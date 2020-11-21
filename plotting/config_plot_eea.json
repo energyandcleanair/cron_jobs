@@ -1,0 +1,15 @@
+[
+  {
+     "command": "plot_measurements",
+     "source": "eea",
+     "poll": ["no2","pm10","o3"],
+     "subplot_by": "poll",
+     "subfile_by": "country",
+     "process_id": "country_day_mad",
+     "destination": "gs://crea-public/plots/eea/country/all",
+     "aggregate_level": "country",
+     "running_days": [30],
+     "size": ["l"],
+     "add_lockdown": true
+  }
+]

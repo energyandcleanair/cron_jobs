@@ -1,0 +1,24 @@
+[
+   {
+     "command": "run_script",
+     "rscript":["require(tidyr)",
+                "require(dplyr)",
+                "meas <- rcrea::measurements(source='mee', city=c('beijing','shanghai','guangzhou','chongqing','guangzhou','shenzhen','wuhan'), poll=rcrea::NO2, process_id='anomaly_offsetted_gbm_lag1_city_mad',  aggregate_level='city')",
+                "meas30 <- meas %>% ungroup() %>% rcrea::utils.rolling_average(average_by='day', average_width=30, vars_to_avg='value') %>% filter(!is.na(value), date>='2020-01-01')"
+       ],
+     "export": [
+       {
+         "folder":"gs://crea-public/data/meas/deweathered/",
+         "variable":"meas30",
+         "format":"csv",
+         "filename":"deweathered_reuters_cn.csv"
+       },
+       {
+         "folder":"gs://crea-public/data/meas/deweathered/",
+         "variable":"meas",
+         "format":"rds",
+         "filename":"deweathered_reuters_cn.rds"
+       }
+     ]
+  }
+]

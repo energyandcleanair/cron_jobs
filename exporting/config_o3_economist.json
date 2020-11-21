@@ -1,0 +1,55 @@
+[
+  {
+     "command": "refresh_measurements",
+     "scraper": "eea",
+     "poll": ["o3"],
+     "city": ["London", "Paris", "Madrid", "Berlin", "Brussels", "Warsaw", "Athens","Stockholm"],
+     
+     "aggregate_level": "city",
+     "years_force_refresh": null
+  },
+  {
+     "command": "deweather_measurements",
+     "scraper": "cpcb-api",
+     "poll": ["o3"],
+     "city": ["Delhi", "Hyderabad", "Kolkata", "Varanasi", "Lucknow", "Mumbai", "Bengaluru", "Chennai", "Pune"],
+     
+     "aggregate_level": "city"
+  },
+  {
+    "command": "deweather_measurements",
+    "source": "mee",
+    "poll": ["o3"],
+    "city": ["Beijing","Shanghai"],
+    
+    "aggregate_level": "city",
+    "years_force_refresh": null
+  },
+  {
+     "command": "deweather_measurements",
+     "source": "openaq",
+     "poll": ["o3"],
+     "city": ["Amsterdam", "Roma", "Jakarta", "chicago-naperville-joliet",
+       "los angeles-long beach-santa ana", "Distrito Federal",
+       "new york-northern new jersey-long island", "Buenos Aires", "bangkok", "bogota", "santiago"],
+
+  },
+  {
+     "command": "deweather_measurements",
+     "source": "airkorea",
+     "poll": ["o3"],
+     "city": ["Seoul"],
+     
+     "aggregate_level": "city",
+     "years_force_refresh": null
+  },
+   {
+     "command": "deweather_measurements",
+     "source": "jp",
+     "poll": ["o3"],
+     "city": ["tokyo"],
+     
+     "aggregate_level": "city",
+     "years_force_refresh": null
+  }
+]

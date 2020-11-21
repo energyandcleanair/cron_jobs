@@ -1,0 +1,13 @@
+{
+  "command": "refresh_measurements",
+  "scraper": "airkorea",
+  "filters": [
+    {
+      "date_from": -14
+    }
+  ],
+  "processes": [
+    "station_day_mad",
+    "city_day_mad"
+  ]
+}

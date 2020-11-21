@@ -1,0 +1,26 @@
+[
+  {
+    "command": "refresh_measurements",
+    "scraper": "earthengine",
+    "filters": [
+      {
+        "date_from": -17,
+        "date_to": -8,
+        "region_type": "gcpt"
+      },
+     {
+        "date_from": -17,
+        "date_to": -8,
+        "region_type": "gcpt_10km"
+      },
+      {
+        "date_from": -17,
+        "date_to": -8,
+        "region_type": "gcpt_50km"
+      }
+    ],
+    "processes": [
+      "raw"
+    ]
+  }
+]

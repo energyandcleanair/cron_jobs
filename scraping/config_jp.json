@@ -1,0 +1,13 @@
+{
+  "command": "refresh_measurements",
+  "scraper": "jp",
+  "filters": [
+    {
+      "date_from": -10
+    }
+  ],
+  "processes": [
+    "station_day_mad",
+    "city_day_mad"
+  ]
+}

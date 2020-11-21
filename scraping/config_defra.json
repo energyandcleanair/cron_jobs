@@ -1,0 +1,12 @@
+{
+  "command": "refresh_measurements",
+  "scraper": "defra",
+  "filters": [
+    {
+      "date_from": -20
+    }
+  ],
+  "processes": [
+    "city_day_mad"
+  ]
+}

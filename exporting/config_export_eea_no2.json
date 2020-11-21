@@ -1,0 +1,14 @@
+[
+  {
+    "command": "export_measurements",
+    "source": "eea",
+    "polls": ["no2"],
+    "aggregate_level":"city",
+    "average_by": "day",
+    "date_from": "2020-01-01",
+    "date_to":"2020-12-31",
+    "folder": "gs://crea-public/data/meas/observations",
+    "filename": "meas_eea_no2_city_day_2020.RDS",
+    "with_metadata": true
+  }
+]

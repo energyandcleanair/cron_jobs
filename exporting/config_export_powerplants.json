@@ -1,0 +1,41 @@
+[
+    {
+    "command": "export_measurements",
+    "source": "earthengine",
+    "polls": ["no2"],
+    "country": ["CN"],
+    "location_type": "powerplant_50km",
+    "process_id":"raw",
+    "date_from": "2018-01-01",
+    "folder": "gs://crea-public/data/meas/observations",
+    "filename": "meas_no2_tropomi_cn_powerplants_50km.csv",
+    "format": "csv",
+    "with_metadata": true
+  },
+  {
+    "command": "export_measurements",
+    "source": "earthengine",
+    "polls": ["no2"],
+    "country": ["CN"],
+    "location_type": "powerplant_10km",
+    "process_id":"raw",
+    "date_from": "2018-01-01",
+    "folder": "gs://crea-public/data/meas/observations",
+    "filename": "meas_no2_tropomi_cn_powerplants_10km.csv",
+    "format": "csv",
+    "with_metadata": true
+  },
+  {
+    "command": "export_measurements",
+    "source": "earthengine",
+    "polls": ["no2"],
+    "country": ["CN"],
+    "location_type": "powerplant",
+    "process_id":"raw",
+    "date_from": "2018-01-01",
+    "folder": "gs://crea-public/data/meas/observations",
+    "filename": "meas_no2_tropomi_cn_powerplants.csv",
+    "format": "csv",
+    "with_metadata": true
+  }
+]

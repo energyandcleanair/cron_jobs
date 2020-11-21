@@ -1,0 +1,58 @@
+[
+  {
+     "command": "deweather_measurements",
+     "source": "eea",
+     "poll": ["no2","pm25","pm10","o3"],
+     "city": ["London", "Paris", "Madrid", "Berlin", "Brussels", "Warsaw", "Athens","Stockholm"],
+     "output": ["anomaly", "anomaly_yday"],
+     "aggregate_level": "city",
+     "years_force_refresh": null
+  },
+  {
+     "command": "deweather_measurements",
+     "source": "cpcb",
+     "poll": ["no2","pm25","pm10","o3"],
+     "city": ["Delhi", "Hyderabad", "Kolkata", "Varanasi", "Lucknow", "Mumbai", "Bengaluru", "Chennai", "Pune"],
+     "output": ["anomaly", "anomaly_yday"],
+     "aggregate_level": "city",
+     "years_force_refresh": 2020
+  },
+  {
+    "command": "deweather_measurements",
+    "source": "mee",
+    "poll": ["no2","pm25","pm10","o3"],
+    "city": ["Beijing","Shanghai"],
+    "output": ["anomaly", "anomaly_yday"],
+    "aggregate_level": "city",
+    "years_force_refresh": null
+  },
+  {
+     "command": "deweather_measurements",
+     "source": "openaq",
+     "poll": ["no2","pm25","pm10","o3"],
+     "city": ["Amsterdam", "Roma", "Jakarta", "chicago-naperville-joliet",
+       "los angeles-long beach-santa ana", "Distrito Federal",
+       "new york-northern new jersey-long island", "Buenos Aires", "bangkok", "bogota", "santiago"],
+     "output": ["anomaly", "anomaly_yday"],
+     "aggregate_level": "city",
+     "years_force_refresh": 2020
+  },
+  {
+     "command": "deweather_measurements",
+     "source": "airkorea",
+     "poll": ["no2","pm25","pm10","o3"],
+     "city": ["Seoul"],
+     "output": ["anomaly", "anomaly_yday"],
+     "aggregate_level": "city",
+     "years_force_refresh": null
+  },
+   {
+     "command": "deweather_measurements",
+     "source": "jp",
+     "poll": ["no2","pm25","pm10","o3"],
+     "city": ["tokyo"],
+     "output": ["anomaly", "anomaly_yday"],
+     "aggregate_level": "city",
+     "years_force_refresh": null
+  }
+]

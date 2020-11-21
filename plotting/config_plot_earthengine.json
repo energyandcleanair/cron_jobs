@@ -1,0 +1,15 @@
+[
+  {
+     "command": "plot_measurements",
+     "source": "earthengine",
+     "poll": ["no2"],
+     "subplot_by": "region_name",
+     "subfile_by": "country",
+     "process_id": "country_day_absolute",
+     "destination": "gs://crea-public/plots/earthengine/",
+     "aggregate_level": "country",
+     "running_days": [14, 30],
+     "size": ["m","l"]
+  }
+]
+

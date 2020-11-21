@@ -1,0 +1,13 @@
+{
+  "command": "refresh_measurements",
+  "scraper": "csb",
+  "filters": [
+    {
+      "date_from": -80
+    }
+  ],
+  "processes": [
+    "station_day_mad",
+    "city_day_mad"
+  ]
+}

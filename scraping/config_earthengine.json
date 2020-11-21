@@ -1,0 +1,13 @@
+{
+  "command": "refresh_measurements",
+  "scraper": "earthengine",
+  "filters": [
+    {
+      "date_from": -20,
+      "country": ["BG","GI","HR","AD","AL","AT","BA","BE","CH","CY","CZ","DK","EE","FI","SE","FR","GR","HU","IS","LT","LU","LV","ME","MK","MT","NL","PT","RO","RS","SI","SK","TR","XK","DE","IE","IT","ES","GE","NO","PL","GB","KH","SG","ID","LA","VN","PH","TH","MM","MY","BN","ID","PK","BD"]
+    }
+  ],
+  "processes": [
+    "country_day_absolute"
+  ]
+}
