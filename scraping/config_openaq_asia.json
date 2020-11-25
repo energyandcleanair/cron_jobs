@@ -4,7 +4,7 @@
   "country":["TH","VN","ID","SG","MY","KH"],
   "filters": [
     {
-      "date_from": -7
+      "date_from": -5
     }
   ],
   "processes": [
