@@ -1,19 +1,14 @@
 {
   "command": "refresh_measurements",
+  "error_if_no_measurement": true,
   "scraper": "eea",
   "filters": [
     {
-      "date_from": -4
+      "date_from": -6
     }
   ],
   "processes": [
     "station_day_mad",
-    "city_day_mad",
-    "gadm2_day_mad",
-    "gadm1_day_mad",
-    "country_day_mad",
-    "gadm2_day_mad_gpw",
-    "gadm1_day_mad_gpw",
-    "country_day_mad_gpw"
+    "city_day_mad"
   ]
 }
