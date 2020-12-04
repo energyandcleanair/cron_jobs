@@ -7,7 +7,7 @@
               "Copenhagen","Dublin","Hamburg","Helsinki","Lisbon","Ljubljana","London","Luxemburg","Madrid",
               "Milan","Munich","Nicosia","Paris","Prague","Riga","Rome","Sofia","Stockholm",
               "Tallinn","The Hague","Valletta","Vienna","Vilnius","Warsaw","Zagreb","Oslo"],
-     "output": ["anomaly", "anomaly_yday"],
+     "output": ["anomaly"],
      "aggregate_level": "city",
      "folder": "gs://crea-public/data/meas/deweathered",
      "filename": "deweathered_eea.RDS"
@@ -17,7 +17,7 @@
      "source": "cpcb",
      "poll": ["no2","so2", "pm25", "pm10"],
      "city": [],
-     "output": ["anomaly", "anomaly_yday"],
+     "output": ["anomaly"],
      "aggregate_level": "city",
      "folder": "gs://crea-public/data/meas/deweathered",
      "filename": "deweathered_cpcb.RDS"
@@ -27,7 +27,7 @@
     "source": "mee",
     "poll": ["no2","so2", "pm25", "pm10"],
     "city": ["Beijing","Shanghai","Guangzhou","Shenzhen","Chengdu","Hangzhou","Wuhan","Chongqing","Nanjing","Tianjin","Suzhou","Xi'an","Changsha","Shenyang","Qingdao","Zhengzhou","Dalian","Dongguan","Ningbo"],
-    "output": ["anomaly" ,"anomaly_yday"],
+    "output": ["anomaly"],
     "aggregate_level": "city",
     "folder": "gs://crea-public/data/meas/deweathered",
     "filename": "deweathered_mee.RDS"
@@ -38,7 +38,7 @@
      "poll": ["no2","so2", "pm25", "pm10"],
      "city": ["Jakarta","Bangkok", "Hanoi", "New York", "Chicago", "Los Angeles", "Distrito Federal", "Buenos Aires", "são paulo",
        "nairobi", "santiago", "bogota"],
-     "output": ["anomaly" ,"anomaly_yday"],
+     "output": ["anomaly"],
      "aggregate_level": "city",
      "folder": "gs://crea-public/data/meas/deweathered",
      "filename": "deweathered_openaq.RDS"
@@ -48,7 +48,7 @@
      "source": "jp",
      "poll": ["no2","so2", "pm25", "pm10"],
      "city": ["Tokyo","Kyoto", "Osaka", "Yokohama", "Sapporo", "Nagoya", "Kobe", "Fukuoka", "Kawasaki", "Saitama", "Hiroshima", "Sendai"],
-     "output": ["anomaly" ,"anomaly_yday"],
+     "output": ["anomaly"],
      "aggregate_level": "city",
      "folder": "gs://crea-public/data/meas/deweathered",
      "filename": "deweathered_jp.RDS"
@@ -57,7 +57,7 @@
      "command": "deweather_measurements",
      "source": "airkorea",
      "poll": ["no2","so2", "pm25", "pm10"],
-     "output": ["anomaly" ,"anomaly_yday"],
+     "output": ["anomaly"],
      "aggregate_level": "city",
      "folder": "gs://crea-public/data/meas/deweathered",
      "filename": "deweathered_airkorea.RDS"
@@ -66,9 +66,19 @@
      "command": "deweather_measurements",
      "source": "defra",
      "poll": ["no2","so2", "pm25", "pm10"],
-     "output": ["anomaly", "anomaly_yday"],
+     "output": ["anomaly"],
      "aggregate_level": "city",
      "folder": "gs://crea-public/data/meas/deweathered",
      "filename": "deweathered_defra.RDS"
+  },
+  {
+     "command": "deweather_measurements",
+     "source": "csb",
+     "city": "istanbul",
+     "poll": ["no2","so2", "pm25", "pm10"],
+     "output": ["anomaly"],
+     "aggregate_level": "city",
+     "folder": "gs://crea-public/data/meas/deweathered",
+     "filename": "deweathered_csb.RDS"
   }
 ]

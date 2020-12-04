@@ -5,14 +5,16 @@
        "content":[
          "require(tidyr)",
          "require(dplyr)",
+         "require(remotes); remotes::install_github('tidyverse/lubridate'); require(lubridate)",
          "meas_eea <- rcrea::measurements( source='eea', city=c('athens','berlin','brussels','bucharest','budapest','copenhagen','lisbon','ljubljana','london','madrid','milan','munich','oslo','paris','prague','riga','rome','sofia','the hague','vilnius','warsaw'), poll=rcrea::NO2, process_id='anomaly_offsetted_gbm_lag1_city_mad',aggregate_level='city')",
          "meas_cpcb <- rcrea::measurements(  source='cpcb',  city=c('chennai','delhi','kolkata','mumbai'),  poll=rcrea::NO2,  process_id='anomaly_offsetted_gbm_lag1_city_mad',  aggregate_level='city')",
          "meas_mee <- rcrea::measurements(source='mee', city=c('beijing','shanghai','guangzhou','chongqing','guangzhou','shenzhen','wuhan'), poll=rcrea::NO2, process_id='anomaly_offsetted_gbm_lag1_city_mad',  aggregate_level='city')",
          "meas_openaq <- rcrea::measurements(city=c('bangkok'), poll=rcrea::NO2, process_id='anomaly_offsetted_gbm_lag1_city_absolute', aggregate_level='city')",
-         "meas <- rbind(meas_cpcb, meas_eea, meas_mee, meas_openaq)",
+         "meas_csb <- rcrea::measurements(city=c('istanbul'), poll=rcrea::NO2, process_id='anomaly_offsetted_gbm_lag1_city_mad', aggregate_level='city')",
+         "meas <- rbind(meas_cpcb, meas_eea, meas_mee, meas_openaq, meas_csb)",
          "meas30 <- meas %>% ungroup() %>% rcrea::utils.rolling_average(average_by='day', average_width=30, vars_to_avg='value') %>% filter(!is.na(value), date>='2020-01-01')",
          "saveRDS(meas30, file.path({tmp_dir}, 'deweathered_ft.RDS'))",
-         "write.csv(x=meas30, file=file.path({tmp_dir}, 'deweathered_ft.RDS'),  row.names = F)"
+         "write.csv(x=meas30, file=file.path({tmp_dir}, 'deweathered_ft.csv'),  row.names = F)"
        ]
      },
      "export": [

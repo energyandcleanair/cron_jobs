@@ -1,10 +1,10 @@
 {
   "command": "refresh_measurements",
-  "scraper": "openaq-archive",
+  "scraper": "openaq",
   "country":["TH","VN","ID","SG","MY","KH"],
   "filters": [
     {
-      "date_from": -5
+      "date_from": -15
     }
   ],
   "processes": [

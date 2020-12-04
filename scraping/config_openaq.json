@@ -1,6 +1,6 @@
 {
   "command": "refresh_measurements",
-  "scraper": "openaq-archive",
+  "scraper": "openaq",
   "filters": [
     {
       "date_from": -7

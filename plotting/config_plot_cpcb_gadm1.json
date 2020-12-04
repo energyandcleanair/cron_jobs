@@ -3,7 +3,7 @@
      "command": "plot_measurements",
      "source": "cpcb",
      "poll": ["no2","pm25","pm10"],
-     "subplot_by": "region_name",
+     "subplot_by": "location_name",
      "subfile_by": "poll",
      "process_id": "gadm1_day_mad",
      "destination": "gs://crea-public/plots/cpcb/admin1/all/observations/",
