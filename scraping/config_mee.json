@@ -4,7 +4,7 @@
   "scraper": "mee",
   "filters": [
     {
-     "date_from": -5
+     "date_from": -10
     }
   ],
   "processes": [
