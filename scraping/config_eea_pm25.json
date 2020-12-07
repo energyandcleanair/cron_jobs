@@ -1,0 +1,15 @@
+{
+  "command": "refresh_measurements",
+  "error_if_no_measurement": true,
+  "scraper": "eea",
+  "filters": [
+    {
+      "pollutant":["pm25"],
+      "date_from": -6
+    }
+  ],
+  "processes": [
+    "station_day_mad",
+    "city_day_mad"
+  ]
+}
