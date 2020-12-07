@@ -3,9 +3,9 @@
   "error_if_no_measurement": true,
   "debug": true,
   "scraper": "openaq",
-  "country":["TH","VN","ID","SG","MY","KH"],
   "filters": [
     {
+      "country":["TH","VN","ID","SG","MY","KH"],
       "date_from": -15
     }
   ],
