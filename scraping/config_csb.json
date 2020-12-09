@@ -1,5 +1,6 @@
 {
   "command": "refresh_measurements",
+  "error_if_no_measurement": true,
   "scraper": "csb",
   "filters": [
     {
