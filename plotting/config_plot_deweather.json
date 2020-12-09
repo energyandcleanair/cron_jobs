@@ -3,7 +3,7 @@
      "command": "plot_measurements",
      "source": "eea",
      "city": ["Amsterdam","Athens","Barcelona","Berlin","Bratislava","Brussels","Bucharest","Budapest",
-              "Copenhagen","Dublin","Hamburg","Helsinki","Lisbon","Ljubljana","London","Luxemburg","Madrid",
+              "Copenhagen","Dublin","Hamburg","Helsinki","Lisbon","Ljubljana","London","Liverpool","Manchester","Luxemburg","Madrid",
               "Milan","Munich","Nicosia","Paris","Prague","Riga","Rome","Sofia","Stockholm",
               "Tallinn","The Hague","Valletta","Vienna","Vilnius","Warsaw","Zagreb","Oslo"],
      "poll": ["no2", "pm10"],
@@ -15,7 +15,7 @@
      "destination": "gs://crea-public/plots/eea/city/capitals/anomaly_offsetted",
      "aggregate_level": "city",
      "running_days": [14, 30],
-     "size": ["m","l"],
+     "size": ["l"],
      "add_lockdown": true
   },
 
@@ -23,7 +23,7 @@
      "command": "plot_measurements",
      "source": "eea",
      "city": ["Amsterdam","Athens","Barcelona","Berlin","Bratislava","Brussels","Bucharest","Budapest",
-              "Copenhagen","Dublin","Hamburg","Helsinki","Lisbon","Ljubljana","London","Luxemburg","Madrid",
+              "Copenhagen","Dublin","Hamburg","Helsinki","Lisbon","Ljubljana","London","Liverpool","Manchester","Luxemburg","Madrid",
               "Milan","Munich","Nicosia","Paris","Prague","Riga","Rome","Sofia","Stockholm",
               "Tallinn","The Hague","Valletta","Vienna","Vilnius","Warsaw","Zagreb","Oslo"],
      "poll": ["no2","pm10"],
@@ -37,9 +37,34 @@
      "destination": "gs://crea-public/plots/eea/city/capitals/anomaly",
      "aggregate_level": "city",
      "running_days": [14, 30],
-     "size": ["m","l"],
+     "size": ["l"],
      "add_lockdown": true
   },
+
+  {
+     "command": "plot_measurements",
+     "source": "eea",
+     "city": ["Amsterdam","Athens","Barcelona","Berlin","Bratislava","Brussels","Bucharest","Budapest",
+              "Copenhagen","Dublin","Hamburg","Helsinki","Lisbon","Ljubljana","London","Liverpool","Manchester","Luxemburg","Madrid",
+              "Milan","Munich","Nicosia","Paris","Prague","Riga","Rome","Sofia","Stockholm",
+              "Tallinn","The Hague","Valletta","Vienna","Vilnius","Warsaw","Zagreb","Oslo"],
+     "poll": ["no2","pm10"],
+     "subplot_by": "location_name",
+     "subfile_by": "poll",
+     "color_by": "value",
+     "title": "{poll} rebound tracking in European cities",
+     "subtitle": "Weather-corrected anomalies.",
+     "color_by": "value",
+     "caption": "A negative value indicates an air pollution level lower than what would have been expected under observed weather conditions.\nSource: CREA based on CPCB and NOAA.",
+     "process_id": "anomaly_vs_counterfactual_gbm_lag1_city_mad",
+     "percent": true,
+     "destination": "gs://crea-public/plots/eea/city/capitals/anomaly_vs_counterfactual",
+     "aggregate_level": "city",
+     "running_days": [30],
+     "size": ["l"],
+     "add_lockdown": true
+  },
+
 
   {
      "command": "plot_measurements",
