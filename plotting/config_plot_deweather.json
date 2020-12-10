@@ -223,7 +223,7 @@
      "caption": "A negative value indicates an air pollution level lower than what would have been expected under observed weather conditions.\nSource: CREA based on DEFRA and NOAA.",
      "process_id": "anomaly_vs_counterfactual_gbm_lag1_city_mad_pbl",
      "percent": true,
-     "destination": "gs://crea-public/plots/eea/city/capitals/anomaly_vs_counterfactual",
+     "destination": "gs://crea-public/plots/defra/city/capitals/anomaly_vs_counterfactual",
      "aggregate_level": "city",
      "running_days": [30],
      "size": ["l"],
