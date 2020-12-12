@@ -2,13 +2,16 @@
   {
      "command": "plot_measurements",
      "source": "cpcb",
+     "city":["Mumbai","Delhi","Bengaluru","Kolkata","Chennai","Ahmedabad","Hyderabad","Pune","Kanpur",
+        "Jaipur","Lucknow","Nagpur","Indore","Patna","Bhopal","Ludhiana","Thane","Agra",
+        "Nashik","Faridabad","Kalyan","Ghaziabad","Meerut","Varanasi","Amritsar"],
      "poll": ["no2","pm25","pm10"],
      "subplot_by": "location_name",
      "subfile_by": "poll",
      "process_id": "city_day_mad",
-     "destination": "gs://crea-public/plots/cpcb/city/all/observations/",
+     "destination": "gs://crea-public/plots/cpcb/city/keycities/observations/",
      "aggregate_level": "city",
-     "running_days": [14, 30],
+     "running_days": [30],
      "size": ["l"]
   }
 ]
