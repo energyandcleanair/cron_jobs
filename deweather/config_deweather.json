@@ -16,6 +16,9 @@
   {
      "command": "deweather_measurements",
      "source": "cpcb",
+     "city":["Mumbai","Delhi","Bengaluru","Kolkata","Chennai","Ahmedabad","Hyderabad","Pune","Kanpur",
+        "Jaipur","Lucknow","Nagpur","Indore","Patna","Bhopal","Ludhiana","Thane","Agra",
+        "Nashik","Faridabad","Kalyan","Ghaziabad","Meerut","Varanasi","Amritsar"],
      "poll": ["no2","so2", "pm25", "pm10"],
      "city": [],
      "output": ["anomaly"],
