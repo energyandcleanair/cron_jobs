@@ -19,7 +19,6 @@
         "Jaipur","Lucknow","Nagpur","Indore","Patna","Bhopal","Ludhiana","Thane","Agra",
         "Nashik","Faridabad","Kalyan","Ghaziabad","Meerut","Varanasi","Amritsar"],
      "poll": ["no2","so2", "pm25", "pm10"],
-     "city": [],
      "output": ["anomaly"],
      "aggregate_level": "city",
      "folder": "gs://crea-public/data/meas/deweathered",
