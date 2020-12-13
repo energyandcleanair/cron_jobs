@@ -8,6 +8,8 @@
      "poll": ["no2","pm25","pm10"],
      "subplot_by": "location_name",
      "subfile_by": "poll",
+     "date_from": "2017-01-01",
+     "color_by": "year",
      "process_id": "city_day_mad",
      "destination": "gs://crea-public/plots/cpcb/city/keycities/observations/",
      "aggregate_level": "city",
