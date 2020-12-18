@@ -1,0 +1,9 @@
+[
+	{
+		"command": "compute_trajectories",
+		"source": "openaq",
+		"polls": ["pm25"],
+		"city": ["manila", "bangkok", "jakarta"],
+		"date_from": -14
+	}
+]
