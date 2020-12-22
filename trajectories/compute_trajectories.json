@@ -1,6 +1,7 @@
 [
 	{
 		"command": "compute_trajectories",
+		"conda_env": "crea",
 		"source": "openaq",
 		"polls": ["pm25"],
 		"city": ["manila", "bangkok", "jakarta"],

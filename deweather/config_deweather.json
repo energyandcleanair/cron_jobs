@@ -3,10 +3,10 @@
      "command": "deweather_measurements",
      "source": "eea",
      "poll": ["no2","o3", "pm25", "pm10"],
-     "city": ["Amsterdam","Athens","Barcelona","Berlin","Bratislava","Brussels","Bucharest","Budapest",
-              "Copenhagen","Dublin","Hamburg","Helsinki","Lisbon","Ljubljana","London","Luxemburg","Madrid",
-              "Milan","Munich","Nicosia","Paris","Prague","Riga","Rome","Sofia","Stockholm",
-              "Tallinn","The Hague","Valletta","Vienna","Vilnius","Warsaw","Zagreb","Oslo"],
+     "city": ["Amsterdam","Athens","Barcelona","Berlin","Bratislava","Brussels","Bucharest","Budapest","Copenhagen"
+      "Dublin","Hamburg","Helsinki","Lisbon","Ljubljana","London","Madrid","Milan","Munich","Nicosia"
+      "Oslo","Paris","Prague","Riga","Rome","Sofia","Stockholm","Tallinn","Vienna","Vilnius","Warsaw","Zagreb",
+      "Luxemburg", "The Hague"] ,
      "output": ["anomaly"],
      "aggregate_level": "city",
      "folder": "gs://crea-public/data/meas/deweathered",
