@@ -1,7 +1,7 @@
 {
   "command": "refresh_measurements",
   "scraper": "airvisual",
-  "process": [
+  "processes": [
 	"city_day_mad",
     	"station_day_mad"],
   "filters": [
