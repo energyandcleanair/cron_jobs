@@ -5,7 +5,7 @@
   "scraper": "openaq",
   "filters": [
     {
-      "country":["TH","VN","ID","SG","MY","KH","PH"],
+      "country":["TH","VN","ID","SG","MY","KH","PH","PK"],
       "date_from": -15
     }
   ],
