@@ -6,7 +6,7 @@
     	"station_day_mad"],
   "filters": [
     {
-      "country": ["HK","TH","ID","PH"]
+      "country": ["HK","TH","ID","PH","VN"]
     }
   ]
 }
