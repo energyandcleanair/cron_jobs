@@ -6,6 +6,7 @@
     	"station_day_mad"],
   "filters": [
     {
+     "date_from": -7,
       "country": ["HK","TH","ID","PH","VN"]
     }
   ]
