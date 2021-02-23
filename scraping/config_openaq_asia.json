@@ -6,10 +6,12 @@
   "filters": [
     {
       "country":["TH","VN","ID","SG","MY","KH","PH","PK"],
-      "date_from": -15
+      "date_from": -15,
+      "entity": "government"
     }
   ],
   "processes": [
+    "station_day_absolute",
     "city_day_absolute"
   ]
 }
