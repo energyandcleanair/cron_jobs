@@ -5,7 +5,7 @@
   "scraper": "openaq",
   "filters": [
     {
-      "country":["TH","VN","ID","SG","MY","KH","PH","PK"],
+      "country":["PK","MX","CA","AU","PH","TH","ID","CL","PE","AR","BR","EC","EG","RU","LK","TJ","MM","VN","PY","UY","UZ","AE","TW","PA","MA","MY","JM","IR","IQ","HK","CI","KH","DZ"],
       "date_from": -15,
       "entity": "government"
     }
