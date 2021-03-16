@@ -1,5 +1,15 @@
 [
   {
+    "command": "deweather_measurements",
+     "source": "airvisual",
+     "city": ["Hanoi","Bangkok","Chiang mai"],
+     "poll": ["pm25"],
+     "output": ["anomaly"],
+     "aggregate_level": "city",
+     "folder": "gs://crea-public/data/meas/deweathered",
+     "filename": "deweathered_airvisual.RDS"
+  },
+  {
      "command": "deweather_measurements",
      "source": "eea",
      "poll": ["no2","o3", "pm25", "pm10"],
@@ -50,14 +60,14 @@
   },
   {
      "command": "deweather_measurements",
-     "source": "openaq",
+     "source": "openaq_government",
      "poll": ["no2","o3", "pm25", "pm10"],
      "city": ["Jakarta","Bangkok", "Hanoi", "New York", "Chicago", "Los Angeles", "Distrito Federal", "Buenos Aires", "são paulo",
        "nairobi", "santiago", "bogota"],
      "output": ["anomaly"],
      "aggregate_level": "city",
      "folder": "gs://crea-public/data/meas/deweathered",
-     "filename": "deweathered_openaq.RDS"
+     "filename": "deweathered_openaq_government.RDS"
   },
   {
      "command": "deweather_measurements",
