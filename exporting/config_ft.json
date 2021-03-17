@@ -12,7 +12,7 @@
          "meas_openaq <- rcrea::measurements(source='openaq_government', city=c('bangkok'), poll=rcrea::NO2, process_id='anomaly_offsetted_gbm_lag1_city_mad_pbl', aggregate_level='city')",
          "meas_csb <- rcrea::measurements(city=c('istanbul'), poll=rcrea::NO2, process_id='anomaly_offsetted_gbm_lag1_city_mad_pbl', aggregate_level='city')",
          "meas <- rbind(meas_cpcb, meas_eea, meas_mee, meas_openaq, meas_csb)",
-         "meas30 <- meas %>% ungroup() %>% rcrea::utils.rolling_average(average_by='day', average_width=30, vars_to_avg='value') %>% filter(!is.na(value), date>='2020-01-01')",
+         "meas30 <- meas %>% ungroup() %>% rcrea::utils.rolling_average(average_by='day', average_width=30, vars_to_avg='value') %>% filter(!is.na(value), date>='2020-01-01') %>% arrange(source, location_id, date)",
          "saveRDS(meas30, file.path({tmp_dir}, 'deweathered_ft.RDS'))",
          "write.csv(x=meas30, file=file.path({tmp_dir}, 'deweathered_ft.csv'),  row.names = F)"
        ]
