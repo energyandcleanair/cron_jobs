@@ -1,0 +1,20 @@
+[
+   {
+     "command": "run_script",
+     "rscript":{
+       "content":[
+         "require(tidyr)",
+         "require(dplyr)",
+         "require(remotes); remotes::install_github('tidyverse/lubridate'); require(lubridate)",
+         "meas <- rcrea::measurements(source='mee', city=c('beijing','shanghai','guangzhou','chongqing','guangzhou','shenzhen','wuhan',"Xi'an"), poll=rcrea::PM25, process_id='city_day_mad', date_from='2020-01-01', aggregate_level='city') %>% arrange(source, location_id, date)"
+         "write.csv(x=meas, file=file.path({tmp_dir}, 'ft_china_pm25.csv'),  row.names = F)"
+       ]
+     },
+     "export": [
+       {
+         "dest_folder":"gs://crea-public/data/meas/deweathered/",
+         "source_filepath":"*"
+       }
+     ]
+  }
+]
