@@ -11,6 +11,17 @@
   },
   {
      "command": "deweather_measurements",
+     "source": "openaq_government",
+     "poll": ["no2","o3", "pm25", "pm10"],
+     "city": ["Jakarta","Bangkok", "Hanoi", "New York", "Chicago", "Los Angeles", "Distrito Federal", "Buenos Aires", "são paulo",
+       "nairobi", "santiago", "bogota"],
+     "output": ["anomaly"],
+     "aggregate_level": "city",
+     "folder": "gs://crea-public/data/meas/deweathered",
+     "filename": "deweathered_openaq_government.RDS"
+  },
+  {
+     "command": "deweather_measurements",
      "source": "eea",
      "poll": ["no2","o3", "pm25", "pm10"],
      "city": ["Amsterdam","Athens","Barcelona","Berlin","Bratislava","Brussels","Bucharest","Budapest","Copenhagen",
@@ -57,17 +68,6 @@
     "aggregate_level": "city",
     "folder": "gs://crea-public/data/meas/deweathered",
     "filename": "deweathered_mee.RDS"
-  },
-  {
-     "command": "deweather_measurements",
-     "source": "openaq_government",
-     "poll": ["no2","o3", "pm25", "pm10"],
-     "city": ["Jakarta","Bangkok", "Hanoi", "New York", "Chicago", "Los Angeles", "Distrito Federal", "Buenos Aires", "são paulo",
-       "nairobi", "santiago", "bogota"],
-     "output": ["anomaly"],
-     "aggregate_level": "city",
-     "folder": "gs://crea-public/data/meas/deweathered",
-     "filename": "deweathered_openaq_government.RDS"
   },
   {
      "command": "deweather_measurements",
