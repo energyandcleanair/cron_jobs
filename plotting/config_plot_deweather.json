@@ -14,7 +14,7 @@
      "process_id": "anomaly_offsetted_gbm_lag1_city_mad_pbl",
      "destination": "gs://crea-public/plots/eea/city/capitals/anomaly_offsetted",
      "aggregate_level": "city",
-     "running_days": [14, 30],
+     "running_days": [30],
      "size": ["l"],
      "add_lockdown": true
   },
@@ -36,7 +36,7 @@
      "process_id": "anomaly_gbm_lag1_city_mad_pbl",
      "destination": "gs://crea-public/plots/eea/city/capitals/anomaly",
      "aggregate_level": "city",
-     "running_days": [14, 30],
+     "running_days": [30],
      "size": ["l"],
      "add_lockdown": true
   },
@@ -78,8 +78,8 @@
      "process_id": "anomaly_offsetted_gbm_lag1_city_mad_pbl",
      "destination": "gs://crea-public/plots/mee/city/keycities/anomaly_offsetted",
      "aggregate_level": "city",
-     "running_days": [14, 30],
-     "size": ["m","l"],
+     "running_days": [30],
+     "size": ["l"],
      "add_lockdown": true
   },
   {
@@ -96,8 +96,8 @@
      "process_id": "anomaly_gbm_lag1_city_mad_pbl",
      "destination": "gs://crea-public/plots/mee/city/keycities/anomaly",
      "aggregate_level": "city",
-     "running_days": [14, 30],
-     "size": ["m","l"],
+     "running_days": [30],
+     "size": ["l"],
      "add_lockdown": true
   },
   {
@@ -250,8 +250,8 @@
      "process_id": "anomaly_offsetted_gbm_lag1_city_mad_pbl",
      "destination": "gs://crea-public/plots/jp/city/all/anomaly_offsetted",
      "aggregate_level": "city",
-     "running_days": [14, 30],
-     "size": ["m","l"],
+     "running_days": [30],
+     "size": ["l"],
      "add_lockdown": true
   },
   {
@@ -267,8 +267,8 @@
      "process_id": "anomaly_gbm_lag1_city_mad_pbl",
      "destination": "gs://crea-public/plots/jp/city/all/anomaly",
      "aggregate_level": "city",
-     "running_days": [14, 30],
-     "size": ["m","l"],
+     "running_days": [30],
+     "size": ["l"],
      "add_lockdown": true
   },
   {
@@ -282,8 +282,8 @@
      "process_id": "anomaly_offsetted_gbm_lag1_city_mad_pbl",
      "destination": "gs://crea-public/plots/airkorea/city/all/anomaly_offsetted/",
      "aggregate_level": "city",
-     "running_days": [14, 30],
-     "size": ["m","l"],
+     "running_days": [30],
+     "size": ["l"],
      "add_lockdown": true
   },
   {
@@ -299,8 +299,8 @@
      "process_id": "anomaly_gbm_lag1_city_mad_pbl",
      "destination": "gs://crea-public/plots/airkorea/city/all/anomaly",
      "aggregate_level": "city",
-     "running_days": [14, 30],
-     "size": ["m","l"],
+     "running_days": [30],
+     "size": ["l"],
      "add_lockdown": true
   },
    {
@@ -315,8 +315,8 @@
      "process_id": "anomaly_offsetted_gbm_lag1_city_absolute_pbl",
      "destination": "gs://crea-public/plots/openaq/city/key_cities_us/anomaly_offsetted",
      "aggregate_level": "city",
-     "running_days": [14, 30],
-     "size": ["m","l"],
+     "running_days": [30],
+     "size": ["l"],
      "add_lockdown": true
   },
   {
@@ -333,8 +333,8 @@
      "process_id": "anomaly_gbm_lag1_city_absolute_pbl",
      "destination": "gs://crea-public/plots/openaq/city/key_cities_us/anomaly",
      "aggregate_level": "city",
-     "running_days": [14, 30],
-     "size": ["m","l"],
+     "running_days": [30],
+     "size": ["l"],
      "add_lockdown": true
   }
 ]
