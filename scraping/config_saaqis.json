@@ -4,7 +4,7 @@
   "scraper": "saaqis",
   "filters": [
     {
-      "date_from": -7,
+      "date_from": -7
     }
   ],
   "processes": [
