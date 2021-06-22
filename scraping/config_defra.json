@@ -1,15 +1,33 @@
-{
-  "command": "refresh_measurements",
-  "error_if_no_measurement": true,
-  "scraper": "defra",
-  "filters": [
-    {
-      "date_from": -20
-    }
-  ],
-  "processes": [
-    "station_day_mad",
-    "city_day_mad",
-    "city_background_day_mad"
-  ]
-}
+[
+  {
+    "command": "refresh_measurements",
+    "error_if_no_measurement": true,
+    "scraper": "defra",
+    "filters": [
+      {
+        "date_from": -20
+      }
+    ],
+    "processes": [
+      "station_day_mad",
+      "city_day_mad",
+      "city_background_day_mad"
+    ]
+  },
+  {
+    "command": "refresh_measurements",
+    "error_if_no_measurement": true,
+    "scraper": "defra",
+    "filters": [
+      {
+        "pollutant": ["o3"],
+        "date_from": -20
+      }
+    ],
+    "processes": [
+      "station_8h_max_day_mad",
+      "city_8h_max_day_mad"
+    ]
+  }
+]
+
