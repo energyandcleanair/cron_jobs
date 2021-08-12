@@ -5,12 +5,14 @@
     "scraper": "csb",
     "filters": [
       {
-        "date_from": -80
+        "date_from": -10
       }
     ],
     "processes": [
       "station_day_mad",
-      "city_day_mad"
+      "city_day_mad",
+      "station_hour_mad",
+      "city_hour_mad"
     ]
   },
   {
@@ -20,7 +22,7 @@
     "filters": [
       {
         "pollutant": ["o3"],
-        "date_from": -80
+        "date_from": -10
       }
     ],
     "processes": [
