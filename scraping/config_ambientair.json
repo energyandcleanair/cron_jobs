@@ -1,0 +1,31 @@
+[
+  {
+    "command": "refresh_measurements",
+    "error_if_no_measurement": true,
+    "scraper": "ambientair",
+    "filters": [
+      {
+       "date_from": -5
+     }
+   ],
+    "processes": [
+      "station_day_mad",
+      "city_day_mad"
+    ]
+  },
+  {
+    "command": "refresh_measurements",
+    "error_if_no_measurement": true,
+    "scraper": "ambientair",
+    "filters": [
+      {
+        "pollutant": ["o3"],
+        "date_from": -5
+     }
+   ],
+    "processes": [
+      "station_8h_max_day_mad",
+      "city_8h_max_day_mad"
+    ]
+  }
+]
