@@ -5,7 +5,7 @@
     "scraper": "jp",
     "filters": [
       {
-        "date_from": -10
+        "date_from": -62
       }
     ],
     "processes": [
@@ -20,7 +20,7 @@
     "filters": [
       {
         "pollutant": ["o3"],
-        "date_from": -10
+        "date_from": -62
       }
     ],
     "processes": [
