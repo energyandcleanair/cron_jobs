@@ -12,8 +12,7 @@
       "station_day_mad",
       "city_day_mad"
     ]
-  }
-],
+  },
   {
     "command": "refresh_measurements",
     "error_if_no_measurement": true,
@@ -29,3 +28,4 @@
       "city_8h_max_day_mad"
     ]
   }
+]
