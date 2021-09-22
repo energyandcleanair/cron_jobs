@@ -1,16 +1,6 @@
 [
   {
      "command": "deweather_measurements",
-     "source": "openaq-government",
-     "poll": ["no2"],
-     "city": ["Bangkok"],
-     "output": ["anomaly"],
-     "aggregate_level": "city",
-     "folder": "gs://crea-public/data/meas/deweathered",
-     "filename": "deweathered_openaq_government_ft.csv"
-  },
-  {
-     "command": "deweather_measurements",
      "source": "eea",
      "poll": ["no2"],
      "city": ["athens","berlin","brussels","bucharest","budapest","copenhagen","lisbon","ljubljana","london","madrid","milan","munich","oslo","paris","prague","riga","rome","sofia","the hague","vilnius","warsaw"] ,
@@ -49,5 +39,15 @@
     "aggregate_level": "city",
     "folder": "gs://crea-public/data/meas/deweathered",
     "filename": "deweathered_csb_ft.csv"
+  },
+  {
+     "command": "deweather_measurements",
+     "source": "openaq-government",
+     "poll": ["no2"],
+     "city": ["Bangkok"],
+     "output": ["anomaly"],
+     "aggregate_level": "city",
+     "folder": "gs://crea-public/data/meas/deweathered",
+     "filename": "deweathered_openaq_government_ft.csv"
   }
 ]
