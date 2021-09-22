@@ -1,0 +1,53 @@
+[
+  {
+     "command": "deweather_measurements",
+     "source": "openaq_government",
+     "poll": ["no2"],
+     "city": ["Bangkok"],
+     "output": ["anomaly"],
+     "aggregate_level": "city",
+     "folder": "gs://crea-public/data/meas/deweathered",
+     "filename": "deweathered_openaq_government_ft.csv"
+  },
+  {
+     "command": "deweather_measurements",
+     "source": "eea",
+     "poll": ["no2"],
+     "city": ["athens","berlin","brussels","bucharest","budapest","copenhagen","lisbon","ljubljana","london","madrid","milan","munich","oslo","paris","prague","riga","rome","sofia","the hague","vilnius","warsaw"] ,
+     "output": ["anomaly"],
+     "aggregate_level": "city",
+     "folder": "gs://crea-public/data/meas/deweathered",
+     "filename": "deweathered_eea_ft.csv"
+  },
+ 
+  {
+     "command": "deweather_measurements",
+     "source": "cpcb",
+     "city":["chennai","delhi","kolkata","mumbai"],
+     "poll": ["no2"],
+     "output": ["anomaly"],
+     "aggregate_level": "city",
+     "folder": "gs://crea-public/data/meas/deweathered",
+     "filename": "deweathered_cpcb_ft.csv"
+  },
+  {
+    "command": "deweather_measurements",
+    "source": "mee",
+    "poll": ["no2"],
+    "city": ["beijing","shanghai","guangzhou","chongqing","guangzhou","shenzhen","wuhan"],
+    "output": ["anomaly"],
+    "aggregate_level": "city",
+    "folder": "gs://crea-public/data/meas/deweathered",
+    "filename": "deweathered_mee_ft.csv"
+  },
+  {
+    "command": "deweather_measurements",
+    "source": "csb",
+    "poll": ["no2"],
+    "city": ["istanbul"],
+    "output": ["anomaly"],
+    "aggregate_level": "city",
+    "folder": "gs://crea-public/data/meas/deweathered",
+    "filename": "deweathered_csb_ft.csv"
+  }
+]
