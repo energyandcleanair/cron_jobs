@@ -1,7 +1,7 @@
 [
   {
      "command": "deweather_measurements",
-     "source": "openaq_government",
+     "source": "openaq-government",
      "poll": ["no2"],
      "city": ["Bangkok"],
      "output": ["anomaly"],
