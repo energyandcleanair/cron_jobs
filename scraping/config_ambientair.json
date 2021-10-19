@@ -2,7 +2,7 @@
   {
     "command": "refresh_measurements",
     "error_if_no_measurement": true,
-    "scraper": "mee",
+    "scraper": "ambientair",
     "filters": [
       {
        "date_from": -5
@@ -16,7 +16,7 @@
   {
     "command": "refresh_measurements",
     "error_if_no_measurement": true,
-    "scraper": "mee",
+    "scraper": "ambientair",
     "filters": [
       {
         "pollutant": ["o3"],

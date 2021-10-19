@@ -1,13 +1,31 @@
-{
-  "command": "refresh_measurements",
-  "scraper": "airvisual",
-  "processes": [
-	"city_day_mad",
-    	"station_day_mad"],
-  "filters": [
-    {
-     "date_from": -7,
-      "country": ["HK","TH","ID","PH","VN"]
-    }
-  ]
-}
+[
+  {
+    "command": "refresh_measurements",
+    "scraper": "airvisual",
+    "processes": [
+  	   "city_day_mad",
+      	"station_day_mad"],
+    "filters": [
+      {
+       "date_from": -7,
+        "country": ["HK","TH","ID","PH","VN"]
+      }
+    ]
+  },
+  {
+    "command": "refresh_measurements",
+    "error_if_no_measurement": true,
+    "scraper": "airvisual",
+    "filters": [
+      {
+        "pollutant": ["o3"],
+        "date_from": -7,
+        "country": ["HK","TH","ID","PH","VN"]
+      }
+    ],
+    "processes": [
+      "station_8h_max_day_mad",
+      "city_8h_max_day_mad"
+    ]
+  }
+]
