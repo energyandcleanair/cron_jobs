@@ -8,5 +8,9 @@
      "library(creapower)",
      "lapply(data.available_data_sources(), update_generation)"
    ]
- }
+ },
+ "environment_variables":[
+  "ENTSO_TOKEN",
+  "EIA_KEY"
+ ]
 }
