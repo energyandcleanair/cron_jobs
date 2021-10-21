@@ -6,7 +6,7 @@
      "library(remotes)",
      "remotes::install_github('energyandcleanair/creapower', upgrade=F)",
      "library(creapower)",
-     "lapply(data.available_data_sources(), update_generation)"
+     "lapply(available_data_sources(), update_generation)"
    ]
  },
  "environment_variables":[
