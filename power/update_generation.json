@@ -6,11 +6,12 @@
      "library(remotes)",
      "remotes::install_github('energyandcleanair/creapower', upgrade=F)",
      "library(creapower)",
-     "lapply(available_data_sources(), update_generation)"
+     "lapply(available_data_sources(), function(ds) purrr::safely(update_generation)(data_source=ds))"
    ]
  },
  "environment_variables":[
   "ENTSO_TOKEN",
-  "EIA_KEY"
+  "EIA_KEY",
+  "BMRS_KEY"
  ]
 }
