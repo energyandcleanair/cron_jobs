@@ -6,7 +6,7 @@
     "scraper": "openaq",
     "filters": [
       {
-        "country":["US","CL"],
+        "country":["US","CL","BR","PE","CO","AR","MX","CA"],
         "date_from": -15,
         "entity": "government"
       }
@@ -24,7 +24,7 @@
     "filters": [
       {
         "pollutant": ["o3"],
-        "country":["US","CL"],
+        "country":["US","CL","BR","PE","CO","AR","MX","CA"],
         "date_from": -15,
         "entity": "government"
       }
