@@ -1,0 +1,17 @@
+{
+ "command": "run_script",
+ "rscript":{
+   "content":[
+     "library(tidyverse)",
+     "library(remotes)",
+     "remotes::install_github('energyandcleanair/creapower', upgrade=F)",
+     "library(creapower)",
+     "lapply(available_data_sources(), function(ds) purrr::safely(update_generation)(data_source=ds))"
+   ]
+ },
+ "environment_variables":[
+  "ENTSO_TOKEN",
+  "EIA_KEY",
+  "BMRS_KEY"
+ ]
+}
