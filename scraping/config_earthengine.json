@@ -3,11 +3,13 @@
   "scraper": "earthengine",
   "filters": [
     {
-      "date_from": -20,
-      "country": ["BG","GI","HR","AD","AL","AT","BA","BE","CH","CY","CZ","DK","EE","FI","SE","FR","GR","HU","IS","LT","LU","LV","ME","MK","MT","NL","PT","RO","RS","SI","SK","TR","XK","DE","IE","IT","ES","GE","NO","PL","GB","KH","SG","ID","LA","VN","PH","TH","MM","MY","BN","ID","PK","BD"]
+      "date_from": -30,
+      "country": ["PK","MX","CA","AU","PH","TH","ID","CL","PE","AR","BR",
+        "EC","EG","RU","LK","TJ","MM","VN","PY","UY","UZ","AE","TW","PA",
+        "MA","MY","JM","IR","IQ","HK","CI","KH","DZ","HK"]
     }
   ],
   "processes": [
-    "country_day_absolute"
+    "city_day_mad"
   ]
 }
