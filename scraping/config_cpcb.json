@@ -10,7 +10,9 @@
     ],
     "processes": [
       "city_day_mad",
-      "station_day_mad"
+      "station_day_mad",
+      "city_hour_mad",
+      "station_hour_mad"
     ]
   },
   {

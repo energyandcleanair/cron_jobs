@@ -8,7 +8,7 @@
       {
         "country":["PK","MX","CA","AU","PH","TH","ID","CL","PE","AR","BR",
         "EC","EG","RU","LK","TJ","MM","VN","PY","UY","UZ","AE","TW","PA",
-        "MA","MY","JM","IR","IQ","HK","CI","KH","DZ"],
+        "MA","MY","JM","IR","IQ","HK","CI","KH","DZ","HK"],
         "date_from": -15,
         "entity": "government"
       }
@@ -28,7 +28,7 @@
         "pollutant": ["o3"],
         "country":["PK","MX","CA","AU","PH","TH","ID","CL","PE","AR","BR",
         "EC","EG","RU","LK","TJ","MM","VN","PY","UY","UZ","AE","TW","PA",
-        "MA","MY","JM","IR","IQ","HK","CI","KH","DZ"],
+        "MA","MY","JM","IR","IQ","HK","CI","KH","DZ","HK"],
         "date_from": -15,
         "entity": "government"
       }
