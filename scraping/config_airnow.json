@@ -15,7 +15,7 @@
   },
   {
     "command": "refresh_measurements",
-    "error_if_no_measurement": true,
+    "error_if_no_measurement": false,
     "scraper": "airnow",
     "filters": [
       {
