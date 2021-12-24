@@ -1,0 +1,7 @@
+[
+   {
+     "command": "run_script",
+     "rscript":{
+       "content":["library(tidyr)"]
+     }
+]
