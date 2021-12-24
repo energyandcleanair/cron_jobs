@@ -13,6 +13,8 @@
     "city_background_day_mad",
     "city_day_mad",
     "station_8h_max_day_mad",
-    "city_8h_max_day_mad"
+    "city_8h_max_day_mad",
+    "station_max_day_mad",
+    "city_max_day_mad"
   ]
 }

@@ -11,6 +11,8 @@
   "processes": [
     "station_day_mad",
     "city_background_day_mad",
-    "city_day_mad"
+    "city_day_mad",
+    "station_max_day_mad",
+      "city_max_day_mad"
   ]
 }

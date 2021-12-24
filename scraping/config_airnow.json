@@ -2,10 +2,10 @@
   {
     "command": "refresh_measurements",
     "error_if_no_measurement": true,
-    "scraper": "csb",
+    "scraper": "airnow",
     "filters": [
       {
-        "date_from": -10
+        "date_from": -14
       }
     ],
     "processes": [
@@ -17,12 +17,12 @@
   },
   {
     "command": "refresh_measurements",
-    "error_if_no_measurement": true,
-    "scraper": "csb",
+    "error_if_no_measurement": false,
+    "scraper": "airnow",
     "filters": [
       {
         "pollutant": ["o3"],
-        "date_from": -10
+        "date_from": -14
       }
     ],
     "processes": [
