@@ -1,0 +1,18 @@
+[
+  {
+    "command": "refresh_measurements",
+    "error_if_no_measurement": true,
+    "scraper": "doemy",
+    "filters": [
+      {
+        "date_from": -14
+      }
+    ],
+    "processes": [
+      "station_day_mad",
+      "city_day_mad",
+      "station_max_day_mad",
+      "city_max_day_mad"
+    ]
+  }
+]
