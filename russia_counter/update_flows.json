@@ -6,8 +6,8 @@
      "library(tidyverse)",
      "library(remotes)",
      "remotes::install_github('energyandcleanair/202203_russian_gas', upgrade=F)",
-     "library(russia_counter)",
-     "russia_counter::update_counter()"
+     "library(russiacounter)",
+     "russiacounter::update_counter()"
    ]
  },
  "environment_variables":[
