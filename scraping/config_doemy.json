@@ -5,7 +5,7 @@
     "scraper": "doemy",
     "filters": [
       {
-        "date_from": -14
+        "date_from": -7
       }
     ],
     "processes": [
