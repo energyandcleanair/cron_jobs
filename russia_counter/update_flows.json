@@ -5,6 +5,7 @@
      "install.packages('tidyverse',repos='http://cran.us.r-project.org')",
      "library(tidyverse)",
      "library(remotes)",
+     "remotes::install_github('energyandcleanair/entsog', upgrade=F)",
      "remotes::install_github('energyandcleanair/202203_russian_gas', upgrade=F)",
      "library(russiacounter)",
      "russiacounter::update_counter()"
