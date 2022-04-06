@@ -14,20 +14,5 @@
       "station_max_day_mad",
       "city_max_day_mad"
     ]
-  },
-  {
-    "command": "refresh_measurements",
-    "error_if_no_measurement": true,
-    "scraper": "jp",
-    "filters": [
-      {
-        "pollutant": ["o3"],
-        "date_from": -31
-      }
-    ],
-    "processes": [
-      "station_8h_max_day_mad",
-      "city_8h_max_day_mad"
-    ]
   }
 ]
