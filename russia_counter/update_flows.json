@@ -13,6 +13,7 @@
  },
  "environment_variables":[
   "CREA_MONGODB_URL",
+  "FOSSIL_DB_DEVELOPMENT",
   "GITHUB_PAT"
  ]
 }
