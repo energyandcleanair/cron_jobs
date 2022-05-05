@@ -6,7 +6,7 @@
      "library(tidyverse)",
      "library(remotes)",
      "remotes::install_github('energyandcleanair/entsog', upgrade=F)",
-     "remotes::install_github('energyandcleanair/202203_russian_gas', upgrade=F)",
+     "remotes::install_github('energyandcleanair/202203_russian_gas', upgrade=F, force=T)",
      "library(russiacounter)",
      "russiacounter::update_counter()"
    ]
