@@ -1,0 +1,61 @@
+[
+    {
+        "command": "refresh_measurements",
+        "error_if_no_measurement": true,
+        "debug": true,
+        "scraper": "openaq",
+        "filters": [
+            {
+                "pollutant": [
+                    "no2"
+                ],
+            },
+            {
+                "country": [
+                    "PK",
+                    "MX",
+                    "CA",
+                    "AU",
+                    "PH",
+                    "TH",
+                    "ID",
+                    "CL",
+                    "PE",
+                    "AR",
+                    "BR",
+                    "EC",
+                    "EG",
+                    "RU",
+                    "LK",
+                    "TJ",
+                    "MM",
+                    "VN",
+                    "PY",
+                    "UY",
+                    "UZ",
+                    "AE",
+                    "TW",
+                    "PA",
+                    "MA",
+                    "MY",
+                    "JM",
+                    "IR",
+                    "IQ",
+                    "HK",
+                    "CI",
+                    "KH",
+                    "DZ",
+                    "HK"
+                ],
+                "date_from": -15,
+                "entity": "government"
+            }
+        ],
+        "processes": [
+            "station_day_mad",
+            "city_day_mad",
+            "station_max_day_mad",
+            "city_max_day_mad"
+        ]
+    }
+]
