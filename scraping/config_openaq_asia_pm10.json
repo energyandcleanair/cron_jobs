@@ -9,8 +9,6 @@
                 "pollutant": [
                     "pm10"
                 ],
-            },
-            {
                 "country": [
                     "PK",
                     "MX",
@@ -56,6 +54,7 @@
             "city_day_mad",
             "station_max_day_mad",
             "city_max_day_mad"
+            
         ]
     }
 ]
