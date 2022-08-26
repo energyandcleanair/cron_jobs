@@ -1,0 +1,22 @@
+[
+  {
+    "command": "refresh_measurements",
+    "error_if_no_measurement": true,
+    "debug": true,
+    "scraper": "openaq",
+    "filters": [
+      {
+        "pollutant": ["co"],
+        "country":["US","CL","BR","PE","CO","AR","MX","CA"],
+        "date_from": -15,
+        "entity": "government"
+      }
+    ],
+    "processes": [
+      "station_day_mad",
+      "city_day_mad",
+      "station_max_day_mad",
+      "city_max_day_mad"
+    ]
+  }
+]
