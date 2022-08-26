@@ -1,6 +1,6 @@
 [
   {
-    "command": "refresh_generation",
+    "command": "refresh",
     "scraper": "entsoe",
     "filters": [
       {
