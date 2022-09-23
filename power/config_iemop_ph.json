@@ -1,0 +1,11 @@
+[
+  {
+    "command": "refresh",
+    "scraper": "iemop_ph",
+    "filters": [
+      {
+        "date_from": -14
+      }
+    ]
+  }
+]
