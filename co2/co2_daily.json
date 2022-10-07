@@ -5,9 +5,9 @@
      "install.packages('tidyverse',repos='http://cran.us.r-project.org')",
      "library(tidyverse)",
      "library(remotes)",
-     "remotes::install_github('energyandcleanair/creaco2counter', upgrade=F)",
-     "library(creaco2counter)",
-     "creaco2counter::update_co2_daily()"
+     "remotes::install_github('energyandcleanair/creaco2tracker', upgrade=F)",
+     "library(creaco2tracker)",
+     "creaco2tracker::update_co2_daily()"
    ]
  },
  "environment_variables":[
