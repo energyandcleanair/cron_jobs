@@ -3,7 +3,7 @@
   "scraper": "earthengine",
   "filters": [
     {
-      "date_from": -7
+      "date_from": -5
     }
   ]
 }
