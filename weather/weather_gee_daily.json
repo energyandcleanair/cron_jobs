@@ -1,0 +1,9 @@
+{
+  "command": "refresh_weather_measurements",
+  "scraper": "earthengine",
+  "filters": [
+    {
+      "date_from": -15
+    }
+  ]
+}
