@@ -1,0 +1,16 @@
+{
+ "command": "run_script",
+ "rscript":{
+   "content":[
+     "install.packages('tidyverse',repos='http://cran.us.r-project.org')",
+     "library(tidyverse)",
+     "library(remotes)",
+     "remotes::install_github('energyandcleanair/creaco2tracker', upgrade=F)",
+     "library(creaco2tracker)",
+     "creaco2tracker::update_co2_daily()"
+   ]
+ },
+ "environment_variables":[
+  "CREA_DB_PRODUCTION"
+ ]
+}
