@@ -4,8 +4,7 @@
         "scraper": "nldc_vn",
         "filters": [
             {
-                "date_from": -10,
-                "date_to": -5
+                "date_from": -14
             }
         ]
     }
