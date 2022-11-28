@@ -1,0 +1,11 @@
+[
+    {
+        "command": "refresh",
+        "scraper": "wind_cn",
+        "filters": [
+            {
+                "date_from": -14
+            }
+        ]
+    }
+]
