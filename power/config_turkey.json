@@ -1,0 +1,11 @@
+[
+    {
+      "command": "refresh",
+      "scraper": "turkey",
+      "filters": [
+        {
+          "date_from": -180
+        }
+      ]
+    }
+]
