@@ -5,6 +5,7 @@
      "install.packages('tidyverse',repos='http://cran.us.r-project.org', upgrade=F, force=F)",
      "library(tidyverse)",
      "library(remotes)",
+     "remotes::install_github('energyandcleanair/creahelpers', upgrade=F, force=F)",
      "remotes::install_github('energyandcleanair/creaco2tracker', upgrade=F, force=F)",
      "library(creaco2tracker)",
      "creaco2tracker::update_co2_daily()"
