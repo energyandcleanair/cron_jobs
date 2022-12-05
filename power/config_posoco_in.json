@@ -1,0 +1,11 @@
+[
+    {
+        "command": "refresh",
+        "scraper": "posoco_in",
+        "filters": [
+            {
+                "date_from": -14
+            }
+        ]
+    }
+]

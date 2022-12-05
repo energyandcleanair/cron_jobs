@@ -1,0 +1,11 @@
+[
+    {
+      "command": "refresh",
+      "scraper": "japan",
+      "filters": [
+        {
+          "date_from": -14
+        }
+      ]
+    }
+]

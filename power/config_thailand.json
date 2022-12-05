@@ -1,0 +1,11 @@
+[
+    {
+      "command": "refresh",
+      "scraper": "thailand",
+      "filters": [
+        {
+          "date_from": -180
+        }
+      ]
+    }
+]

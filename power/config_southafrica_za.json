@@ -1,0 +1,11 @@
+[
+  {
+    "command": "refresh",
+    "scraper": "southafrica_za",
+    "filters": [
+      {
+        "date_from": -14
+      }
+    ]
+  }
+]
