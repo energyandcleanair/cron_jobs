@@ -4,7 +4,7 @@
     "scraper": "southkorea_kr",
     "filters": [
       {
-        "date_from": -14
+        "date_from": -180
       }
     ]
   }
