@@ -9,8 +9,7 @@
      "remotes::install_github('energyandcleanair/creaco2tracker', upgrade=F, force=F)",
      "if('creaco2tracker' %in% (.packages())){detach('package:creaco2tracker', unload=T)}",
      "library(creaco2tracker)",
-     "creaco2tracker::update_gas_demand()",
-     "creaco2tracker::update_co2_daily()"
+     "creaco2tracker::update_all()""
    ]
  },
  "environment_variables":[
