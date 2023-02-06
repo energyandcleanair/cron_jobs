@@ -12,6 +12,7 @@
    ]
  },
  "environment_variables":[
-  "CREA_DB_PRODUCTION"
+  "CREA_DB_PRODUCTION",
+  "POWER_DB_PRODUCTION"
  ]
 }
