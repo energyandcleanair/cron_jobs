@@ -2,7 +2,6 @@
  "command": "run_script",
  "rscript":{
    "content":[
-     "install.packages('tidyverse',repos='http://cran.us.r-project.org', upgrade=F, force=F)",
      "library(tidyverse)",
      "library(remotes)",
      "remotes::install_github('energyandcleanair/creahelpers', upgrade=F, force=F)",
