@@ -5,7 +5,7 @@
     "scraper": "jp",
     "filters": [
       {
-        "date_from": -31
+        "date_from": -21
       }
     ],
     "processes": [
