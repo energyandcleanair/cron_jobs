@@ -8,7 +8,7 @@
       {
         "pollutant": ["o3"],
         "country":["US","CL","BR","PE","CO","AR","MX","CA"],
-        "date_from": -15,
+        "date_from": -10,
         "entity": "government"
       }
     ],
