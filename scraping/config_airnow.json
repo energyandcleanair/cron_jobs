@@ -5,7 +5,7 @@
     "scraper": "airnow",
     "filters": [
       {
-        "date_from": -14
+        "date_from": -7
       }
     ],
     "processes": [
@@ -22,7 +22,7 @@
     "filters": [
       {
         "pollutant": ["o3"],
-        "date_from": -14
+        "date_from": -7
       }
     ],
     "processes": [
