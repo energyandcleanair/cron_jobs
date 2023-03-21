@@ -1,6 +1,6 @@
 [
     {
-        "command": "refresh_locations",
+        "command": "refresh_measurements",
         "scraper": "opendata_sg",
         "processes": [
             "city_day_mad",
