@@ -1,7 +1,6 @@
 [
 	{
 		"command": "compute_trajectories",
-		"conda_env": "crea",
 		"source": ["air4thai", "doemy", "mee", "cpcb"],
 		"date_from": "2023-05-01"
 	}
