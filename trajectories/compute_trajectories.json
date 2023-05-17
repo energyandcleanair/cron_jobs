@@ -2,6 +2,7 @@
 	{
 		"command": "compute_trajectories",
 		"source": ["air4thai", "doemy", "mee", "cpcb"],
-		"date_from": "2023-05-01"
+		"date_from": "2023-05-01",
+		"city": ["Bangkok"]
 	}
 ]
