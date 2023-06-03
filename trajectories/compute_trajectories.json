@@ -1,7 +1,7 @@
 [
 	{
 		"command": "compute_trajectories",
-		"source": ["cpcb"],
-		"date_from": "2023-05-01"
+		"city": ["Jakarta", "Delhi", "Beijing"],
+		"date_from": -7
 	}
 ]
