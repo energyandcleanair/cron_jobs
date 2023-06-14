@@ -3,12 +3,10 @@
     "command": "deweather_measurements",
     "source": "mee",
     "poll": [
-      "pm25",
-      "no2",
-      "pm10"
+      "pm25"
     ],
     "location_id": [
-      "harbin_chn.11_1_cn"
+      "beijing_chn.2_1_cn"
     ],
     "deweather_process_id": [
       "default_anomaly_2018_2099"
