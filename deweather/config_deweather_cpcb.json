@@ -1,0 +1,16 @@
+[
+  {
+    "command": "deweather_measurements",
+    "source": "cpcn",
+    "poll": [
+      "pm25",
+      "no2",
+      "pm10"
+    ],
+    "city": ["Lucknow", "Ghaziabad", "Varanasi"],
+    "deweather_process_id": [
+      "default_anomaly_2018_2099",
+      "default_trend"
+    ]
+  }
+]
