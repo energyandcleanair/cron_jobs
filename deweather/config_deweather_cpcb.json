@@ -7,30 +7,6 @@
       "no2",
       "pm10"
     ],
-    "location_id": [
-      "agartala_ind.33_1_in",
-      "aizawl_ind.23_1_in",
-      "amaravati_ind.2_1_in",
-      "bengaluru_ind.16_1_in",
-      "bhopal_ind.19_1_in",
-      "chandigarh_ind.6_1_in",
-      "chennai_ind.31_1_in",
-      "dehradun_ind.35_1_in",
-      "gandhinagar_ind.11_1_in",
-      "gangtok_ind.30_1_in",
-      "hyderabad_ind.32_1_in",
-      "imphal_ind.21_1_in",
-      "jaipur_ind.29_1_in",
-      "kohima_ind.24_1_in",
-      "kolkata_ind.36_1_in",
-      "lucknow_ind.34_1_in",
-      "mumbai_ind.20_1_in",
-      "nagpur_ind.20_1_in",
-      "patna_ind.5_1_in",
-      "raipur_ind.7_1_in",
-      "shillong_ind.22_1_in",
-      "thiruvananthapuram_ind.17_1_in"
-    ],
     "deweather_process_id": [
       "default_anomaly_2018_2099"
     ]
@@ -40,30 +16,6 @@
     "source": "cpcb",
     "poll": [
       "o3"
-    ],
-    "location_id": [
-      "agartala_ind.33_1_in",
-      "aizawl_ind.23_1_in",
-      "amaravati_ind.2_1_in",
-      "bengaluru_ind.16_1_in",
-      "bhopal_ind.19_1_in",
-      "chandigarh_ind.6_1_in",
-      "chennai_ind.31_1_in",
-      "dehradun_ind.35_1_in",
-      "gandhinagar_ind.11_1_in",
-      "gangtok_ind.30_1_in",
-      "hyderabad_ind.32_1_in",
-      "imphal_ind.21_1_in",
-      "jaipur_ind.29_1_in",
-      "kohima_ind.24_1_in",
-      "kolkata_ind.36_1_in",
-      "lucknow_ind.34_1_in",
-      "mumbai_ind.20_1_in",
-      "nagpur_ind.20_1_in",
-      "patna_ind.5_1_in",
-      "raipur_ind.7_1_in",
-      "shillong_ind.22_1_in",
-      "thiruvananthapuram_ind.17_1_in"
     ],
     "deweather_process_id": [
       "default_anomaly_o3_2018_2099"
