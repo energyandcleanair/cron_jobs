@@ -3,12 +3,12 @@
   "scraper": "earthengine",
   "filters": [
     {
-      "iso2": ["EU", "CN"],
+      "iso2": ["EU", "CN", "IN"],
       "region_type": "country",
       "date_from": -4
     },
     {
-      "iso2": ["CN"],
+      "iso2": ["CN", "IN"],
       "region_type": "gadm1",
       "date_from": -4
     }
