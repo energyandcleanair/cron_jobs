@@ -1,0 +1,11 @@
+[
+    {
+      "command": "refresh",
+      "scraper": "eia",
+      "filters": [
+        {
+          "date_from": -7
+        }
+      ]
+    }
+]

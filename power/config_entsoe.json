@@ -1,0 +1,11 @@
+[
+  {
+    "command": "refresh",
+    "scraper": "entsoe",
+    "filters": [
+      {
+        "date_from": -14
+      }
+    ]
+  }
+]

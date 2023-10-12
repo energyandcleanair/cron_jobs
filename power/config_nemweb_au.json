@@ -1,0 +1,11 @@
+[
+    {
+        "command": "refresh",
+        "scraper": "nemweb_au",
+        "filters": [
+            {
+                "date_from": -14
+            }
+        ]
+    }
+]

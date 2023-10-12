@@ -1,0 +1,8 @@
+[
+  {
+    "command": "deweather_measurements",
+     "source": "air4thai",
+     "poll": ["pm25"],
+     "deweather_process_id": ["default_anomaly_2018_2099"]
+  }
+]

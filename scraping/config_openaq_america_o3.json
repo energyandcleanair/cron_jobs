@@ -2,10 +2,14 @@
   {
     "command": "refresh_measurements",
     "error_if_no_measurement": true,
-    "scraper": "airnow",
+    "debug": true,
+    "scraper": "openaq",
     "filters": [
       {
-        "date_from": -14
+        "pollutant": ["o3"],
+        "country":["US","CL","BR","PE","CO","AR","MX","CA"],
+        "date_from": -10,
+        "entity": "government"
       }
     ],
     "processes": [
@@ -13,20 +17,6 @@
       "city_day_mad",
       "station_max_day_mad",
       "city_max_day_mad",
-      "city_hour_mad"
-    ]
-  },
-  {
-    "command": "refresh_measurements",
-    "error_if_no_measurement": false,
-    "scraper": "airnow",
-    "filters": [
-      {
-        "pollutant": ["o3"],
-        "date_from": -14
-      }
-    ],
-    "processes": [
       "station_8h_max_day_mad",
       "city_8h_max_day_mad"
     ]

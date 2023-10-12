@@ -1,0 +1,11 @@
+[
+    {
+        "command": "refresh",
+        "scraper": "nldc_vn",
+        "filters": [
+            {
+                "date_from": -14
+            }
+        ]
+    }
+]

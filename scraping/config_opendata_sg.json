@@ -1,0 +1,16 @@
+[
+    {
+        "command": "refresh_measurements",
+        "scraper": "opendata_sg",
+        "processes": [
+            "city_day_mad",
+            "station_day_mad"
+        ],
+       "filters": [
+        {
+            "date_from": -14
+        }
+    ]
+        
+    }
+]

@@ -2,10 +2,14 @@
   {
     "command": "refresh_measurements",
     "error_if_no_measurement": true,
-    "scraper": "jp",
+    "debug": true,
+    "scraper": "openaq",
     "filters": [
       {
-        "date_from": -21
+        "pollutant": ["co"],
+        "country":["US","CL","BR","PE","CO","AR","MX","CA"],
+        "date_from": -15,
+        "entity": "government"
       }
     ],
     "processes": [

@@ -1,0 +1,11 @@
+[
+  {
+    "command": "refresh",
+    "scraper": "southkorea_kr",
+    "filters": [
+      {
+        "date_from": -180
+      }
+    ]
+  }
+]

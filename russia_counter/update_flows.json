@@ -5,13 +5,18 @@
      "install.packages('tidyverse',repos='http://cran.us.r-project.org')",
      "library(tidyverse)",
      "library(remotes)",
-     "remotes::install_github('energyandcleanair/202203_russian_gas', upgrade=F)",
+     "remotes::install_github('energyandcleanair/entsog', upgrade=F)",
+     "remotes::install_github('energyandcleanair/202203_russian_gas', upgrade=F, force=T)",
      "library(russiacounter)",
-     "russiacounter::update_counter()"
+     "print(packageVersion('russiacounter'))",
+     "print(russiacounter::update_counter2)",
+     "russiacounter::update_counter2()"
    ]
  },
  "environment_variables":[
   "CREA_MONGODB_URL",
+  "FOSSIL_DB_DEVELOPMENT",
+  "FOSSIL_DB_PRODUCTION",
   "GITHUB_PAT"
  ]
 }

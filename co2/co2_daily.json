@@ -1,0 +1,18 @@
+{
+ "command": "run_script",
+ "rscript":{
+   "content":[
+     "library(tidyverse)",
+     "library(remotes)",
+     "remotes::install_github('energyandcleanair/creahelpers', upgrade=F, force=F)",
+     "remotes::install_github('energyandcleanair/creaco2tracker', upgrade=F, force=F)",
+     "if('creaco2tracker' %in% (.packages())){detach('package:creaco2tracker', unload=T)}",
+     "library(creaco2tracker)",
+     "creaco2tracker::update_all()"
+   ]
+ },
+ "environment_variables":[
+  "CREA_DB_PRODUCTION",
+  "POWER_DB_PRODUCTION"
+ ]
+}
