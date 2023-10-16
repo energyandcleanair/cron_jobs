@@ -20,5 +20,8 @@
       "dest_folder":"gs://crea-public/plots/china_co2",
       "source_filepath":"plots/*"
     }
+  ],
+  "environment_variables":[
+    "GITHUB_PAT"
   ]
 }
