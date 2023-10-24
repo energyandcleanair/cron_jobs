@@ -1,0 +1,38 @@
+[
+  {
+    "command": "deweather_measurements",
+    "source": ["air4thai", "doemy", "opendata_sg", "airnow"],
+    "poll": [
+      "pm25",
+      "pm10"
+    ],
+    "location_id": [
+      "jakarta_idn.7_1_id",
+      "bangkok_tha.3_1_th",
+      "hanoi_vnm.27_1_vn",
+      "chiang mai_tha.10_1_th",
+      "singapore_sgp.1_1_sg",
+      "kuala lumpur_mys.4_1_my",
+      "gaya_ind.5_1_in",
+      "delhi_ind.25_1_in",
+      "kolkata_ind.36_1_in",
+      "palembang_idn.31_1_id",
+      "jambi_idn.8_1_id",
+      "palangkaraya_idn.14_1_id",
+      "banjarbaru_idn.13_1_id",
+      "pekanbaru_idn.24_1_id",
+      "pontianak_idn.12_1_id",
+      "lucknow_ind.34_1_in",
+      "mumbai_ind.20_1_in",
+      "noida_ind.34_1_in",
+      "varanasi_ind.34_1_in",
+      "amritsar_ind.28_1_in"
+
+    ],
+    "deweather_process_id": [
+      "default_anomaly_2020_2099_fire",
+      "default_anomaly_2020_2099_fire_gadm0",
+      "default_anomaly_2020_2099_fire_gadm1"
+    ]
+  }
+]
