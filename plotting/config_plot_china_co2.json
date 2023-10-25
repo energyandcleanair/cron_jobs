@@ -2,9 +2,9 @@
   "command": "run_script",
   "rscript":{
     "content": [
-      "library(creahelpers)",
       "remotes::install_github('energyandcleanair/rcrea', upgrade=F, force=F, auth_token=Sys.getenv('GITHUB_PAT'))",
-      "if('rcrea' %in% (.packages())){detach('package:rcrea', unload=T)}",
+      "remotes::install_github('energyandcleanair/creahelpers', upgrade=F, force=F, auth_token=Sys.getenv('GITHUB_PAT'))",
+      "library(creahelpers)",
       "library(rcrea)",
       "library(zoo)",
       "library(magrittr)",
