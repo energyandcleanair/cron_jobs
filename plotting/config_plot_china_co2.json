@@ -5,6 +5,7 @@
       "library(creahelpers)",
       "library(rcrea)",
       "library(zoo)",
+      "library(magrittr)",
       "library(remotes)",
       "remotes::install_github('energyandcleanair/china_co2', upgrade=F, force=F, auth_token=Sys.getenv('GITHUB_PAT'))",
       "if('chinatracker' %in% (.packages())){detach('package:chinatracker', unload=T)}",
