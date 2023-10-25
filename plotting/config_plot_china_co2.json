@@ -2,9 +2,10 @@
   "command": "run_script",
   "rscript":{
     "content": [
+      "if('chinatracker' %in% (.packages())){detach('package:chinatracker', unload=T)}",
+      "if('rcrea' %in% (.packages())){detach('package:rcrea', unload=T)}",
       "remotes::install_github('energyandcleanair/rcrea', upgrade=F, force=F, auth_token=Sys.getenv('GITHUB_PAT'))",
       "remotes::install_github('energyandcleanair/creahelpers', upgrade=F, force=F, auth_token=Sys.getenv('GITHUB_PAT'))",
-      "if('rcrea' %in% (.packages())){detach('package:rcrea', unload=T)}",
       "library(creahelpers)",
       "library(rcrea)",
       "library(zoo)",
