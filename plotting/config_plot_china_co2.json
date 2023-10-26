@@ -13,6 +13,7 @@
       "library(zoo)",
       "library(magrittr)",
       "library(remotes)",
+      "library(directlabels)",
       "library(chinatracker)",
       "folder <- {tmp_dir}",
       "build_snapshot(base_dir=folder)"
