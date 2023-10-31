@@ -5,7 +5,7 @@
     "scraper": "cpcb",
     "filters": [
       {
-        "date_from": -5
+        "date_from": -3
       }
     ],
     "processes": [
@@ -22,7 +22,7 @@
     "filters": [
       {
         "pollutant": ["o3"],
-        "date_from": -5
+        "date_from": -3
       }
     ],
     "processes": [
