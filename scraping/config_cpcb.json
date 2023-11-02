@@ -5,6 +5,7 @@
     "scraper": "cpcb",
     "filters": [
       {
+        "pollutant": ["pm25", "pm10", "no2"],
         "date_from": -3
       }
     ],
@@ -26,6 +27,10 @@
       }
     ],
     "processes": [
+      "city_day_mad",
+      "station_day_mad",
+      "city_hour_mad",
+      "station_hour_mad",
       "station_8h_max_day_mad",
       "city_8h_max_day_mad"
     ]
