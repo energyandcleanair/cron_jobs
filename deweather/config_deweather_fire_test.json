@@ -6,7 +6,8 @@
         "pm25"
       ],
       "location_id": [
-        "delhi_ind.25_1_in"
+        "pontianak_idn.12_1_id",
+        "manila_phl.47_1_ph"
       ],
       "deweather_process_id": [
         "default_anomaly_2018_2099_fire",
