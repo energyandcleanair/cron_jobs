@@ -9,7 +9,9 @@
         "delhi_ind.25_1_in"
       ],
       "deweather_process_id": [
-        "default_anomaly_2018_2099_fire"
+        "default_anomaly_2018_2099_fire",
+        "default_anomaly_2018_2099_fire_gadm0",
+        "default_anomaly_2018_2099_fire_gadm1"
       ],
       "upload_weather": true,
       "upload_fire": true
