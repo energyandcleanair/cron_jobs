@@ -24,8 +24,7 @@
     ],
     "deweather_process_id": [
       "default_anomaly_2020_2099_fire",
-      "default_anomaly_2020_2099_fire_gadm0",
-      "default_anomaly_2020_2099_fire_gadm1"
+      "default_anomaly_2020_2099_fire_gadm0"
     ],
     
     "upload_weather": true,
