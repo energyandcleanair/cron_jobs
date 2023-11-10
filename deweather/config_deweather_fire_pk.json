@@ -1,0 +1,21 @@
+[
+    {
+      "command": "deweather_measurements",
+      "source": ["airnow"],
+      "poll": [
+        "pm25"
+      ],
+      "location_id": [
+        "islamabad_pak.4_1_pk",
+        "karachi_pak.8_1_pk",
+        "lahore_pak.7_1_pk",
+        "peshawar_pak.5_1_pk"
+      ],
+      "deweather_process_id": [
+        "default_anomaly_2018_2099_fire_96h",
+        "default_anomaly_2018_2099_fire_gadm0_96h"
+      ],
+      "upload_weather": true,
+      "upload_fire": true
+    }
+  ]

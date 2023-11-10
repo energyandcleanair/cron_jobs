@@ -13,11 +13,7 @@
         "mumbai_ind.20_1_in",
         "noida_ind.34_1_in",
         "varanasi_ind.34_1_in",
-        "amritsar_ind.28_1_in",
-        "islamabad_pak.4_1_pk",
-        "karachi_pak.8_1_pk",
-        "lahore_pak.7_1_pk",
-        "peshawar_pak.5_1_pk"
+        "amritsar_ind.28_1_in"
       ],
       "deweather_process_id": [
         "default_anomaly_2018_2099_fire",
