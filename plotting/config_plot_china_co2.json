@@ -12,7 +12,7 @@
       "library(magrittr)",
       "library(remotes)",
       "library(chinatracker)",
-      "library(ggrepel",
+      "library(ggrepel)",
       "folder <- {tmp_dir}",
       "build_snapshot(base_dir=folder)"
     ]
