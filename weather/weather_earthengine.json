@@ -11,6 +11,12 @@
       "iso2": ["CN", "IN"],
       "region_type": "gadm1",
       "date_from": -4
+    },
+    {
+      "iso2": ["ID"],
+      "region_type": "gadm1",
+      "date_from": -4,
+      "variable": ["thermal_anomaly"]
     }
   ]
 }
