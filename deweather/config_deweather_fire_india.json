@@ -16,8 +16,8 @@
         "amritsar_ind.28_1_in"
       ],
       "deweather_process_id": [
-        "default_anomaly_2018_2099_fire",
-        "default_anomaly_2018_2099_fire_gadm0"
+        "default_anomaly_2018_2099_fire_96h",
+        "default_anomaly_2018_2099_fire_gadm0_96h"
       ],
       "upload_weather": true,
       "upload_fire": true
