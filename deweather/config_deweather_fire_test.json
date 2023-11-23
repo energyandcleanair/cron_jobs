@@ -1,13 +1,27 @@
 [
+  {
+    "command": "deweather_measurements",
+    "source": ["cpcb"],
+    "poll": [
+      "pm25"
+    ],
+    "location_id": [
+      "lahore_pak.7_1_pk",
+      "delhi_ind.25_1_in",
+    ],
+    "deweather_process_id": [
+      "default_anomaly_2018_2099_fire"
+    ],
+    "upload_weather": true,
+    "upload_fire": true
+  },
     {
       "command": "deweather_measurements",
-      "source": ["cpcb"],
+      "source": ["airnow"],
       "poll": [
         "pm25"
       ],
       "location_id": [
-        "lahore_pak.7_1_pk",
-        "delhi_ind.25_1_in",
         "jakarta_idn.7_1_id",
         "palembang_idn.31_1_id",
         "jambi_idn.8_1_id",
