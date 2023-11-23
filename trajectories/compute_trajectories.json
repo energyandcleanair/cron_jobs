@@ -1,7 +1,7 @@
 [
 	{
 		"command": "compute_trajectories",
-		"city": ["Jakarta", "Delhi", "Beijing"],
+		"city": ["Jakarta", "Delhi", "Beijing", "Lahore"],
 		"date_from": -14
 	}
 ]
