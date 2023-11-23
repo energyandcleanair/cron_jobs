@@ -15,7 +15,7 @@
         "pontianak_idn.12_1_id"
       ],
       "deweather_process_id": [
-        "default_anomaly_2018_2099_fire_gadm1_96h"
+        "default_anomaly_2018_2099_fire_gadm1"
       ],
       "upload_weather": true,
       "upload_fire": true
