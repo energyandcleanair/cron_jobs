@@ -8,13 +8,12 @@
     ],
     "location_id": [
       "jakarta_idn.7_1_id",
-      "bangkok_tha.3_1_th",
-      "hanoi_vnm.27_1_vn",
-      "chiang mai_tha.10_1_th",
-      "singapore_sgp.1_1_sg",
-      "kuala lumpur_mys.4_1_my",
-      "gaya_ind.5_1_in",
-      "manila_phl.47_1_ph"
+      "palembang_idn.31_1_id",
+      "jambi_idn.8_1_id",
+      "palangkaraya_idn.14_1_id",
+      "banjarbaru_idn.13_1_id",
+      "pekanbaru_idn.24_1_id",
+      "pontianak_idn.12_1_id"
     ],
     "deweather_process_id": [
       "default_anomaly_2018_2099_fire_96h",
