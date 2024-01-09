@@ -153,13 +153,14 @@ def construct_job(item):
     container = run_v2.Container()
     container.image = item["image"]
     container.args = item["command"].split(" ")
-
+    container.command = ["python3"]
     container.resources.limits = {"cpu": item["cpu"], "memory": item["memory"]}
 
     if item["nfs"]:
         vpc = run_v2.VpcAccess()
         vpc.connector = nsf_connector
         job.template.template.vpc_access = vpc
+        container.command = []
         # append the run.sh script to the command
         container.args.insert(0, "/app/config/run.sh")
     job.template.template.containers.append(container)
