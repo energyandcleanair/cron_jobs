@@ -37,7 +37,8 @@
       "jinan_chn.23_1_cn",
       "kunming_chn.30_1_cn",
       "hohhot_chn.19_1_cn",
-      "chongqing_chn.3_1_cn"
+      "chongqing_chn.3_1_cn",
+      "haikou_chn.9_1_cn"
     ],
     "deweather_process_id": [
       "default_anomaly_2018_2099"
@@ -79,7 +80,8 @@
       "jinan_chn.23_1_cn",
       "kunming_chn.30_1_cn",
       "hohhot_chn.19_1_cn",
-      "chongqing_chn.3_1_cn"
+      "chongqing_chn.3_1_cn",
+      "haikou_chn.9_1_cn"
     ],
     "deweather_process_id": [
       "default_anomaly_o3_2018_2099"
