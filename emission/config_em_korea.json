@@ -1,0 +1,8 @@
+[
+    {
+      "command": "refresh_emissions",
+      "scraper": "kr_cleansys",
+      "filters": [
+      ]
+    }
+  ]
