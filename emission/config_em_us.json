@@ -4,6 +4,7 @@
     "scraper": "us_epa",
     "auto_dates": true,
     "filters": [
+      {}
     ]
   }
 ]
