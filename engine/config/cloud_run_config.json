@@ -757,7 +757,7 @@
   },
   {
     "name": "scrape-em-us",
-    "schedule": "30 22 5 1,4,7,10 *",
+    "schedule": "30 22 1 3,6,9,12 *",
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/emission/config_em_us.json",
