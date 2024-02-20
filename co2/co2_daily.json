@@ -9,7 +9,7 @@
      "remotes::install_github('rOpenGov/eurostat', upgrade=F, force=F)",
      "if('creaco2tracker' %in% (.packages())){detach('package:creaco2tracker', unload=T)}",
      "library(creaco2tracker)",
-     "creaco2tracker::update_all()"
+     "creaco2tracker::update_all(diagnostics_folder=NULL)"
    ]
  },
  "environment_variables":[
