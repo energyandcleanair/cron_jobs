@@ -1,0 +1,13 @@
+[
+  {
+    "command": "refresh_measurements",
+    "error_if_no_measurement": true,
+    "scraper": "mefindo",
+    "filters": [{}],
+    "processes": [
+      "raw",
+      "station_hour_mad",
+      "city_hour_mad"
+    ]
+  }
+]
