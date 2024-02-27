@@ -796,5 +796,19 @@
     "cpu": "1000m",
     "memory": "2Gi",
     "nfs": false
+  },
+  {
+    "name": "scrape-mefindo",
+    "schedule": "0 4,16 * * *",
+    "time_zone": "Asia/Hong_Kong",
+    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
+    "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/scraping/config_mefindo.json",
+    "parallelism": 1,
+    "taskCount": 1,
+    "maxRetries": 0,
+    "timeoutSeconds": 86400,
+    "cpu": "1000m",
+    "memory": "2Gi",
+    "nfs": false
   }
 ]
