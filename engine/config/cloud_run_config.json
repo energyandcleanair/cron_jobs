@@ -98,6 +98,20 @@
     "nfs": true
   },
   {
+    "name": "deweather-cpcb2",
+    "schedule": "0 0 * * 2",
+    "time_zone": "Etc/UTC",
+    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
+    "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/deweather/config_deweather_cpcb_additional.json",
+    "parallelism": 1,
+    "taskCount": 1,
+    "maxRetries": 0,
+    "timeoutSeconds": 86400,
+    "cpu": "8000m",
+    "memory": "32Gi",
+    "nfs": true
+  },
+  {
     "name": "deweather-mee",
     "schedule": "0 0 * * 0",
     "time_zone": "Etc/UTC",
