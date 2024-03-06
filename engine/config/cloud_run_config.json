@@ -1,5 +1,19 @@
 [
   {
+    "name": "cache-ncap",
+    "schedule": "0 0 * * *",
+    "time_zone": "Asia/Hong_Kong",
+    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
+    "command": "main.py -c cache_ncap",
+    "parallelism": 1,
+    "taskCount": 1,
+    "maxRetries": 0,
+    "timeoutSeconds": 86400,
+    "cpu": "1000m",
+    "memory": "1Gi",
+    "nfs": false
+  },
+  {
     "name": "co2-counter",
     "schedule": "15 5 * * *",
     "time_zone": "Asia/Hong_Kong",
