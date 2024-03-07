@@ -24,6 +24,7 @@ jobs:
         with:
           workload_identity_provider: ${{ secrets.WIP }}
           service_account: ${{ secrets.SERVICE_ACCOUNT }}
+          create_credentials_file: true
 
       - name: Install python packages
         run: |
