@@ -1,0 +1,16 @@
+[
+    {
+      "command": "refresh_measurements",
+      "error_if_no_measurement": true,
+      "scraper": "cpcb",
+      "filters": [
+        {
+          "date_from": "2023-01-01"
+        }
+      ],
+      "processes": [
+        "raw"
+      ]
+    }
+  ]
+  
