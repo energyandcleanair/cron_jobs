@@ -2,9 +2,11 @@
     {
       "command": "refresh_measurements",
       "error_if_no_measurement": true,
-      "scraper": "cpcb",
+      "scraper": "eea",
       "filters": [
         {
+          "pollutant": "pm25",
+          "country": "DE",
           "date_from": "2023-01-01"
         }
       ],
