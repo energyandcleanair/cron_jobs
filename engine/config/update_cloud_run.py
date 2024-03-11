@@ -25,14 +25,17 @@ def main():
     remote_config = generate_current_config(jobs, schedulers)
     local_config = load_json(local_config_file_name)
 
+    remote_config.sort(key=lambda obj: obj["name"])
+    local_config.sort(key=lambda obj: obj["name"])
+
     diff = check_diff(remote_config, local_config)
 
     for action in ["inserted", "updated", "removed"]:
         if diff[action]:
-            for _, item in diff[action]:
-                pass
+            for k, item in diff[action]:
+                prev_item = remote_config[k]
                 create_job(action, item)
-                create_scheduler_job(action, item)
+                create_scheduler_job(action, prev_item, item)
 
     print(diff)
 
@@ -57,28 +60,27 @@ def generate_current_config(jobs: Dict[str, run_v2.Job], schedulers: Dict[str, s
     for job_name, job in jobs.items():
         scheduler = schedulers.get(job_name, None)
 
-        if scheduler is not None:
-            uses_nfs = job.template.template.vpc_access.connector not in [None, ""]
-            # skip first command arg if nfs is used
-            index_args = 1 if uses_nfs else 0
-            command = " ".join(job.template.template.containers[0].args[index_args:])
+        uses_nfs = job.template.template.vpc_access.connector not in [None, ""]
+        # skip first command arg if nfs is used
+        index_args = 1 if uses_nfs else 0
+        command = " ".join(job.template.template.containers[0].args[index_args:])
 
-            output.append(
-                {
-                    "name": job.name.split("/")[-1],
-                    "schedule": scheduler.schedule,
-                    "time_zone": scheduler.time_zone,
-                    "image": job.template.template.containers[0].image,
-                    "command": command,
-                    "parallelism": job.template.parallelism,
-                    "taskCount": job.template.task_count,
-                    "maxRetries": job.template.template.max_retries,
-                    "timeoutSeconds": int(job.template.template.timeout.total_seconds()),
-                    "cpu": job.template.template.containers[0].resources.limits["cpu"],
-                    "memory": job.template.template.containers[0].resources.limits["memory"],
-                    "nfs": uses_nfs,
-                }
-            )
+        output.append(
+            {
+                "name": job.name.split("/")[-1],
+                "schedule": scheduler.schedule if scheduler else "",
+                "time_zone": scheduler.time_zone if scheduler else "",
+                "image": job.template.template.containers[0].image,
+                "command": command,
+                "parallelism": job.template.parallelism,
+                "taskCount": job.template.task_count,
+                "maxRetries": job.template.template.max_retries,
+                "timeoutSeconds": int(job.template.template.timeout.total_seconds()),
+                "cpu": job.template.template.containers[0].resources.limits["cpu"],
+                "memory": job.template.template.containers[0].resources.limits["memory"],
+                "nfs": uses_nfs,
+            }
+        )
 
     return output
 
@@ -105,7 +107,14 @@ def create_job(action, item):
     sleep(2)
 
 
-def create_scheduler_job(action, item):
+def create_scheduler_job(action: str, prev_item: dict, item: dict):
+    if not prev_item["schedule"] and item["schedule"]:
+        action = "inserted"
+    elif prev_item["schedule"] and not item["schedule"]:
+        action = "removed"
+    elif prev_item["schedule"] != item["schedule"]:
+        action = "updated"
+
     if action == "inserted":
         job = construct_scheduler(item)
         create_request = scheduler_v1.CreateJobRequest(parent=project_path, job=job)
@@ -126,7 +135,7 @@ def create_scheduler_job(action, item):
     sleep(2)
 
 
-def construct_scheduler(item):
+def construct_scheduler(item: dict):
     job = scheduler_v1.Job()
     job.name = full_project_job_name.format(job_name=item["name"])
     job.schedule = item["schedule"]
@@ -138,7 +147,7 @@ def construct_scheduler(item):
     return job
 
 
-def construct_job(item):
+def construct_job(item: dict):
     job = run_v2.Job()
     job.name = full_project_job_name.format(job_name=item["name"])
     job.template = run_v2.ExecutionTemplate()
@@ -169,9 +178,6 @@ def construct_job(item):
 
 
 def check_diff(remote_config: dict, local_config: dict):
-    remote_config.sort(key=lambda obj: obj["name"])
-    local_config.sort(key=lambda obj: obj["name"])
-
     diff = jsondiff.diff(remote_config, local_config, syntax="explicit")
 
     result = {
