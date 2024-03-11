@@ -2,12 +2,11 @@
     {
       "command": "refresh_measurements",
       "error_if_no_measurement": true,
-      "scraper": "airnow",
+      "scraper": "jp",
       "filters": [
         {
           "pollutant": "pm25",
-          "country": "IN",
-          "date_from": "2021-01-01"
+          "date_from": "2023-07-01"
         }
       ],
       "processes": [
