@@ -7,7 +7,7 @@
         {
           "pollutant": "pm25",
           "country": ["IN", "DE", "CN"],
-          "date_from": "2021-01-01"
+          "date_from": "2023-01-01"
         }
       ],
       "processes": [
