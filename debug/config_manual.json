@@ -2,12 +2,10 @@
     {
       "command": "refresh_measurements",
       "error_if_no_measurement": true,
-      "scraper": "airnow",
+      "scraper": "saaqis",
       "filters": [
         {
-          "pollutant": "pm25",
-          "country": ["IN", "DE", "CN"],
-          "date_from": "2023-01-01"
+          "pollutant": "pm25"
         }
       ],
       "processes": [
