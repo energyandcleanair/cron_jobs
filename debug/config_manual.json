@@ -5,7 +5,8 @@
       "scraper": "saaqis",
       "filters": [
         {
-          "pollutant": "pm25"
+          "pollutant": "pm25",
+          "date_from": "2021-01-01"
         }
       ],
       "processes": [
