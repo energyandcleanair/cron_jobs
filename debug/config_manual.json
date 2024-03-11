@@ -1,17 +1,16 @@
-[
+{
+  "command": "refresh_measurements",
+  "scraper": "openaq",
+  "filters": [
     {
-      "command": "refresh_measurements",
-      "error_if_no_measurement": true,
-      "scraper": "saaqis",
-      "filters": [
-        {
-          "pollutant": "pm25",
-          "date_from": "2021-01-01"
-        }
-      ],
-      "processes": [
-        "raw"
-      ]
+      "country":["TW"],
+      "date_from": "2021-01-01",
+      "entity": "government",
+      "poll": ["pm25"]
+
     }
+  ],
+  "processes": [
+          "raw"
   ]
-  
+}
