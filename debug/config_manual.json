@@ -2,13 +2,12 @@
     {
       "command": "refresh_measurements",
       "error_if_no_measurement": true,
-      "scraper": "eea",
+      "scraper": "jp",
       "filters": [
         {
           "pollutant": "pm25",
-          "country": "DE",
-          "date_from": "2021-01-01",
-          "date_to": "2022-12-31"
+          "country": "raw",
+          "date_from": "2021-01-01"
         }
       ],
       "processes": [
