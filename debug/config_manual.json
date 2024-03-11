@@ -3,7 +3,7 @@
   "scraper": "openaq",
   "filters": [
     {
-      "country":["TW"],
+      "country":["US"],
       "date_from": "2021-01-01",
       "entity": "government",
       "poll": ["pm25"]
