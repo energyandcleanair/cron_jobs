@@ -4,8 +4,8 @@
   "filters": [
     {
       "country":["US"],
-      "date_from": "2022-01-01",
-      "date_to": "2022-12-31",
+      "date_from": "2023-01-01",
+      "date_to": "2023-12-31",
       "entity": "government",
       "poll": ["pm25"]
 
