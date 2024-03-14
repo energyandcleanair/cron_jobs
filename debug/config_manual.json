@@ -5,7 +5,7 @@
     {
       "country":["US"],
       "date_from": "2021-01-01",
-      "date_to": "2021-01-03",
+      "date_to": "2021-12-31",
       "entity": "government",
       "poll": ["pm25"]
 
