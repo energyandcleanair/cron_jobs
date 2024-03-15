@@ -1,0 +1,17 @@
+{
+  "command": "refresh_measurements",
+  "scraper": "openaq",
+  "filters": [
+    {
+      "country":["US"],
+      "date_from": "2023-01-01",
+      "date_to": "2023-12-31",
+      "entity": "government",
+      "poll": ["pm25"]
+
+    }
+  ],
+  "processes": [
+          "raw"
+  ]
+}
