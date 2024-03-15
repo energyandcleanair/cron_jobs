@@ -1,31 +1,34 @@
 [
   {
     "command": "refresh_measurements",
-    "error_if_no_measurement": true,
     "scraper": "vietnam",
     "filters": [
       {
-        "date_from": -1
+        "pollutant": ["pm25", "pm10", "no2", "so2", "co"]
       }
     ],
     "processes": [
-      "station_day_mad",
+      "raw",
       "city_day_mad",
-      "station_max_day_mad",
-      "city_max_day_mad"
+      "station_day_mad",
+      "city_hour_mad",
+      "station_hour_mad"
     ]
   },
   {
     "command": "refresh_measurements",
-    "error_if_no_measurement": true,
     "scraper": "vietnam",
     "filters": [
       {
-        "pollutant": ["o3"],
-        "date_from": -1
+        "pollutant": ["o3"]
       }
     ],
     "processes": [
+      "raw",
+      "city_day_mad",
+      "station_day_mad",
+      "city_hour_mad",
+      "station_hour_mad",
       "station_8h_max_day_mad",
       "city_8h_max_day_mad"
     ]
