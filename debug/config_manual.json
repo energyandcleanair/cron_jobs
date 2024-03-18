@@ -14,6 +14,24 @@
   "filters": [
     {
       "country":["TH"],
+      "date_from": "2024-03-01",
+      "date_to": "2024-03-31",
+      "entity": "community"
+    },
+    {
+      "country":["TH"],
+      "date_from": "2024-02-01",
+      "date_to": "2024-02-29",
+      "entity": "community"
+    },
+    {
+      "country":["TH"],
+      "date_from": "2024-01-01",
+      "date_to": "2024-01-31",
+      "entity": "community"
+    },
+    {
+      "country":["TH"],
       "date_from": "2023-12-01",
       "date_to": "2023-12-31",
       "entity": "community"
