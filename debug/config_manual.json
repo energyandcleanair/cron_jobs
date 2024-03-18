@@ -1,6 +1,6 @@
 [
   {
-    "command": "refresh_measurements",
+    "command": "refresh_locations",
     "scraper": "openaq",
     "filters": [
       {
