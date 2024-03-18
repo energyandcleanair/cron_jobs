@@ -1,35 +1,19 @@
-{
+[
+  {
   "command": "refresh_measurements",
   "scraper": "openaq",
   "filters": [
     {
-      "country":["US"],
-      "date_from": "2022-11-01",
-      "date_to": "2022-11-30",
+      "country": "TH",
       "entity": "government",
-      "poll": ["pm25"]
-    },
-    {
-      "country":["US"],
-      "date_from": "2022-12-01",
-      "date_to": "2022-12-31",
-      "entity": "government"
-    },
-    {
-      "country":["US"],
-      "date_from": "2023-11-01",
-      "date_to": "2023-11-30",
-      "entity": "government",
-      "poll": ["pm25"]
-    },
-    {
-      "country":["US"],
-      "date_from": "2023-12-01",
+      "date_from": "2021-01-01",
       "date_to": "2023-12-31",
-      "entity": "government"
+      "poll": ["pm25"]
+
     }
   ],
   "processes": [
           "raw"
   ]
 }
+]
