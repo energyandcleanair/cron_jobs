@@ -4,16 +4,169 @@
   "scraper": "openaq",
   "filters": [
     {
-      "country": "TH",
-      "entity": "government",
-      "date_from": "2021-01-01",
-      "date_to": "2023-12-31",
-      "poll": ["pm25"]
-
+      "country":["BR"],
+      "date_from": "2022-01-01",
+      "date_to": "2022-01-31",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2022-02-01",
+      "date_to": "2022-02-28",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2022-03-01",
+      "date_to": "2022-03-31",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2022-04-01",
+      "date_to": "2022-04-30",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2022-05-01",
+      "date_to": "2022-05-31",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2022-06-01",
+      "date_to": "2022-06-30",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2022-07-01",
+      "date_to": "2022-07-31",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2022-08-01",
+      "date_to": "2022-08-31",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2022-09-01",
+      "date_to": "2022-09-30",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2022-10-01",
+      "date_to": "2022-10-31",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2022-11-01",
+      "date_to": "2022-11-30",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2022-12-01",
+      "date_to": "2022-12-31",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2023-01-01",
+      "date_to": "2023-01-31",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2023-02-01",
+      "date_to": "2023-02-28",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2023-03-01",
+      "date_to": "2023-03-31",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2023-04-01",
+      "date_to": "2023-04-30",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2023-05-01",
+      "date_to": "2023-05-31",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2023-06-01",
+      "date_to": "2023-06-30",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2023-07-01",
+      "date_to": "2023-07-31",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2023-08-01",
+      "date_to": "2023-08-31",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2023-09-01",
+      "date_to": "2023-09-30",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2023-10-01",
+      "date_to": "2023-10-31",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2023-11-01",
+      "date_to": "2023-11-30",
+      "entity": "government"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2023-12-01",
+      "date_to": "2023-12-31"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2024-01-01",
+      "date_to": "2024-01-31"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2024-02-01",
+      "date_to": "2024-02-29"
+    },
+    {
+      "country":["BR"],
+      "date_from": "2024-03-01",
+      "date_to": "2024-03-31"
     }
   ],
   "processes": [
-          "raw"
+    "station_day_mad",
+    "city_day_mad",
+    "station_max_day_mad",
+    "city_max_day_mad",
+    "raw"
   ]
 }
-]
