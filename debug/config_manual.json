@@ -5,15 +5,15 @@
     "scraper": "openaq",
     "filters": [
       {
-        "country": "CL",
-       "date_from": "2021-01-01",
-        "date_to": "2023-12-31",
-       "pollutant": "pm25",
-       "entity": "government"
+        "country": "BR",
+        "date_from": "2021-01-01",
+        "date_to": "2023-12-31"
      }
    ],
     "processes": [
-      "raw"
+      "raw",
+      "station_day_mad",
+      "city_day_mad"
     ]
   }
 ]
