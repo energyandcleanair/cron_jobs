@@ -1,17 +1,11 @@
-[
-  {
-    "command": "refresh_measurements",
-    "error_if_no_measurement": true,
-    "scraper": "mee",
-    "filters": [
-      {
-        "date_from": "2021-01-01",
-        "date_to": "2023-12-31",
-        "pollutant": "pm25"
-     }
-   ],
-    "processes": [
-      "raw"
-    ]
-  }
-]
+{
+  "command": "refresh_weather_measurements",
+  "scraper": "earthengine",
+  "filters": [
+    {
+      "iso2": ["IN"],
+      "region_type": "country",
+      "date_from": "2010-01-01",
+      "date_to": "2014-12-31"
+    }]
+}
