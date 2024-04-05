@@ -1,11 +1,18 @@
-{
-  "command": "refresh_weather_measurements",
-  "scraper": "earthengine",
-  "filters": [
-    {
-      "iso2": ["IN"],
-      "region_type": "country",
-      "date_from": "2010-01-01",
-      "date_to": "2014-12-31"
-    }]
-}
+[
+  {
+    "command": "deweather_measurements",
+    "source": "mee",
+    "poll": [
+      "pm25",
+      "no2",
+      "pm10"
+    ],
+    "location_id": [
+      "harbin_chn.11_1_cn",
+      "changsha_chn.14_1_cn"
+    ],
+    "deweather_process_id": [
+      "default_anomaly_2018_2099"
+    ]
+  }
+]
