@@ -168,6 +168,19 @@
     "nfs": false
   },
   {
+    "name": "precheck-plot-china-co2",
+    "time_zone": "Asia/Hong_Kong",
+    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
+    "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/plotting/config_precheck_plot_china_co2.json",
+    "parallelism": 1,
+    "taskCount": 1,
+    "maxRetries": 0,
+    "timeoutSeconds": 86400,
+    "cpu": "1000m",
+    "memory": "2Gi",
+    "nfs": false
+  },
+  {
     "name": "power-update-generation",
     "schedule": "0 5 * * *",
     "time_zone": "Asia/Hong_Kong",
