@@ -119,7 +119,15 @@
       "default_anomaly_o3_2018_2099"
     ],
     "location_id": [		
-	    	"nashik_ind.20_1_in",
+	    "nagaon_ind.4_1_in",
+		"nagaur_ind.29_1_in",
+		"nagpur_ind.20_1_in",
+		"naharlagun_ind.3_1_in",
+		"nalbari_ind.4_1_in",
+		"nanded_ind.20_1_in",
+		"nandesari_ind.11_1_in",
+		"narnaul_ind.12_1_in",
+		"nashik_ind.20_1_in",
 		"navi mumbai_ind.20_1_in",
 		"nayagarh_ind.26_1_in",
 		"noida_ind.34_1_in",

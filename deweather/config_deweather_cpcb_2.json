@@ -121,6 +121,10 @@
       "default_anomaly_o3_2018_2099"
     ],
     "location_id": [
+		"fatehabad_ind.12_1_in",
+		"firozabad_ind.34_1_in",
+		"gadag_ind.16_1_in",
+		"gandhinagar_ind.11_1_in",
 		"gangtok_ind.30_1_in",
 		"gaya_ind.5_1_in",
 		"ghaziabad_ind.34_1_in",
@@ -212,15 +216,7 @@
 		"muradabad_ind.34_1_in",
 		"muzaffarnagar_ind.34_1_in",
 		"muzaffarpur_ind.5_1_in",
-		"mysuru_ind.16_1_in",
-		"nagaon_ind.4_1_in",
-		"nagaur_ind.29_1_in",
-		"nagpur_ind.20_1_in",
-		"naharlagun_ind.3_1_in",
-		"nalbari_ind.4_1_in",
-		"nanded_ind.20_1_in",
-		"nandesari_ind.11_1_in",
-		"narnaul_ind.12_1_in"
+		"mysuru_ind.16_1_in"
     ] 
   }
 ]
