@@ -169,6 +169,7 @@
   },
   {
     "name": "precheck-plot-china-co2",
+    "schedule": "0 0 29 2 *",
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/plotting/config_precheck_plot_china_co2.json",
