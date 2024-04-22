@@ -168,7 +168,7 @@
     "nfs": false
   },
   {
-    "name": "precheck-plot-china-co2",
+    "name": "plot-china-co2-snapshot",
     "schedule": "0 0 29 2 *",
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
@@ -177,8 +177,8 @@
     "taskCount": 1,
     "maxRetries": 0,
     "timeoutSeconds": 86400,
-    "cpu": "1000m",
-    "memory": "2Gi",
+    "cpu": "4000m",
+    "memory": "8Gi",
     "nfs": false
   },
   {
