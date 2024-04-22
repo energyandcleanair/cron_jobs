@@ -168,20 +168,6 @@
     "nfs": false
   },
   {
-    "name": "plot-china-co2-snapshot",
-    "schedule": "0 0 29 2 *",
-    "time_zone": "Asia/Hong_Kong",
-    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
-    "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/plotting/config_plot_china_co2_snapshot.json",
-    "parallelism": 1,
-    "taskCount": 1,
-    "maxRetries": 0,
-    "timeoutSeconds": 86400,
-    "cpu": "4000m",
-    "memory": "8Gi",
-    "nfs": false
-  },
-  {
     "name": "power-update-generation",
     "schedule": "0 5 * * *",
     "time_zone": "Asia/Hong_Kong",
@@ -893,6 +879,20 @@
     "timeoutSeconds": 86400,
     "cpu": "1000m",
     "memory": "2Gi",
+    "nfs": false
+  },
+  {
+    "name": "plot-china-co2-snapshot",
+    "schedule": "0 0 29 2 *",
+    "time_zone": "Asia/Hong_Kong",
+    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
+    "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/plotting/config_plot_china_co2_snapshot.json",
+    "parallelism": 1,
+    "taskCount": 1,
+    "maxRetries": 0,
+    "timeoutSeconds": 86400,
+    "cpu": "4000m",
+    "memory": "8Gi",
     "nfs": false
   }
 ]
