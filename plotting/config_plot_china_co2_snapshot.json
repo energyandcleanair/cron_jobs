@@ -1,4 +1,4 @@
-{
+{{
   "command": "run_script",
   "rscript":{
     "content": [
@@ -14,12 +14,12 @@
       "library(chinatracker)",
       "library(ggrepel)",
       "folder <- {tmp_dir}",
-      "check_wind_update(output_dir = folder)"
+      "build_snapshot(base_dir=folder, snapshot_precheck = T)"
     ]
   },
   "export": [
     {
-      "dest_folder":"gs://crea-public/plots/china_co2/wind_update_check",
+      "dest_folder":"gs://crea-public/plots/china_co2",
       "source_filepath":"*"
     }
   ],
