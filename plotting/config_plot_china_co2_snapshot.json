@@ -1,4 +1,4 @@
-{{
+{
   "command": "run_script",
   "rscript":{
     "content": [
