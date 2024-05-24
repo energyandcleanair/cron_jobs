@@ -1,16 +1,32 @@
 [
   {
-    "command": "deweather_measurements",
-    "source": "mee",
-    "poll": [
-      "pm25"
+    "command": "refresh_measurements",
+    "scraper": "airnow",
+    "error_if_no_measurement": true,
+    "filters": [
+      {
+        "country": ["MN","PE"],
+        "date_from": "2022-07-01"
+      }
     ],
-    "location_id": [
-      "harbin_chn.11_1_cn",
-      "changsha_chn.14_1_cn"
+    "processes": [
+      "station_day_mad",
+      "city_day_mad"
+    ]
+  },
+  {
+    "command": "refresh_measurements",
+    "scraper": "airnow_archive",
+    "error_if_no_measurement": true,
+    "filters": [
+      {
+        "country": ["MN","PE"],
+        "date_from": "2022-07-01"
+      }
     ],
-    "deweather_process_id": [
-      "default_anomaly_2018_2099"
+    "processes": [
+      "station_day_mad",
+      "city_day_mad"
     ]
   }
 ]
