@@ -6,7 +6,7 @@
     "filters": [
       {
         "country": ["MN","PE"],
-        "date_from": "2022-07-01"
+        "date_from": "2022-01-01"
       }
     ],
     "processes": [
@@ -21,7 +21,7 @@
     "filters": [
       {
         "country": ["MN","PE"],
-        "date_from": "2022-07-01"
+        "date_from": "2022-01-01"
       }
     ],
     "processes": [
