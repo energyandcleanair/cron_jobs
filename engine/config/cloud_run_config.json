@@ -108,7 +108,7 @@
     "maxRetries": 0,
     "timeoutSeconds": 86400,
     "cpu": "8000m",
-    "memory": "32Gi",
+    "memory": "16Gi",
     "nfs": true
   },
   {
@@ -122,7 +122,7 @@
     "maxRetries": 0,
     "timeoutSeconds": 86400,
     "cpu": "8000m",
-    "memory": "32Gi",
+    "memory": "16Gi",
     "nfs": true
   },
   {
@@ -136,7 +136,7 @@
     "maxRetries": 0,
     "timeoutSeconds": 86400,
     "cpu": "8000m",
-    "memory": "32Gi",
+    "memory": "16Gi",
     "nfs": true
   },
   {
@@ -906,7 +906,7 @@
     "maxRetries": 0,
     "timeoutSeconds": 86400,
     "cpu": "8000m",
-    "memory": "32Gi",
+    "memory": "16Gi",
     "nfs": true
   }
 ]
