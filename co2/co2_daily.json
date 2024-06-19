@@ -15,6 +15,7 @@
  "environment_variables":[
   "CREA_DB_PRODUCTION",
   "POWER_DB_PRODUCTION",
-  "API_KEY"
+  "API_KEY",
+  "AGSI_API_KEY"
  ]
 }
