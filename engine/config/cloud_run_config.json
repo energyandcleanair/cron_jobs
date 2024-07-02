@@ -65,8 +65,8 @@
     "taskCount": 1,
     "maxRetries": 0,
     "timeoutSeconds": 86400,
-    "cpu": "2000m",
-    "memory": "8Gi",
+    "cpu": "8000m",
+    "memory": "32Gi",
     "nfs": true
   },
   {
