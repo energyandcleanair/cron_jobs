@@ -1,32 +1,19 @@
 [
   {
-    "command": "refresh_measurements",
-    "scraper": "airnow",
-    "error_if_no_measurement": true,
-    "filters": [
-      {
-        "country": ["MN","PE"],
-        "date_from": "2022-01-01"
-      }
+    "command": "deweather_measurements",
+    "source": ["cpcb"],
+    "poll": [
+      "pm25",
+      "pm10"
     ],
-    "processes": [
-      "station_day_mad",
-      "city_day_mad"
-    ]
-  },
-  {
-    "command": "refresh_measurements",
-    "scraper": "airnow_archive",
-    "error_if_no_measurement": true,
-    "filters": [
-      {
-        "country": ["MN","PE"],
-        "date_from": "2022-01-01"
-      }
+    "location_id": [
+      "delhi_ind.25_1_in"
     ],
-    "processes": [
-      "station_day_mad",
-      "city_day_mad"
-    ]
+    "deweather_process_id": [
+      "default_anomaly_2018_2099_fire_96h",
+      "default_anomaly_2018_2099_fire_gadm0_96h"
+    ],
+    "upload_weather": true,
+    "upload_fire": true
   }
 ]
