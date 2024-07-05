@@ -7,7 +7,8 @@
       "pm10"
     ],
     "location_id": [
-      "delhi_ind.25_1_in"
+      "kolkata_ind.36_1_in",
+      "lucknow_ind.34_1_in"
     ],
     "deweather_process_id": [
       "default_anomaly_2018_2099_fire_96h",
