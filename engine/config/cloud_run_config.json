@@ -51,8 +51,8 @@
     "taskCount": 1,
     "maxRetries": 0,
     "timeoutSeconds": 86400,
-    "cpu": "2000m",
-    "memory": "8Gi",
+    "cpu": "4000m",
+    "memory": "10Gi",
     "nfs": true
   },
   {
@@ -79,8 +79,8 @@
     "taskCount": 1,
     "maxRetries": 0,
     "timeoutSeconds": 86400,
-    "cpu": "2000m",
-    "memory": "8Gi",
+    "cpu": "4000m",
+    "memory": "16Gi",
     "nfs": true
   },
   {
@@ -93,8 +93,8 @@
     "taskCount": 1,
     "maxRetries": 0,
     "timeoutSeconds": 86400,
-    "cpu": "2000m",
-    "memory": "8Gi",
+    "cpu": "4000m",
+    "memory": "16Gi",
     "nfs": true
   },
   {
