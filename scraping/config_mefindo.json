@@ -16,6 +16,7 @@
     "aggregation": [
       "city_hour_to_day",
       "station_hour_to_day"
-    ]
+    ],
+    "date_from": -3
   }
 ]
