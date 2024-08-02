@@ -12,7 +12,8 @@
       "station_day_mad",
       "city_day_mad",
       "station_max_day_mad",
-      "city_max_day_mad"
+      "city_max_day_mad",
+      "city_hour_mad"
     ]
   },
   {
@@ -27,7 +28,8 @@
    ],
     "processes": [
       "station_8h_max_day_mad",
-      "city_8h_max_day_mad"
+      "city_8h_max_day_mad",
+      "city_hour_mad"
     ]
   }
 ]
