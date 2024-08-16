@@ -533,7 +533,7 @@
   },
   {
     "name": "scrape-openaq-america-co",
-    "schedule": "0 2 * * *",
+    "schedule": "0 0 * * 1",
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/scraping/config_openaq_america_co.json",
@@ -547,7 +547,7 @@
   },
   {
     "name": "scrape-openaq-america-no2",
-    "schedule": "0 8 * * *",
+    "schedule": "0 0 * * 1",
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/scraping/config_openaq_america_no2.json",
@@ -561,7 +561,7 @@
   },
   {
     "name": "scrape-openaq-america-o3",
-    "schedule": "30 14 * * *",
+    "schedule": "0 0 * * 1",
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/scraping/config_openaq_america_o3.json",
@@ -575,7 +575,7 @@
   },
   {
     "name": "scrape-openaq-america-pm10",
-    "schedule": "30 14 * * *",
+    "schedule": "0 0 * * 1",
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/scraping/config_openaq_america_pm10.json",
@@ -589,7 +589,7 @@
   },
   {
     "name": "scrape-openaq-america-pm25",
-    "schedule": "0 2 * * *",
+    "schedule": "0 0 * * 1",
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/scraping/config_openaq_america_pm25.json",
@@ -603,7 +603,7 @@
   },
   {
     "name": "scrape-openaq-america-so2",
-    "schedule": "0 8 * * *",
+    "schedule": "0 0 * * 1",
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/scraping/config_openaq_america_so2.json",
@@ -617,7 +617,7 @@
   },
   {
     "name": "scrape-openaq-asia-no2",
-    "schedule": "30 0 * * *",
+    "schedule": "0 0 * * 1",
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/scraping/config_openaq_asia_no2.json",
@@ -631,7 +631,7 @@
   },
   {
     "name": "scrape-openaq-asia-o3",
-    "schedule": "0 1 * * *",
+    "schedule": "0 0 * * 1",
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/scraping/config_openaq_asia_o3.json",
@@ -645,7 +645,7 @@
   },
   {
     "name": "scrape-openaq-asia-pm10",
-    "schedule": "0 1 * * *",
+    "schedule": "0 0 * * 1",
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/scraping/config_openaq_asia_pm10.json",
@@ -659,7 +659,7 @@
   },
   {
     "name": "scrape-openaq-asia-pm25",
-    "schedule": "0 0 * * *",
+    "schedule": "0 0 * * 1",
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/scraping/config_openaq_asia_pm25.json",
@@ -673,7 +673,7 @@
   },
   {
     "name": "scrape-openaq-asia-so2",
-    "schedule": "0 1 * * *",
+    "schedule": "0 0 * * 1",
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/scraping/config_openaq_asia_so2.json",
@@ -687,7 +687,7 @@
   },
   {
     "name": "scrape-opendata-sg",
-    "schedule": "0 1 * * *",
+    "schedule": "0 0 * * 1",
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/scraping/config_opendata_sg.json",
