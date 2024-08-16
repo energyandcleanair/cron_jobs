@@ -18,9 +18,6 @@
         "date_to": -8,
         "region_type": "gcpt_50km"
       }
-    ],
-    "processes": [
-      "raw"
     ]
   }
 ]

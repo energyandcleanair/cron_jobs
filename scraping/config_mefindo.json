@@ -5,7 +5,6 @@
     "scraper": "mefindo",
     "filters": [{}],
     "processes": [
-      "raw",
       "station_hour_mad",
       "city_hour_mad"
     ]
