@@ -1,7 +1,6 @@
 [
   {
     "command": "refresh_measurements",
-    "error_if_no_measurement": true,
     "scraper": "air4thai",
     "filters": [
       {
@@ -17,7 +16,6 @@
   },
   {
     "command": "refresh_measurements",
-    "error_if_no_measurement": true,
     "scraper": "air4thai",
     "filters": [
       {

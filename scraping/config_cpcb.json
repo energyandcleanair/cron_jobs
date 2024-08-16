@@ -1,7 +1,6 @@
 [
   {
     "command": "refresh_measurements",
-    "error_if_no_measurement": true,
     "scraper": "cpcb",
     "filters": [
       {
@@ -18,7 +17,6 @@
   },
   {
     "command": "refresh_measurements",
-    "error_if_no_measurement": true,
     "scraper": "cpcb",
     "filters": [
       {

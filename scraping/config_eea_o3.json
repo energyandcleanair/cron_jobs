@@ -2,7 +2,6 @@
   "command": "refresh_measurements",
   "error_if_no_measurement": true,
   "scraper": "eea",
-  "store_raw": false,
   "filters": [
     {
       "pollutant":["o3"],

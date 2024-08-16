@@ -1,7 +1,6 @@
 [
   {
     "command": "refresh_measurements",
-    "error_if_no_measurement": true,
     "scraper": "airkorea",
     "filters": [
       {
@@ -17,7 +16,6 @@
   },
   {
     "command": "refresh_measurements",
-    "error_if_no_measurement": true,
     "scraper": "airkorea",
     "filters": [
       {

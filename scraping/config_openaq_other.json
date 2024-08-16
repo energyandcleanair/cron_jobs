@@ -1,7 +1,6 @@
 [
   {
     "command": "refresh_measurements",
-    "error_if_no_measurement": true,
     "store_raw": false,
     "debug": true,
     "scraper": "openaq",
@@ -19,7 +18,6 @@
   },
   {
     "command": "refresh_measurements",
-    "error_if_no_measurement": true,
     "store_raw": false,
     "debug": true,
     "scraper": "openaq",
