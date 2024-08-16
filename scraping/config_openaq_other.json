@@ -2,9 +2,9 @@
   {
     "command": "refresh_measurements",
     "error_if_no_measurement": true,
+    "store_raw": false,
     "debug": true,
     "scraper": "openaq",
-    "store_raw": false,
     "filters": [
       {
         "country":["US","CL","BR","PE","CO","AR","MX","CA"],
@@ -14,10 +14,7 @@
     ],
     "processes": [
       "station_day_mad",
-      "city_day_mad",
-      "station_max_day_mad",
-      "city_max_day_mad",
-      "raw"
+      "city_day_mad"
     ]
   },
   {

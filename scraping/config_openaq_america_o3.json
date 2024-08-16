@@ -4,6 +4,7 @@
     "error_if_no_measurement": true,
     "debug": true,
     "scraper": "openaq",
+    "store_raw": false,
     "filters": [
       {
         "pollutant": ["o3"],
