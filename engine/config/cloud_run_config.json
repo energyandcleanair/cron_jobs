@@ -252,20 +252,6 @@
     "nfs": false
   },
   {
-    "name": "scrape-csb",
-    "schedule": "0 6 * * *",
-    "time_zone": "Asia/Hong_Kong",
-    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
-    "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/scraping/config_csb.json",
-    "parallelism": 1,
-    "taskCount": 1,
-    "maxRetries": 0,
-    "timeoutSeconds": 86400,
-    "cpu": "2000m",
-    "memory": "4Gi",
-    "nfs": false
-  },
-  {
     "name": "scrape-doemy",
     "schedule": "* 7 * * 6",
     "time_zone": "Asia/Hong_Kong",
