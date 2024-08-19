@@ -5,8 +5,9 @@
     {
       "iso2": ["CN"],
       "region_type": "gadm1",
-      "date_from": "2022-07-01",
-      "variable": ["solar_radiation"]
+      "date_from": "2015-01-01",
+      "date_to": "2019-12-31",
+      "variable": ["solar_radiation", "temperature", "wind_speed"]
     }
   ]
 }]
