@@ -5,7 +5,8 @@
     {
       "iso2": ["CN"],
       "region_type": "gadm1",
-      "date_from": -4
+      "date_from": -4,
+      "variable": ["HDD", "CDD", "precipitation", "wind_speed"]
     }
   ]
 }
