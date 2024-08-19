@@ -1,18 +1,12 @@
-[
-  {
-    "command": "deweather_measurements",
-    "source": ["cpcb"],
-    "poll": [
-      "pm25"
-    ],
-    "location_id": [
-      "mumbai_ind.20_1_in"
-    ],
-    "deweather_process_id": [
-      "default_anomaly_2018_2099_fire_96h",
-      "default_anomaly_2018_2099_fire_gadm0_96h"
-    ],
-    "upload_weather": true,
-    "upload_fire": true
-  }
-]
+[{
+  "command": "refresh_weather_measurements",
+  "scraper": "earthengine",
+  "filters": [
+    {
+      "iso2": ["CN"],
+      "region_type": "gadm1",
+      "date_from": "2024-01-01",
+      "variable": ["wind_speed"]
+    }
+  ]
+}]
