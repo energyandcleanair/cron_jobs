@@ -5,8 +5,8 @@
     {
       "iso2": ["CN"],
       "region_type": "gadm1",
-      "date_from": "2024-01-01",
-      "variable": ["wind_speed"]
+      "date_from": "2020-01-01",
+      "variable": ["temperature"]
     }
   ]
 }]
