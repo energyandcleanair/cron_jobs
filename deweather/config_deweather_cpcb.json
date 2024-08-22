@@ -10,6 +10,7 @@
     "deweather_process_id": [
       "default_anomaly_2018_2099"
     ],
+	"yoy_months": [-1, -2],
     "location_id": [
 		"agartala_ind.33_1_in",
 		"agra_ind.34_1_in",
@@ -94,6 +95,7 @@
     "deweather_process_id": [
       "default_anomaly_o3_2018_2099"
     ],
+	"yoy_months": [-1, -2],
     "location_id": [
 		"agartala_ind.33_1_in",
 		"agra_ind.34_1_in",

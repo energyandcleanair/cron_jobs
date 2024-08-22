@@ -10,6 +10,7 @@
     "deweather_process_id": [
       "default_anomaly_2018_2099"
     ],
+	"yoy_months": [-1, -2],
     "location_id": [
 		"pithampur_ind.19_1_in",
 		"pratapgarh_ind.29_1_in",
@@ -93,6 +94,7 @@
     "deweather_process_id": [
       "default_anomaly_o3_2018_2099"
     ],
+	"yoy_months": [-1, -2],
     "location_id": [		
 	    "pithampur_ind.19_1_in",
 		"pratapgarh_ind.29_1_in",

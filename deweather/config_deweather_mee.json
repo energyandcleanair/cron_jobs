@@ -7,6 +7,10 @@
       "no2",
       "pm10"
     ],
+    "deweather_process_id": [
+      "default_anomaly_2018_2099"
+    ],
+    "yoy_months": [-1, -2],
     "location_id": [
       "harbin_chn.11_1_cn",
       "changsha_chn.14_1_cn",
@@ -40,9 +44,6 @@
       "chongqing_chn.3_1_cn",
       "haikou_chn.9_1_cn",
       "hainan_chn.21_1_cn"
-    ],
-    "deweather_process_id": [
-      "default_anomaly_2018_2099"
     ]
   },
   {
@@ -51,6 +52,10 @@
     "poll": [
       "o3"
     ],
+    "deweather_process_id": [
+      "default_anomaly_o3_2018_2099"
+    ],
+    "yoy_months": [-1, -2],
     "location_id": [
       "harbin_chn.11_1_cn",
       "changsha_chn.14_1_cn",
@@ -83,9 +88,6 @@
       "hohhot_chn.19_1_cn",
       "chongqing_chn.3_1_cn",
       "haikou_chn.9_1_cn"
-    ],
-    "deweather_process_id": [
-      "default_anomaly_o3_2018_2099"
     ]
   }
 ]
