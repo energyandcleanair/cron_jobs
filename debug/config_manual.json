@@ -3,7 +3,7 @@
     "command": "deweather_measurements",
     "source": "cpcb",
     "poll": [
-      "pm25",
+      "pm25"
     ],
     "deweather_process_id": [
       "default_anomaly_2018_2099"
