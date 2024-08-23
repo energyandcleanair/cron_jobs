@@ -1,13 +1,17 @@
-[{
-  "command": "refresh_weather_measurements",
-  "scraper": "earthengine",
-  "filters": [
-    {
-      "iso2": ["CN"],
-      "region_type": "gadm1",
-      "date_from": "2015-01-01",
-      "date_to": "2019-12-31",
-      "variable": ["solar_radiation", "temperature", "wind_speed"]
-    }
-  ]
-}]
+[
+  {
+    "command": "deweather_measurements",
+    "source": "cpcb",
+    "poll": [
+      "pm25",
+    ],
+    "deweather_process_id": [
+      "default_anomaly_2018_2099"
+    ],
+	"yoy_months": [-1, -2],
+	"split_by_location_id": false,
+    "location_id": [
+		"ankleshwar_ind.11_1_in"
+    ] 
+  }
+]
