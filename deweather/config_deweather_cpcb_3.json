@@ -11,6 +11,7 @@
       "default_anomaly_2018_2099"
     ],
 	"yoy_months": [-1, -2],
+	"split_by_location_id": false,
     "location_id": [
 		"karnal_ind.12_1_in",
 		"karwar_ind.16_1_in",
@@ -96,6 +97,7 @@
       "default_anomaly_o3_2018_2099"
     ],
 	"yoy_months": [-1, -2],
+	"split_by_location_id": false,
     "location_id": [	
 		"karnal_ind.12_1_in",
 		"karwar_ind.16_1_in",

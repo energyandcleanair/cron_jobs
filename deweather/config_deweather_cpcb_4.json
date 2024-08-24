@@ -11,6 +11,7 @@
       "default_anomaly_2018_2099"
     ],
 	"yoy_months": [-1, -2],
+	"split_by_location_id": false,
     "location_id": [
 		"pithampur_ind.19_1_in",
 		"pratapgarh_ind.29_1_in",
@@ -95,6 +96,7 @@
       "default_anomaly_o3_2018_2099"
     ],
 	"yoy_months": [-1, -2],
+	"split_by_location_id": false,
     "location_id": [		
 	    "pithampur_ind.19_1_in",
 		"pratapgarh_ind.29_1_in",
