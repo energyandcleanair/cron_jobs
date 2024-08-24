@@ -3,7 +3,7 @@
     "command": "deweather_measurements",
     "source": "cpcb",
     "poll": [
-      "pm25"
+      "pm25",
       "no2",
       "pm10"
     ],
