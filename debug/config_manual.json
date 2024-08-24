@@ -11,7 +11,8 @@
 	"yoy_months": [-1, -2],
 	"split_by_location_id": false,
     "location_id": [
-		"ankleshwar_ind.11_1_in"
+		"alwar_ind.29_1_in",
+    "ahmedabad_ind.11_1_in"
     ] 
   }
 ]
