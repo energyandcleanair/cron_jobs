@@ -4,6 +4,8 @@
     "source": "cpcb",
     "poll": [
       "pm25"
+      "no2",
+      "pm10"
     ],
     "deweather_process_id": [
       "default_anomaly_2018_2099"
