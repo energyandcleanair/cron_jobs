@@ -10,7 +10,7 @@
     "deweather_process_id": [
       "default_anomaly_2018_2099"
     ],
-	"split_by_location_id": false,
+	"split_by_location_id": true,
     "location_id": [
 		"agartala_ind.33_1_in",
 		"agra_ind.34_1_in",
@@ -95,7 +95,7 @@
     "deweather_process_id": [
       "default_anomaly_o3_2018_2099"
     ],
-	"split_by_location_id": false,
+	"split_by_location_id": true,
     "location_id": [
 		"agartala_ind.33_1_in",
 		"agra_ind.34_1_in",
