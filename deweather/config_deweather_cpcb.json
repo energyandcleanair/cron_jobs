@@ -11,6 +11,7 @@
       "default_anomaly_2018_2099"
     ],
 	"yoy_months": [-1, -2],
+	"weather_update_era5": false,
 	"split_by_location_id": true,
     "location_id": [
 		"agartala_ind.33_1_in",
@@ -98,6 +99,7 @@
     ],
 	"yoy_months": [-1, -2],
 	"split_by_location_id": true,
+	"weather_update_era5": false,
     "location_id": [
 		"agartala_ind.33_1_in",
 		"agra_ind.34_1_in",
