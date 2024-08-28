@@ -6,7 +6,7 @@
       "iso2": ["CN"],
       "region_type": "gadm1",
       "date_from": "2015-01-01",
-      "variable": ["wind_speed_hourly"]
+      "variable": ["wind_potential"]
     }
   ]
 }
