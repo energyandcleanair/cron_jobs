@@ -6,7 +6,7 @@
       "iso2": ["CN"],
       "region_type": "gadm1",
       "date_from": -4,
-      "variable": ["HDD", "CDD", "precipitation", "wind_speed"]
+      "variable": ["HDD", "CDD", "precipitation", "wind_speed", "wind_speed_hourly"]
     }
   ]
 }
