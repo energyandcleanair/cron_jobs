@@ -1,6 +1,6 @@
 [
   {
-    "command": "deweather_measurements",
+   "command": "deweather_measurements",
     "source": "cpcb",
     "poll": [
       "pm25",
@@ -8,9 +8,8 @@
       "pm10"
     ],
     "deweather_process_id": [
-      "default_anomaly_2018_2099"
+      "default_trend"
     ],
-	"yoy_months": [-1, -2],
 	"split_by_location_id": false,
     "location_id": [
 		"pithampur_ind.19_1_in",
@@ -93,9 +92,8 @@
       "o3"
     ],
     "deweather_process_id": [
-      "default_anomaly_o3_2018_2099"
+      "default_trend_o3"
     ],
-	"yoy_months": [-1, -2],
 	"split_by_location_id": false,
     "location_id": [		
 	    "pithampur_ind.19_1_in",
