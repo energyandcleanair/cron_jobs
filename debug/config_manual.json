@@ -1,12 +1,28 @@
-{
-  "command": "refresh_weather_measurements",
-  "scraper": "earthengine",
-  "filters": [
-    {
-      "iso2": ["CN"],
-      "region_type": "gadm1",
-      "date_from": "2015-01-01",
-      "variable": ["wind_potential"]
-    }
-  ]
-}
+[
+  {
+    "command": "refresh_weather_measurements",
+    "scraper": "earthengine",
+    "filters": [
+      {
+        "iso2": ["CN"],
+        "region_type": "gadm1",
+        "date_from": "2021-01-28",
+        "date_to": "2022-12-31",
+        "variable": ["wind_potential"]
+      }
+    ]
+  },
+  {
+    "command": "refresh_weather_measurements",
+    "scraper": "earthengine",
+    "filters": [
+      {
+        "iso2": ["CN"],
+        "region_type": "station",
+        "station_source": "gem",
+        "date_from": "2020-01-01",
+        "variable": ["wind_potential"]
+      }
+    ]
+  }
+]
