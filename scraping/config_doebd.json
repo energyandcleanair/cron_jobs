@@ -2,7 +2,7 @@
   {
     "command": "refresh_measurements",
     "scraper": "doebd",
-    "filters": [{}],
+    "filters": [{"date_from": -14}],
     "processes": [
       "station_hour_mad",
       "city_hour_mad"
