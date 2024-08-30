@@ -7,8 +7,9 @@
         "iso2": ["CN"],
         "region_type": "station",
         "station_source": "gem",
-        "date_from": "2020-01-01",
-        "variable": ["wind_potential"]
+        "date_from": "2023-01-01",
+        "date_to": "2023-12-31",
+        "variable": ["wind_power_density", "wind_potential"]
       }
     ]
   }
