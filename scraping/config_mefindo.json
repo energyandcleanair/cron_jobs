@@ -2,19 +2,10 @@
   {
     "command": "refresh_measurements",
     "scraper": "mefindo",
-    "filters": [{}],
+    "filters": [{"date_from": -7}],
     "processes": [
       "station_hour_mad",
       "city_hour_mad"
     ]
-  },
-  {
-    "command": "aggregate_measurements",
-    "source": "mefindo",
-    "aggregation": [
-      "city_hour_to_day",
-      "station_hour_to_day"
-    ],
-    "date_from": -3
   }
 ]
