@@ -700,20 +700,6 @@
     "nfs": false
   },
   {
-    "name": "tracker-china-2021",
-    "schedule": "0 4 * * *",
-    "time_zone": "Asia/Hong_Kong",
-    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
-    "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/202111_china_winter/master/scripts/tracker.json",
-    "parallelism": 1,
-    "taskCount": 1,
-    "maxRetries": 0,
-    "timeoutSeconds": 86400,
-    "cpu": "2000m",
-    "memory": "4Gi",
-    "nfs": false
-  },
-  {
     "name": "weather-earthengine",
     "schedule": "30 5 * * *",
     "time_zone": "Asia/Hong_Kong",
@@ -739,20 +725,6 @@
     "timeoutSeconds": 86400,
     "cpu": "2000m",
     "memory": "4Gi",
-    "nfs": false
-  },
-  {
-    "name": "scrape-em-korea",
-    "schedule": "15,45 * * * *",
-    "time_zone": "Asia/Hong_Kong",
-    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
-    "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/emission/config_em_korea.json",
-    "parallelism": 1,
-    "taskCount": 1,
-    "maxRetries": 1,
-    "timeoutSeconds": 86400,
-    "cpu": "1000m",
-    "memory": "2Gi",
     "nfs": false
   },
   {
