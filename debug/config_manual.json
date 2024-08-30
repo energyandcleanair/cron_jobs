@@ -7,9 +7,10 @@
         "iso2": ["CN"],
         "region_type": "station",
         "station_source": "gem",
-        "date_from": "2023-01-01",
-        "date_to": "2023-12-31",
-        "variable": ["wind_power_density", "wind_potential"]
+        "date_from": "2015-01-01",
+        "date_to": "2022-12-31",
+        "date_direction": -1,
+        "variable": ["wind_power_density"]
       }
     ]
   }
