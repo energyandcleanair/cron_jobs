@@ -7,8 +7,23 @@
         "iso2": ["CN"],
         "region_type": "station",
         "station_source": "gem",
-        "date_from": "2015-01-01",
-        "date_to": "2022-12-31",
+        "date_from": "2018-07-08",
+        "date_to": "2019-01-28",
+        "date_direction": -1,
+        "variable": ["wind_power_density"]
+      }
+    ]
+  },
+  {
+    "command": "refresh_weather_measurements",
+    "scraper": "earthengine",
+    "filters": [
+      {
+        "iso2": ["CN"],
+        "region_type": "station",
+        "station_source": "gem",
+        "date_from": "2016-01-01",
+        "date_to": "2017-12-31",
         "date_direction": -1,
         "variable": ["wind_power_density"]
       }
