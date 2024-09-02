@@ -4,13 +4,13 @@
     "scraper": "earthengine",
     "filters": [
       {
-        "iso2": ["DE"],
+        "iso2": ["CN"],
         "region_type": "station",
         "station_source": "gem",
         "date_to": "2024-09-01",
         "date_from": "2015-01-01",
         "date_direction": -1,
-        "variable": ["wind_power_density"]
+        "variable": ["wind_power_curve"]
       }
     ]
   }
