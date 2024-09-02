@@ -810,5 +810,19 @@
     "cpu": "8000m",
     "memory": "24Gi",
     "nfs": true
+  },
+  {
+    "name": "scrape-em-korea",
+    "schedule": "15,45 * * * *",
+    "time_zone": "Asia/Hong_Kong",
+    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
+    "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/emission/config_em_korea.json",
+    "parallelism": 1,
+    "taskCount": 1,
+    "maxRetries": 1,
+    "timeoutSeconds": 86400,
+    "cpu": "1000m",
+    "memory": "2Gi",
+    "nfs": false
   }
 ]
