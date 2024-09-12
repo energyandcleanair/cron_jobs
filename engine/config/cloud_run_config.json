@@ -336,20 +336,6 @@
     "nfs": false
   },
   {
-    "name": "scrape-energy-nldc-vn",
-    "schedule": "0 11 * * *",
-    "time_zone": "Asia/Hong_Kong",
-    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
-    "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/power/config_nldc_vn.json",
-    "parallelism": 1,
-    "taskCount": 1,
-    "maxRetries": 0,
-    "timeoutSeconds": 86400,
-    "cpu": "2000m",
-    "memory": "4Gi",
-    "nfs": false
-  },
-  {
     "name": "scrape-energy-posoco-in",
     "schedule": "0 11 * * *",
     "time_zone": "Asia/Hong_Kong",
