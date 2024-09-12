@@ -3,9 +3,10 @@
   "rscript":{
     "content": [
       "try(invisible(lapply(paste0('package:', names(sessionInfo()$otherPkgs)), detach, character.only=TRUE, unload=TRUE)), silent=T)",
-      "remotes::install_github('energyandcleanair/creahelpers', upgrade=F, force=T, auth_token=Sys.getenv('GITHUB_PAT'))",
-      "remotes::install_github('energyandcleanair/rcrea', upgrade=F, force=T, auth_token=Sys.getenv('GITHUB_PAT'))",
-      "remotes::install_github('energyandcleanair/china_co2', upgrade=F, force=T, auth_token=Sys.getenv('GITHUB_PAT'))",
+      "remotes::install_version('ggplot2', version = '3.4.4', upgrade = F)",
+      "remotes::install_github('energyandcleanair/creahelpers', upgrade=F, force=F, auth_token=Sys.getenv('GITHUB_PAT'))",
+      "remotes::install_github('energyandcleanair/rcrea', upgrade=F, force=F, auth_token=Sys.getenv('GITHUB_PAT'))",
+      "remotes::install_github('energyandcleanair/china_co2', upgrade=F, force=F, auth_token=Sys.getenv('GITHUB_PAT'))",
       "library(creahelpers)",
       "library(rcrea)",
       "library(zoo)",
