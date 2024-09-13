@@ -15,7 +15,7 @@
       "library(chinatracker)",
       "library(ggrepel)",
       "folder <- {tmp_dir}",
-      "build_snapshot(output_dir=folder, plots='capacity', langs='ZH')"
+      "build_snapshot(output_dir=folder, plots='industry_output', langs='ZH')"
     ]
   },
   "export": [
