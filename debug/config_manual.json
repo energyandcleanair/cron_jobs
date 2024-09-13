@@ -1,17 +1,30 @@
-[
-  {
-    "command": "refresh_weather_measurements",
-    "scraper": "earthengine",
-    "filters": [
-      {
-        "iso2": ["DE"],
-        "region_type": "station",
-        "station_source": "gem",
-        "date_to": "2024-09-14",
-        "date_from": "2015-01-01",
-        "date_direction": -1,
-        "variable": ["wind_power_curve"]
-      }
+{
+  "command": "run_script",
+  "rscript":{
+    "content": [
+      "try(invisible(lapply(paste0('package:', names(sessionInfo()$otherPkgs)), detach, character.only=TRUE, unload=TRUE)), silent=T)",
+      "remotes::install_version('ggplot2', version = '3.3.6', upgrade = F, force = T)",
+      "remotes::install_github('energyandcleanair/creahelpers', upgrade=F, force=F, auth_token=Sys.getenv('GITHUB_PAT'))",
+      "remotes::install_github('energyandcleanair/rcrea', upgrade=F, force=F, auth_token=Sys.getenv('GITHUB_PAT'))",
+      "remotes::install_github('energyandcleanair/china_co2', upgrade=F, force=F, auth_token=Sys.getenv('GITHUB_PAT'))",
+      "library(creahelpers)",
+      "library(rcrea)",
+      "library(zoo)",
+      "library(magrittr)",
+      "library(remotes)",
+      "library(chinatracker)",
+      "library(ggrepel)",
+      "folder <- {tmp_dir}",
+      "build_snapshot(output_dir=folder, plots='capacity', langs='ZH')"
     ]
-  }
-]
+  },
+  "export": [
+    {
+      "dest_folder":"gs://crea-public/plots/china_co2",
+      "source_filepath":"*"
+    }
+  ],
+  "environment_variables":[
+    "GITHUB_PAT"
+  ]
+}
