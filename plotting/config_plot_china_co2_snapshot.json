@@ -15,7 +15,7 @@
       "library(chinatracker)",
       "library(ggrepel)",
       "folder <- {tmp_dir}",
-      "build_snapshot(base_dir=folder, snapshot_precheck = T)"
+      "build_snapshot(output_dir=folder, snapshot_precheck = T)"
     ]
   },
   "export": [
