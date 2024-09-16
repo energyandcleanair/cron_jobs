@@ -8,7 +8,8 @@
 		"pm10"
 	  ],
 	  "deweather_process_id": [
-		"default_trend"
+		"default_trend",
+	    "default_anomaly_2018_2099"
 	  ],
 	  "split_by_location_id": false,
     "location_id": [
@@ -93,7 +94,8 @@
       "o3"
     ],
     "deweather_process_id": [
-      "default_trend_o3"
+      "default_trend_o3",
+	  "default_anomaly_o3_2018_2099"
     ],
 	"split_by_location_id": false,
     "location_id": [
