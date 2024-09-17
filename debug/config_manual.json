@@ -11,7 +11,7 @@
   "processes": [
     "station_hour_mad",
     "station_day_mad",
-    "city_day_mad",
+    "city_hour_mad",
     "city_day_mad"
   ]
   }
