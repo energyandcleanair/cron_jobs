@@ -1,30 +1,18 @@
-{
-  "command": "run_script",
-  "rscript":{
-    "content": [
-      "try(invisible(lapply(paste0('package:', names(sessionInfo()$otherPkgs)), detach, character.only=TRUE, unload=TRUE)), silent=T)",
-      "remotes::install_version('ggplot2', version = '3.3.6', upgrade = F, force = T)",
-      "remotes::install_github('energyandcleanair/creahelpers', upgrade=F, force=F, auth_token=Sys.getenv('GITHUB_PAT'))",
-      "remotes::install_github('energyandcleanair/rcrea', upgrade=F, force=F, auth_token=Sys.getenv('GITHUB_PAT'))",
-      "remotes::install_github('energyandcleanair/china_co2', upgrade=F, force=F, auth_token=Sys.getenv('GITHUB_PAT'))",
-      "library(creahelpers)",
-      "library(rcrea)",
-      "library(zoo)",
-      "library(magrittr)",
-      "library(remotes)",
-      "library(chinatracker)",
-      "library(ggrepel)",
-      "folder <- {tmp_dir}",
-      "build_snapshot(output_dir=folder, plots='industry_output', langs='ZH')"
-    ]
-  },
-  "export": [
-    {
-      "dest_folder":"gs://crea-public/plots/china_co2",
-      "source_filepath":"*"
-    }
+[
+  {
+  "command": "refresh_measurements",
+  "error_if_no_measurement": true,
+  "scraper": "cpcb",
+  "filters": [
+  {
+    "date_from": "2018-01-01"
+  }
   ],
-  "environment_variables":[
-    "GITHUB_PAT"
+  "processes": [
+    "station_hour_mad",
+    "station_day_mad",
+    "city_day_mad",
+    "city_day_mad"
   ]
-}
+  }
+]
