@@ -5,17 +5,17 @@
     {
       "iso2": ["EU", "CN", "IN"],
       "region_type": "country",
-      "date_from": -4
+      "date_from": -10
     },
     {
       "iso2": ["CN", "IN"],
       "region_type": "gadm1",
-      "date_from": -4
+      "date_from": -10
     },
     {
       "iso2": ["ID"],
       "region_type": "gadm1",
-      "date_from": -4,
+      "date_from": -10,
       "variable": ["thermal_anomaly"]
     }
   ]
