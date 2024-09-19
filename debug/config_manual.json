@@ -1,14 +1,36 @@
-{
-  "command": "refresh_weather_measurements",
-  "scraper": "earthengine",
-  "filters": [
-    {
-      "iso2": ["CN"],
-      "region_type": "gadm1",
-      "date_from": "2019-01-01",
-      "date_to": "2022-04-18",
-      "date_direction": "backward",
-      "variable": ["wind_power_density", "wind_power_curve"]
-    }
-  ]
-}
+[
+  {
+    "command": "refresh_measurements",
+    "scraper": "cpcb",
+    "filters": [
+      {
+        "pollutant": ["pm25", "pm10", "no2"],
+        "date_from": "2021-05-15"
+      }
+    ],
+    "processes": [
+      "city_day_mad",
+      "station_day_mad",
+      "city_hour_mad",
+      "station_hour_mad"
+    ]
+  },
+  {
+    "command": "refresh_measurements",
+    "scraper": "cpcb",
+    "filters": [
+      {
+        "pollutant": ["o3"],
+        "date_from": "2021-05-15"
+      }
+    ],
+    "processes": [
+      "city_day_mad",
+      "station_day_mad",
+      "city_hour_mad",
+      "station_hour_mad",
+      "station_8h_max_day_mad",
+      "city_8h_max_day_mad"
+    ]
+  }
+]
