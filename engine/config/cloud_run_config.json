@@ -754,5 +754,19 @@
     "cpu": "1000m",
     "memory": "2Gi",
     "nfs": false
+  },
+  {
+    "name": "update-location-presets",
+    "schedule": "0 * * * *",
+    "time_zone": "Etc/UTC",
+    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
+    "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/locations/presets.json",
+    "parallelism": 1,
+    "taskCount": 1,
+    "maxRetries": 0,
+    "timeoutSeconds": 86400,
+    "cpu": "1000m",
+    "memory": "2Gi",
+    "nfs": false
   }
 ]
