@@ -1,36 +1,32 @@
 [
   {
-    "command": "refresh_measurements",
-    "scraper": "cpcb",
-    "filters": [
-      {
-        "pollutant": ["pm25", "pm10", "no2"],
-        "date_from": "2021-05-15"
-      }
+    "command": "deweather_measurements",
+    "source": "cpcb",
+    "poll": [
+      "pm25",
+      "no2",
+      "pm10"
     ],
-    "processes": [
-      "city_day_mad",
-      "station_day_mad",
-      "city_hour_mad",
-      "station_hour_mad"
+    "deweather_process_id": [
+      "default_trend"
+    ],
+	"split_by_location_id": false,
+    "location_id": [
+		"agartala_ind.33_1_in"
     ]
   },
   {
-    "command": "refresh_measurements",
-    "scraper": "cpcb",
-    "filters": [
-      {
-        "pollutant": ["o3"],
-        "date_from": "2021-05-15"
-      }
+    "command": "deweather_measurements",
+    "source": "cpcb",
+    "poll": [
+      "o3"
     ],
-    "processes": [
-      "city_day_mad",
-      "station_day_mad",
-      "city_hour_mad",
-      "station_hour_mad",
-      "station_8h_max_day_mad",
-      "city_8h_max_day_mad"
-    ]
+    "deweather_process_id": [
+      "default_trend_o3"
+    ],
+	"split_by_location_id": false,
+    "location_id": [
+		"agartala_ind.33_1_in"
+    ] 
   }
 ]
