@@ -11,7 +11,7 @@
     {
       "date_from": "2017-01-01",
       "pollutant": [
-        "pm10"
+        "pm10", "pm25"
       ],
       "city_id": [
         "agra_ind.34_1_in",
