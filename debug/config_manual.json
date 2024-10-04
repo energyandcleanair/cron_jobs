@@ -3,15 +3,13 @@
   "scraper": "cpcb",
   "processes": [
     "city_day_mad",
-    "station_day_mad",
-    "city_hour_mad",
-    "station_hour_mad"
+    "station_day_mad"
   ],
   "filters": [
     {
-      "date_from": "2017-01-01",
+      "date_from": "2015-01-01",
       "pollutant": [
-        "pm10", "pm25"
+        "pm10"
       ],
       "city_id": [
         "agra_ind.34_1_in",
