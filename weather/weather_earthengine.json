@@ -13,7 +13,7 @@
       "date_from": -10
     },
     {
-      "iso2": ["ID"],
+      "iso2": ["ID", "IN"],
       "region_type": "gadm1",
       "date_from": -10,
       "variable": ["thermal_anomaly"]
