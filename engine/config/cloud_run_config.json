@@ -10,7 +10,7 @@
     "maxRetries": 0,
     "timeoutSeconds": 86400,
     "cpu": "1000m",
-    "memory": "1Gi",
+    "memory": "4Gi",
     "nfs": false
   },
   {
