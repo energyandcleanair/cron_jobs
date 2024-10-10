@@ -1,6 +1,6 @@
 {
   "command": "refresh_measurements",
-  "scraper": "cpcb",
+  "scraper": "mee",
   "processes": [
     "city_day_mad",
     "station_day_mad"
