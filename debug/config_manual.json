@@ -8,6 +8,7 @@
   "filters": [
     {
       "date_from": "2015-01-01",
+      "date_to": "2022-09-10",
       "date_direction": "backward"
     }
   ]
