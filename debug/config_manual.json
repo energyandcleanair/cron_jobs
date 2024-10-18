@@ -1,15 +1,21 @@
 {
-  "command": "refresh_measurements",
-  "scraper": "mee",
-  "processes": [
-    "city_day_mad",
-    "station_day_mad"
-  ],
+  "command": "refresh_weather_measurements",
+  "scraper": "earthengine",
   "filters": [
     {
-      "date_from": "2015-01-01",
-      "date_to": "2020-03-11",
-      "date_direction": "backward"
+      "iso2": [
+        "CN"
+      ],
+      "region_type": "gadm1",
+      "date_from": "2024-09-10",
+      "variable": [
+        "solar_radiation",
+        "wind_speed",
+        "wind_power_curve",
+        "wind_power_density",
+        "precipitation",
+        "temperature"
+      ]
     }
   ]
 }
