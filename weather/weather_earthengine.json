@@ -5,12 +5,15 @@
     {
       "iso2": ["EU", "CN", "IN"],
       "region_type": "country",
-      "date_from": -10
+      "date_from": -10,
+      "variable": ["CDD", "HDD"]
+
     },
     {
       "iso2": ["CN", "IN"],
       "region_type": "gadm1",
-      "date_from": -10
+      "date_from": -10,
+      "variable": ["solar_radiation", "wind_speed", "wind_power_curve", "wind_power_density", "precipitation", "temperature"]
     },
     {
       "iso2": ["ID", "IN"],
