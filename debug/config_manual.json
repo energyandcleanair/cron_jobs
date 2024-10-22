@@ -6,7 +6,7 @@
       "iso2": ["CN"],
       "region_type": "country",
       "date_from": "2017-01-01",
-      "variable": ["HDD", "CDD"],
+      "variable": ["precipitation"],
       "flush_daily": false
     }
   ]
