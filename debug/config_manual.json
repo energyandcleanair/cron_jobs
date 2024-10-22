@@ -3,19 +3,11 @@
   "scraper": "earthengine",
   "filters": [
     {
-      "iso2": [
-        "CN"
-      ],
-      "region_type": "gadm1",
-      "date_from": "2024-09-10",
-      "variable": [
-        "solar_radiation",
-        "wind_speed",
-        "wind_power_curve",
-        "wind_power_density",
-        "precipitation",
-        "temperature"
-      ]
+      "iso2": ["CN"],
+      "region_type": "country",
+      "date_from": "2017-01-01",
+      "variable": ["HDD", "CDD"],
+      "flush_daily": false
     }
   ]
 }
