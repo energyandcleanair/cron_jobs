@@ -6,7 +6,7 @@
       "iso2": ["EU"],
       "region_type": "country",
       "region_id": ["EU"],
-      "date_from": "2015-01-01",
+      "date_from": "2016-01-01",
       "variable": ["HDD", "CDD"]
     }
   ]
