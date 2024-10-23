@@ -3,11 +3,11 @@
   "scraper": "earthengine",
   "filters": [
     {
-      "iso2": ["CN"],
+      "iso2": ["EU"],
       "region_type": "country",
-      "date_from": "2017-01-01",
-      "variable": ["precipitation"],
-      "flush_daily": false
+      "region_id": ["EU"],
+      "date_from": "2015-01-01",
+      "variable": ["HDD", "CDD"]
     }
   ]
 }
