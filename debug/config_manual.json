@@ -9,9 +9,12 @@
           "DE"
         ],
         "region_type": "country",
-        "date_from": "2017-01-01",
+        "date_from": "2023-03-01",
+        "date_direction": "backward",
         "variable": [
-          "CDD_21"
+          "CDD_21_ERA5",
+          "CDD_ERA5",
+          "HDD_ERA5"
         ],
         "scale": 10000
       }
