@@ -13,9 +13,9 @@
           "HDD_ERA5",
           "CDD_ERA5",
           "CDD_21_ERA5"
-        ]
-      },
-      "scale": 10000
+        ],
+        "scale": 10000
+      }
     ]
   }
 ]
