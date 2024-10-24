@@ -3,11 +3,10 @@
   "scraper": "earthengine",
   "filters": [
     {
-      "iso2": ["CN", "DE"],
-      "region_type": "country",
-      "date_from": "2015-01-01",
-      "variable": ["CDD_21_ERA5","CDD_ERA5","HDD_ERA5"],
-      "scale": 10000
+      "iso2": ["CN"],
+      "region_type": "gadm1",
+      "date_from": "2017-01-01",
+      "variable": ["HDD_ERA5", "CDD_ERA5"]
     }
   ]
 }
