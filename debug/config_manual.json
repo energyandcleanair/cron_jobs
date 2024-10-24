@@ -8,7 +8,8 @@
           "EU"
         ],
         "region_type": "country",
-        "date_from": "2015-01-01",
+        "date_from": "2020-01-01",
+        "date_to": "2022-12-31",
         "date_direction": "backward",
         "variable": [
           "CDD_21_ERA5",
