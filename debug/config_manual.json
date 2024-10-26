@@ -5,7 +5,7 @@
     "filters": [
       {
         "iso2": [
-          "IN"
+          "ID"
         ],
         "region_type": "country",
         "date_from": "2015-01-01",
