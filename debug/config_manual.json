@@ -5,10 +5,11 @@
     "filters": [
       {
         "iso2": [
-          "ID"
+          "IN"
         ],
         "region_type": "country",
-        "date_from": "2015-01-01",
+        "date_from": "2011-04-15",
+        "date_to": "2014-12-31",
         "date_direction": "backward",
         "variable": [
           "CDD_21_ERA5",
