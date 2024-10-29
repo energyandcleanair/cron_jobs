@@ -1,0 +1,12 @@
+[
+  {
+    "command": "refresh_measurements",
+    "scraper": "cpcb",
+    "filters": [
+      {
+        "city_name": "Delhi",
+        "date_from": -2
+      }
+    ]
+  }
+]
