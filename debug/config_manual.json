@@ -2,8 +2,38 @@
 	{
 		"command": "compute_trajectories",
 		"city": [
-			"Beijing"
+			"Beijing",
+			"Tianjin",
+			"Shanghai",
+			"Chongqing",
+			"Shijiazhuang",
+			"Taiyuan",
+			"Hohhot",
+			"Shenyang",
+			"Changchun",
+			"Harbin",
+			"Nanjing",
+			"Hangzhou",
+			"Hefei",
+			"Fuzhou",
+			"Nanchang",
+			"Jinan",
+			"Zhengzhou",
+			"Wuhan",
+			"Changsha",
+			"Guangzhou",
+			"Nanning",
+			"Haikou",
+			"Chengdu",
+			"Guiyang",
+			"Kunming",
+			"Lhasa",
+			"Xi'an",
+			"Lanzhou",
+			"Xining",
+			"Yinchuan",
+			"Urumqi"
 		],
-		"date_from": -14
+		"date_from": -31
 	}
 ]
