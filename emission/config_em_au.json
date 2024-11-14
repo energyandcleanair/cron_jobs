@@ -1,0 +1,12 @@
+[
+	{
+	  "command": "refresh_emissions",
+	  "scraper": "au_npi",
+	  "filters": [
+		{
+		  "year_from": 2019,
+		  "year_to": 2022
+		}
+	  ]
+	}
+]
