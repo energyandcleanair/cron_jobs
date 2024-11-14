@@ -3,7 +3,7 @@
 	"scraper": "earthengine",
 	"filters": [
 	  {
-		"iso2": ["CN"],
+		"iso2": ["CN","IN"],
 		"region_type": "gadm1",
 		"date_from": "2015-01-01",
 		"variable": ["precipitation_era5"]
