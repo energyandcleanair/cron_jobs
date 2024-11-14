@@ -4,8 +4,7 @@
     "scraper": "mefindo",
     "filters": [{"date_from": -7}],
     "processes": [
-      "station_hour_mad",
-      "city_hour_mad"
+      "raw"
     ]
   }
 ]

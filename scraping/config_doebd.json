@@ -4,8 +4,7 @@
     "scraper": "doebd",
     "filters": [{"date_from": -14}],
     "processes": [
-      "station_hour_mad",
-      "city_hour_mad"
+      "raw"
     ]
   }
 ]
