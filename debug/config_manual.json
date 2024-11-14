@@ -1,9 +1,12 @@
-[
-	{
-		"command": "compute_trajectories",
-		"city": [
-			"Beijing"
-		],
-		"date_from": -14
-	}
-]
+{
+	"command": "refresh_weather_measurements",
+	"scraper": "earthengine",
+	"filters": [
+	  {
+		"iso2": ["CN"],
+		"region_type": "gadm1",
+		"date_from": "2015-01-01",
+		"variable": ["precipitation_era5"]
+	  }
+	]
+  }
