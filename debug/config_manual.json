@@ -3,8 +3,8 @@
 	"scraper": "earthengine",
 	"filters": [
 	  {
-		"iso2": ["CN","IN"],
-		"region_type": "gadm1",
+		"iso2": ["EU", "CN", "IN"],
+		"region_type": "country",
 		"date_from": "2015-01-01",
 		"variable": ["precipitation_era5"]
 	  }
