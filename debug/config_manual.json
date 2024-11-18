@@ -6,7 +6,7 @@
 		"iso2": ["EU", "CN", "IN"],
 		"region_type": "country",
 		"date_from": "2015-01-01",
-		"date_to": "2024-08-06",
+		"date_to": "2016-08-27",
 		"date_direction": "backward",
 		"variable": ["precipitation_era5"]
 	  }
