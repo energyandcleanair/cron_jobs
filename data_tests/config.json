@@ -35,7 +35,7 @@
       "config": {
         "endpoint": "/v1/weather",
         "params": {
-          "source": "CFSV2",
+          "source": "ERA5",
           "region_type": "gadm1",
           "region_iso2": "CN",
           "date_from": -2,
@@ -49,7 +49,7 @@
       "config": {
         "endpoint": "/v1/trajectories",
         "params": { "location_id": "beijing_chn.2_1_cn" },
-        "date_within_days": 10
+        "date_within_days": 15
       }
     },
     {
