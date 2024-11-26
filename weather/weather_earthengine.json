@@ -6,7 +6,7 @@
       "iso2": ["EU", "CN", "IN"],
       "region_type": "country",
       "date_from": -10,
-      "variable": ["CDD", "HDD"]
+      "variable": ["CDD", "HDD", "heat_index"]
 
     },
     {
