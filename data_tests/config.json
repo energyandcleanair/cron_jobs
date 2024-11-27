@@ -1,0 +1,94 @@
+{
+  "command": "test_data",
+  "tests": [
+    {
+      "description": "Recent Delhi AQ has value for each of the last seven days",
+      "type": "has_at_data_for_every_day",
+      "config": {
+        "endpoint": "/v1/measurements",
+        "params": {
+          "pollutant": "pm25",
+          "city": "delhi_ind.25_1_in",
+          "process_id": "city_day_mad"
+        },
+        "date_from": -7,
+        "date_to": -1
+      }
+    },
+    {
+      "description": "Recent CPCB AQ has any value",
+      "type": "has_at_least_one_row",
+      "config": {
+        "endpoint": "/v1/measurements",
+        "params": {
+          "pollutant": "pm25",
+          "source": "cpcb",
+          "process_id": "raw",
+          "date_from": -7,
+          "date_to": -1
+        }
+      }
+    },
+    {
+      "description": "Recent weather China GADM1 has any value",
+      "type": "has_at_least_one_row",
+      "config": {
+        "endpoint": "/v1/weather",
+        "params": {
+          "source": "ERA5",
+          "region_type": "gadm1",
+          "region_iso2": "CN",
+          "date_from": -2,
+          "date_to": -1
+        }
+      }
+    },
+    {
+      "description": "Air trajectory Beijing has a recent enough latest date",
+      "type": "metadata_date_has_max_age",
+      "config": {
+        "endpoint": "/v1/trajectories",
+        "params": { "location_id": "beijing_chn.2_1_cn" },
+        "date_within_days": 15
+      }
+    },
+    {
+      "description": "Recent energy demand EU has any data",
+      "type": "has_at_least_one_row",
+      "config": {
+        "endpoint": "/energy/demand",
+        "params": {
+          "fuel": "fossil_gas_temperature_corrected",
+          "region_id": "EU",
+          "sector": "except_power",
+          "date_from": -13,
+          "date_to": -1
+        }
+      }
+    },
+    {
+      "description": "Recent CO2 emission EU has any data",
+      "type": "has_at_least_one_row",
+      "config": {
+        "endpoint": "/emission/co2",
+        "params": {
+          "region_id": "EU",
+          "date_from": -13,
+          "date_to": -1
+        }
+      }
+    },
+    {
+      "description": "Recent CO2 Power Generation has any data",
+      "type": "has_at_least_one_row",
+      "config": {
+        "endpoint": "/power/generation",
+        "params": {
+          "region": "EU",
+          "date_from": -13,
+          "date_to": -1
+        }
+      }
+    }
+  ]
+}
