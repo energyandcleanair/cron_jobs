@@ -760,7 +760,7 @@
     "schedule": "0 */8 * * *",
     "time_zone": "Etc/UTC",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
-    "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/data_test/config.json",
+    "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/data_tests/config.json",
     "parallelism": 1,
     "taskCount": 1,
     "maxRetries": 0,
