@@ -3,12 +3,11 @@
 	"scraper": "earthengine",
 	"filters": [
 	  {
-		"iso2": ["EU", "CN", "IN"],
-		"region_type": "country",
-		"date_from": "2015-01-01",
-		"date_to": "2016-08-27",
-		"date_direction": "backward",
-		"variable": ["precipitation"]
+		"iso2": ["CN"],
+		"region_type": "gadm1",
+		"date_from": "2010-01-01",
+		  "date_direction": "backward",
+		"variable": ["heat_index"]
 	  }
 	]
   }
