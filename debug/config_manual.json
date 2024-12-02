@@ -5,10 +5,10 @@
 	  {
 		"iso2": ["CN"],
 		"region_type": "gadm1",
-		"date_from": "2010-01-01",
-		  "date_to": "2024-11-16",
+		"date_from": "2015-01-01",
+		  "date_to": "2017-10-29",
 		  "date_direction": "backward",
-		"variable": ["wind_speed"]
+		"variable": ["heat_index"]
 	  }
 	]
   }
