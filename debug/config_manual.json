@@ -6,8 +6,9 @@
 		"iso2": ["CN"],
 		"region_type": "gadm1",
 		"date_from": "2010-01-01",
+		  "date_to": "2024-11-16",
 		  "date_direction": "backward",
-		"variable": ["heat_index"]
+		"variable": ["wind_speed"]
 	  }
 	]
   }
