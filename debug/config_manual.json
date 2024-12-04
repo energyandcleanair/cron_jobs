@@ -2,7 +2,11 @@
 	{
 		"command": "compute_trajectories",
 		"city": [
-			"Johannesburg"
+			"Johannesburg",
+			"Pretoria",
+			"Durban",
+			"Port Elizabeth",
+			"East London"
 		],
 		"date_from": "2024-01-01"
 	}
