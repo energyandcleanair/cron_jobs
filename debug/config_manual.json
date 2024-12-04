@@ -1,14 +1,9 @@
-{
-	"command": "refresh_weather_measurements",
-	"scraper": "earthengine",
-	"filters": [
-	  {
-		"iso2": ["CN"],
-		"region_type": "gadm1",
-		"date_from": "2015-01-01",
-		  "date_to": "2017-10-29",
-		  "date_direction": "backward",
-		"variable": ["heat_index"]
-	  }
-	]
-  }
+[
+	{
+		"command": "compute_trajectories",
+		"city": [
+			"Johannesburg"
+		],
+		"date_from": "2024-01-01"
+	}
+]
