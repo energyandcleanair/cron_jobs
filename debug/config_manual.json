@@ -1,13 +1,15 @@
-[
-	{
-		"command": "compute_trajectories",
-		"city": [
-			"Johannesburg",
-			"Pretoria",
-			"Durban",
-			"Port Elizabeth",
-			"East London"
-		],
-		"date_from": "2024-01-01"
-	}
-]
+{
+	"command": "refresh_measurements",
+	"scraper": "saaqis",
+	"filters": [
+	  {
+		"date_from": "2015-10-01",
+		  "date_to": -2,
+		  "date_direction": "backward"
+	  }
+	],
+	"processes": [
+	  "station_day_mad",
+	  "city_day_mad"
+	]
+  }
