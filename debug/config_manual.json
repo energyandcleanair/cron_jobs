@@ -3,7 +3,7 @@
 	"scraper": "saaqis",
 	"filters": [
 	  {
-		"date_from": "2015-10-01",
+		"date_from": "2015-01-01",
 		  "date_to": -2,
 		  "date_direction": "backward"
 	  }
