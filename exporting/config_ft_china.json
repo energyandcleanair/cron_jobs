@@ -17,6 +17,9 @@
          "dest_folder":"gs://crea-public/data/meas/observations/",
          "source_filepath":"*"
        }
+     ],
+     "environment_variables":[
+      "GITHUB_PAT"
      ]
   }
 ]

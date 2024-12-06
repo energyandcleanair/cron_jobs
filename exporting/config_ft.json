@@ -22,6 +22,9 @@
          "dest_folder":"gs://crea-public/data/meas/deweathered/",
          "source_filepath":"*"
        }
+     ],
+     "environment_variables":[
+      "GITHUB_PAT"
      ]
   }
 ]
