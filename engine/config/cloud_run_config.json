@@ -589,7 +589,7 @@
   },
   {
     "name": "scrape-saaqis",
-    "schedule": "0 0 * * *",
+    "schedule": "0 1 * * *",
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/scraping/config_saaqis.json",
