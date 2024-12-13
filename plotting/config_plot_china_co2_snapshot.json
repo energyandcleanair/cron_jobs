@@ -7,7 +7,7 @@
       "remotes::install_version('ggplot2', version = '3.4.4', upgrade = F, force = T)",
       "remotes::install_github('energyandcleanair/creahelpers', upgrade=F, force=F)",
       "remotes::install_github('energyandcleanair/rcrea', upgrade=F, force=F)",
-      "devtools::install_github('energyandcleanair/china_co2', auth_token = Sys.getenv('GITHUB_PAT'))",
+      "devtools::install_github('energyandcleanair/china_co2')",
       "library(creahelpers)",
       "library(rcrea)",
       "library(zoo)",
