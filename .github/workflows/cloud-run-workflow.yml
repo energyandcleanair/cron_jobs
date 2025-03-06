@@ -1,0 +1,37 @@
+name: Cloud Run Workflow
+
+on:
+  push:
+    branches:
+      - "master"
+    paths:
+      - "engine/config/*.json"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    permissions:
+      contents: "read"
+      id-token: "write"
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: GCP Authentication
+        uses: google-github-actions/auth@v1
+        with:
+          workload_identity_provider: ${{ secrets.WIP }}
+          service_account: ${{ secrets.SERVICE_ACCOUNT }}
+          create_credentials_file: true
+
+      - name: Install python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-cloud-scheduler==2.12.0 google-cloud-run==0.10.1 jsondiff==2.0.0
+
+      - name: Run update_cloud_run script
+        working-directory: engine/config
+        run: |
+          python update_cloud_run.py
