@@ -3,9 +3,10 @@ name: Cloud Run Workflow
 on:
   push:
     branches:
-      - "master"
+      - "main"
     paths:
-      - "engine/config/*.json"
+      - "_config/*.json"
+      - ".github/workflows/cloud-run-workflow.yml"
   workflow_dispatch:
 
 jobs:
@@ -32,6 +33,6 @@ jobs:
           pip install google-cloud-scheduler==2.12.0 google-cloud-run==0.10.1 jsondiff==2.0.0
 
       - name: Run update_cloud_run script
-        working-directory: engine/config
+        working-directory: _config
         run: |
           python update_cloud_run.py
