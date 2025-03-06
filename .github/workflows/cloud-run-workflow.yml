@@ -23,8 +23,8 @@ jobs:
       - name: GCP Authentication
         uses: google-github-actions/auth@v1
         with:
-          workload_identity_provider: ${{ secrets.WIP }}
-          service_account: ${{ secrets.SERVICE_ACCOUNT }}
+          workload_identity_provider: projects/829505003332/locations/global/workloadIdentityPools/github-identity-pool/providers/github-identity-provider
+          service_account: github-actions@crea-aq-data.iam.gserviceaccount.com
           create_credentials_file: true
 
       - name: Install python packages
