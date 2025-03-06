@@ -1,0 +1,23 @@
+{
+  "command": "run_script",
+  "rscript":{
+    "content": [
+      "try(invisible(lapply(paste0('package:', names(sessionInfo()$otherPkgs)), detach, character.only=TRUE, unload=TRUE)), silent=T)",
+      "install.packages('devtools')",
+      "remotes::install_github('energyandcleanair/creahelpers', upgrade=F, force=F)",
+      "remotes::install_github('energyandcleanair/rcrea', upgrade=F, force=F)",
+      "devtools::install_github('energyandcleanair/india_monthly_snapshot')",
+      "folder <- {tmp_dir}",
+      "indiasnapshots::build_snapshot(output_dir=folder)"
+    ]
+  },
+  "export": [
+    {
+      "dest_folder":"gs://crea-public/plots/india_monthly",
+      "source_filepath":"*"
+    }
+  ],
+  "environment_variables":[
+    "GITHUB_PAT"
+  ]
+}
