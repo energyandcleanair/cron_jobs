@@ -4,6 +4,7 @@
    "content":[
      "library(tidyverse)",
      "library(remotes)",
+     "remotes::install_github('energyandcleanair/rcrea', upgrade=F, force=F)",
      "remotes::install_github('energyandcleanair/creahelpers', upgrade=F, force=F)",
      "remotes::install_github('energyandcleanair/creaco2tracker', upgrade=F, force=F)",
      "remotes::install_github('rOpenGov/eurostat', upgrade=F, force=F)",
