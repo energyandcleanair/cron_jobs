@@ -6,9 +6,5 @@
 		"date_from": "2000-01-01",
 		"date_direction": "backward"
 	  }
-	],
-	"processes": [
-		"station_day_mad",
-		"city_day_mad"
-	  ]
-  }
+	]
+}
