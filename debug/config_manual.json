@@ -1,12 +1,9 @@
 {
 	"command": "refresh_weather_measurements",
-	"scraper": "earthengine",
+	"scraper": "airnow",
 	"filters": [
 	  {
-		"iso2": ["EU"],
-		"region_type": "country",
-		"date_from": "2015-01-01",
-		  "date_to": "2016-02-10",
+		"date_from": "2000-01-01",
 		"date_direction": "backward"
 	  }
 	]
