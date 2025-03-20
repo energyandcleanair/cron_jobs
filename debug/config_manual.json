@@ -1,5 +1,5 @@
 {
-	"command": "refresh_weather_measurements",
+	"command": "refresh_measurements",
 	"scraper": "airnow",
 	"filters": [
 	  {
