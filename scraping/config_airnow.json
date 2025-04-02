@@ -1,5 +1,9 @@
 [
   {
+    "command": "refresh_locations",
+    "scraper": "airnow"
+  },
+  {
     "command": "refresh_measurements",
     "scraper": "airnow",
     "filters": [

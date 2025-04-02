@@ -1,15 +1,21 @@
-{
-  "command": "refresh_measurements",
-  "scraper": "earthengine",
-  "filters": [
-    {
-      "date_from": -30,
-      "country": ["PK","MX","CA","AU","PH","TH","ID","CL","PE","AR","BR",
-        "EC","EG","RU","LK","TJ","MM","VN","PY","UY","UZ","AE","TW","PA",
-        "MA","MY","JM","IR","IQ","HK","CI","KH","DZ","HK"]
-    }
-  ],
-  "processes": [
-    "city_day_mad"
-  ]
-}
+[
+  {
+    "command": "refresh_locations",
+    "scraper": "earthengine"
+  },
+  {
+    "command": "refresh_measurements",
+    "scraper": "earthengine",
+    "filters": [
+      {
+        "date_from": -30,
+        "country": ["PK","MX","CA","AU","PH","TH","ID","CL","PE","AR","BR",
+          "EC","EG","RU","LK","TJ","MM","VN","PY","UY","UZ","AE","TW","PA",
+          "MA","MY","JM","IR","IQ","HK","CI","KH","DZ","HK"]
+      }
+    ],
+    "processes": [
+      "city_day_mad"
+    ]
+  }
+]
