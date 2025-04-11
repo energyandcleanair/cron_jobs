@@ -43,7 +43,7 @@
   },
   {
     "name": "deweather-cpcb",
-    "schedule": "0 0 5,28 * *",
+    "schedule": "0 0 29 2 *",
     "time_zone": "Etc/UTC",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/deweather/config_deweather_cpcb.json?a=1",
@@ -57,7 +57,7 @@
   },
   {
     "name": "deweather-cpcb2",
-    "schedule": "0 6 5,28 * *",
+    "schedule": "0 0 29 2 *",
     "time_zone": "Etc/UTC",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/deweather/config_deweather_cpcb_2.json",
@@ -71,7 +71,7 @@
   },
   {
     "name": "deweather-cpcb3",
-    "schedule": "0 12 5,28 * *",
+    "schedule": "0 0 29 2 *",
     "time_zone": "Etc/UTC",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/deweather/config_deweather_cpcb_3.json",
@@ -85,7 +85,7 @@
   },
     {
     "name": "deweather-cpcb4",
-    "schedule": "0 18 5,28 * *",
+    "schedule": "0 0 29 2 *",
     "time_zone": "Etc/UTC",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/deweather/config_deweather_cpcb_4.json",
@@ -99,7 +99,7 @@
   },
   {
     "name": "deweather-mee",
-    "schedule": "0 0 5,10 * *",
+    "schedule": "0 0 10 * *",
     "time_zone": "Etc/UTC",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/deweather/config_deweather_mee.json",
