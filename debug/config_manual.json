@@ -1,5 +1,5 @@
 {
-	"command": "process_measurements",
+	"command": "refresh_measurements",
 	"scraper": "mee",
 	"processes": [
 		"station_day_mad",
