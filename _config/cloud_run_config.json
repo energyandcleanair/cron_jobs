@@ -782,5 +782,5 @@
     "cpu": "2000m",
     "memory": "4Gi",
     "nfs": false
-  },
+  }
 ]
