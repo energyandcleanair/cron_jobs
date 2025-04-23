@@ -14,7 +14,12 @@
   "export": [
     {
       "dest_folder":"gs://crea-public/plots/india_snapshots",
-      "source_filepath":"*"
+      "source_filepath":"*",
+      "notify": {
+        "filter_glob": "**/*.zip",
+        "type": "slack",
+        "channel": "C076JE8T91T"
+      }
     }
   ],
   "environment_variables":[
