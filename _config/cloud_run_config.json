@@ -768,5 +768,19 @@
     "cpu": "1000m",
     "memory": "2Gi",
     "nfs": false
-  }
+  },
+  {
+    "name": "india-monthly-snapshots",
+    "schedule": "0 0 2 * *",
+    "time_zone": "Etc/UTC",
+    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
+    "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/reports/india_monthly.json",
+    "parallelism": 1,
+    "taskCount": 1,
+    "maxRetries": 0,
+    "timeoutSeconds": 86400,
+    "cpu": "2000m",
+    "memory": "4Gi",
+    "nfs": false
+  },
 ]
