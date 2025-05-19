@@ -1,14 +1,13 @@
 {
-	"command": "refresh_measurements",
-	"scraper": "mee",
-	"processes": [
-		"station_day_mad",
-		"city_day_mad"
-	  ],
-
-	"filters": [
-	  {
-          "date_from": "2010-01-01",
-          "date_to": "2015-12-31"
-	  }]
+  "command": "refresh_weather_measurements",
+  "scraper": "earthengine",
+  "filters": [
+    {
+      "iso2": ["CN"],
+      "region_type": "gadm1",
+      "date_from": "2010-01-01",
+      "variable": ["thermal_anomaly"],
+      "date_direction": "backward"
+    }
+  ]
 }
