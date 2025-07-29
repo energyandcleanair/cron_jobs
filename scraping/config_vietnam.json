@@ -8,7 +8,8 @@
     "scraper": "vietnam",
     "filters": [
       {
-        "pollutant": ["pm25", "pm10", "no2", "so2", "co"]
+        "pollutant": ["pm25", "pm10", "no2", "so2", "co"],
+        "date_from": -7
       }
     ],
     "processes": [
@@ -22,7 +23,8 @@
     "scraper": "vietnam",
     "filters": [
       {
-        "pollutant": ["o3"]
+        "pollutant": ["o3"],
+        "date_from": -7
       }
     ],
     "processes": [
