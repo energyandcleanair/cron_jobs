@@ -1,4 +1,5 @@
-{
+[
+  {
   "command": "refresh_measurements",
   "scraper": "eea",
   "store_raw": false,
@@ -15,4 +16,4 @@
     "station_max_day_mad",
     "city_max_day_mad"
   ]
-}
+}]
