@@ -1,0 +1,6 @@
+[
+  {
+    "command": "refresh_locations",
+    "scraper": "openaq"
+  }
+]
