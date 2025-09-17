@@ -1,5 +1,9 @@
 [
   {
+    "command": "refresh_facilities",
+    "scraper": "us_epa"
+  },
+  {
     "command": "refresh_emissions",
     "scraper": "us_epa",
     "auto_dates": true,
