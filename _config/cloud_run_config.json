@@ -182,6 +182,20 @@
     "nfs": false
   },
   {
+    "name": "scrape-dlh",
+    "schedule": "0 6,18 * * *",
+    "time_zone": "Etc/UTC",
+    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
+    "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/scraping/config_dlh.json",
+    "parallelism": 1,
+    "taskCount": 1,
+    "maxRetries": 0,
+    "timeoutSeconds": 86400,
+    "cpu": "2000m",
+    "memory": "44Gi",
+    "nfs": false
+  },
+  {
     "name": "scrape-aurn",
     "schedule": "0 0 */7 * *",
     "time_zone": "Asia/Hong_Kong",
