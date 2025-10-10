@@ -6,7 +6,10 @@
   {
     "command": "refresh_measurements",
     "scraper": "dlh",
-    "filters": [],
+    "filters": [
+      {
+        "date_from": -30
+      }],
     "processes": [
       "raw",
       "city_day_mad",
