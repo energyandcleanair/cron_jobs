@@ -9,7 +9,8 @@
     "filters": [
       {
         "date_from": -30
-      }],
+      }
+    ],
     "processes": [
       "raw",
       "city_day_mad",

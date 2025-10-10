@@ -1,0 +1,11 @@
+[
+  {
+    "command": "process_measurements",
+    "scraper": "dlh",
+    "filters": [{}],
+    "processes": [
+      "city_day_mad",
+      "station_day_mad"
+    ]
+  }
+]
