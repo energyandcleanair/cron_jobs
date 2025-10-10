@@ -8,7 +8,9 @@
     "scraper": "dlh",
     "filters": [],
     "processes": [
-      "raw"
+      "raw",
+      "city_day_mad",
+      "station_day_mad"
     ]
   }
 ]
