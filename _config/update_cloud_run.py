@@ -33,7 +33,7 @@ def main():
     for action in ["inserted", "updated", "removed"]:
         if diff[action]:
             for k, item in diff[action]:
-                prev_item = remote_config[k]
+                prev_item = next((x for x in remote_config if x["name"] == item["name"]), {})
                 create_job(action, item)
                 create_scheduler_job(action, prev_item, item)
 
@@ -91,6 +91,7 @@ def create_job(action, item):
         job.name = None
         create_request = run_v2.CreateJobRequest(job=job, parent=project_path, job_id=item["name"])
         response = run_client.create_job(request=create_request)
+        print(response)
         action_msg = "Created job"
 
     elif action == "updated":
@@ -108,7 +109,8 @@ def create_job(action, item):
 
 
 def create_scheduler_job(action: str, prev_item: dict, item: dict):
-    if not prev_item["schedule"] and item["schedule"]:
+
+    if not prev_item:
         action = "inserted"
     elif prev_item["schedule"] and not item["schedule"]:
         action = "removed"
