@@ -91,7 +91,6 @@ def create_job(action, item):
         job.name = None
         create_request = run_v2.CreateJobRequest(job=job, parent=project_path, job_id=item["name"])
         response = run_client.create_job(request=create_request)
-        print(response)
         action_msg = "Created job"
 
     elif action == "updated":
