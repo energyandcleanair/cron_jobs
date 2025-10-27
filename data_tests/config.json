@@ -53,7 +53,7 @@
       "config": {
         "endpoint": "/v1/trajectories",
         "params": { "location_id": "beijing_chn.2_1_cn" },
-        "date_within_days": 15
+        "date_within_days": 10
       }
     },
     {
