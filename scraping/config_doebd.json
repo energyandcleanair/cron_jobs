@@ -8,7 +8,9 @@
     "scraper": "doebd",
     "filters": [{"date_from": -14}],
     "processes": [
-      "raw"
+      "raw",
+      "station_day_mad",
+      "city_day_mad"
     ]
   }
 ]
