@@ -29,7 +29,7 @@
   },
   {
     "name": "compute-trajectories",
-    "schedule": "0 0 */7 * *",
+    "schedule": "0 0 */3 * *",
     "time_zone": "Etc/UTC",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/trajectories/compute_trajectories.json",
