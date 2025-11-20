@@ -32,6 +32,22 @@
       }
     },
     {
+      "description": "Recent Mefindo AQ has any value",
+      "type": "latest_available_date_at_least",
+      "config": {
+        "endpoint": "/v1/measurements",
+        "params": {
+          "pollutant": "pm25",
+          "source": "mefindo",
+          "process_id": "raw"
+        },
+        "date_from_key": "date_from",
+        "date_to_key": "date_to",
+        "date_key": "date",
+        "date_within_days": 1
+      }
+    },
+    {
       "description": "Recent weather China GADM1 has any value",
       "type": "latest_available_date_at_least",
       "config": {
