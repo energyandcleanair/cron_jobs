@@ -44,7 +44,8 @@
         "date_from_key": "date_from",
         "date_to_key": "date_to",
         "date_key": "date",
-        "date_within_days": 1
+        "date_within_hours": 3,
+        "timezone_hours": 7
       }
     },
     {

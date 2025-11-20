@@ -785,7 +785,7 @@
   },
   {
     "name": "data-test",
-    "schedule": "0 */8 * * *",
+    "schedule": "0 * * * *",
     "time_zone": "Etc/UTC",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/data_tests/config.json",
