@@ -16,6 +16,12 @@
       "variable": ["solar_radiation", "wind_speed", "wind_power_curve", "wind_power_density", "precipitation", "temperature"]
     },
     {
+      "iso2": ["CN"],
+      "region_type": "gadm1",
+      "date_from": -10,
+      "variable": ["HDD", "CDD", "heat_index"]
+    },
+    {
       "iso2": ["ID", "IN", "CN"],
       "region_type": "gadm1",
       "date_from": -10,
