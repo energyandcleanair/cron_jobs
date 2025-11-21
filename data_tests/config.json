@@ -65,6 +65,40 @@
       }
     },
     {
+      "description": "Recent weather China GADM1 has any CDD value",
+      "type": "latest_available_date_at_least",
+      "config": {
+        "endpoint": "/v1/weather",
+        "params": {
+          "source": "ERA5",
+          "region_type": "gadm1",
+          "region_iso2": "CN",
+          "variable": "CDD"
+        },
+        "date_from_key": "date_from",
+        "date_to_key": "date_to",
+        "date_key": "date",
+        "date_within_days": 15
+      }
+    },
+    {
+      "description": "Recent weather China GADM1 has any HDD value",
+      "type": "latest_available_date_at_least",
+      "config": {
+        "endpoint": "/v1/weather",
+        "params": {
+          "source": "ERA5",
+          "region_type": "gadm1",
+          "region_iso2": "CN",
+          "variable": "HDD"
+        },
+        "date_from_key": "date_from",
+        "date_to_key": "date_to",
+        "date_key": "date",
+        "date_within_days": 15
+      }
+    },  
+    {
       "description": "Air trajectory Beijing has a recent enough latest date",
       "type": "metadata_date_has_max_age",
       "config": {
