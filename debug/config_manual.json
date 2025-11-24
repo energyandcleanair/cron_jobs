@@ -1,21 +1,12 @@
-[
-  {
-    "command": "deweather_measurements",
-    "source": ["cpcb", "air4thai", "doemy", "opendata_sg", "airnow"],
-    "poll": [
-      "pm25",
-      "pm10"
-    ],
-    "location_id": [
-      "singapore_sgp.1_1_sg"
-    ],
-    "deweather_process_id": [
-      "default_anomaly_2018_2099_fire_96h",
-      "default_anomaly_2018_2099_fire_gadm0_96h",
-      "default_anomaly_2018_2099_fire_gadm1_96h"
-    ],
-    
-    "upload_weather": true,
-    "upload_fire": true
-  }
-]
+[{
+  "command": "refresh_weather_measurements",
+  "scraper": "earthengine",
+  "filters": [
+    {
+      "iso2": ["EU"],
+      "region_type": "country",
+      "date_from": "2018-01-01",
+      "variable": [ precipitation"]
+    }
+  ]
+}]
