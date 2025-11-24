@@ -6,7 +6,7 @@
       "iso2": ["EU"],
       "region_type": "country",
       "date_from": "2018-01-01",
-      "variable": [ precipitation"]
+      "variable": ["precipitation"]
     }
   ]
 }]
