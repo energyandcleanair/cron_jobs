@@ -19,6 +19,11 @@ scheduler_endpoint = (
     f"https://{location}-run.googleapis.com/apis/run.googleapis.com/v1/namespaces/{project_id}" + "/jobs/{job_name}:run"
 )
 
+nfs_volume_name = "crea-nfs"
+nfs_path = "/crea_nfs"
+nfs_mount_path = f"/mnt{nfs_path}"
+nfs_server = "10.21.193.2"
+
 
 def main():
     jobs, schedulers = get_remote_jobs_and_schedulers()
@@ -162,17 +167,37 @@ def construct_job(item: dict):
     job.template.template.execution_environment = run_v2.ExecutionEnvironment.EXECUTION_ENVIRONMENT_GEN2
     container = run_v2.Container()
     container.image = item["image"]
-    container.args = item["command"].split(" ")
-    container.command = ["python3"]
+    # container.args = item["command"].split(" ")
+    # container.command = ["python3"]
     container.resources.limits = {"cpu": item["cpu"], "memory": item["memory"]}
+
+    container.command = []  # use args[0] as the executable
+    container.args = ["/app/config/run.sh"] + item["command"].split(" ")
 
     if item["nfs"]:
         vpc = run_v2.VpcAccess()
         vpc.connector = nsf_connector
         job.template.template.vpc_access = vpc
-        container.command = []
-        # append the run.sh script to the command
-        container.args.insert(0, "/app/config/run.sh")
+
+        # Add NFS VPC startup script
+        nfs_volume = run_v2.Volume(
+            name=nfs_volume_name,
+            nfs=run_v2.NFSVolumeSource(
+                server=nfs_server,
+                path=nfs_path,
+                read_only=False
+            )
+        )
+
+        job.template.template.volumes.append(nfs_volume)
+
+        container.volume_mounts.append(
+            run_v2.VolumeMount(
+                name=nfs_volume_name,
+                mount_path=nfs_mount_path,
+            )
+        )
+
     job.template.template.containers.append(container)
 
     return job
