@@ -39,7 +39,7 @@
     "timeoutSeconds": 86400,
     "cpu": "2000m",
     "memory": "8Gi",
-    "nfs": false
+    "nfs": true
   },
   {
     "name": "deweather-cpcb",
