@@ -53,7 +53,7 @@
     "timeoutSeconds": 86400,
     "cpu": "8000m",
     "memory": "24Gi",
-    "nfs": false
+    "nfs": true
   },
   {
     "name": "deweather-cpcb2",
@@ -67,7 +67,7 @@
     "timeoutSeconds": 86400,
     "cpu": "8000m",
     "memory": "24Gi",
-    "nfs": false
+    "nfs": true
   },
   {
     "name": "deweather-cpcb3",
@@ -81,7 +81,7 @@
     "timeoutSeconds": 86400,
     "cpu": "8000m",
     "memory": "24Gi",
-    "nfs": false
+    "nfs": true
   },
   {
     "name": "deweather-cpcb4",
@@ -95,7 +95,7 @@
     "timeoutSeconds": 86400,
     "cpu": "8000m",
     "memory": "24Gi",
-    "nfs": false
+    "nfs": true
   },
   {
     "name": "deweather-mee",
@@ -109,7 +109,7 @@
     "timeoutSeconds": 86400,
     "cpu": "8000m",
     "memory": "32Gi",
-    "nfs": false
+    "nfs": true
   },
   {
     "name": "plot-china-co2",
@@ -655,7 +655,7 @@
     "timeoutSeconds": 3600,
     "cpu": "1000m",
     "memory": "1Gi",
-    "nfs": false
+    "nfs": true
   },
   {
     "name": "weather-earthengine",
@@ -725,7 +725,7 @@
     "timeoutSeconds": 86400,
     "cpu": "4000m",
     "memory": "16Gi",
-    "nfs": false
+    "nfs": true
   },
   {
     "name": "scrape-vietnam",
