@@ -83,7 +83,7 @@
     "memory": "24Gi",
     "nfs": true
   },
-    {
+  {
     "name": "deweather-cpcb4",
     "schedule": "0 0 29 2 *",
     "time_zone": "Etc/UTC",
@@ -223,7 +223,7 @@
     "memory": "4Gi",
     "nfs": false
   },
-    {
+  {
     "name": "scrape-cpcb-delhi",
     "schedule": "0 * * * *",
     "time_zone": "Asia/Kolkata",
@@ -810,5 +810,19 @@
     "cpu": "2000m",
     "memory": "4Gi",
     "nfs": false
+  },
+  {
+    "name": "volume-test",
+    "schedule": "0 0 29 2 *",
+    "time_zone": "Asia/Hong_Kong",
+    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:testing_volume",
+    "command": "main.py -s volume",
+    "parallelism": 1,
+    "taskCount": 1,
+    "maxRetries": 0,
+    "timeoutSeconds": 86400,
+    "cpu": "4000m",
+    "memory": "16Gi",
+    "nfs": true
   }
 ]
