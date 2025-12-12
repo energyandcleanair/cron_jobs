@@ -15,7 +15,12 @@
         "CDD",
         "HDD",
         "heat_index",
-        "precipitation"
+        "precipitation",
+        "thermal_anomaly",
+        "solar_radiation",
+        "wind_speed",
+        "wind_power_curve",
+        "wind_power_density"
       ]
     },
     {
