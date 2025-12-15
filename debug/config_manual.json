@@ -1,22 +1,23 @@
-{
-  "command": "refresh_weather_measurements",
-  "scraper": "earthengine",
+[
+  {
+    "command": "refresh_weather_measurements",
+    "scraper": "earthengine",
     "filters": [
-    {
-      "iso2": [
-        "EU",
-        "GB"
-      ],
-      "region_type": "country",
-      "date_from": "2020-01-01",
-      "date_to": -2,
-      "date_direction": -1,
-      "variable": [
-        "solar_radiation",
-        "wind_speed",
-        "wind_power_curve",
-        "wind_power_density"
-      ]
-    }
-  ]
-}
+      {
+        "iso2": [
+          "GB"
+        ],
+        "region_type": "country",
+        "date_from": "2010-01-01",
+        "date_to": "2012-01-08",
+        "date_direction": "backward",
+        "variable": [
+          "CDD",
+          "HDD",
+          "heat_index",
+          "precipitation"
+        ]
+      }
+    ]
+  }
+]
