@@ -4,15 +4,14 @@
   "filters": [
     {
       "iso2": [
-        "EU",
         "CN",
         "IN"
       ],
       "region_type": "country",
-      "date_from": "2024-12-01",
+      "date_from": "2020-01-01",
+      "date_to": -1,
       "variable": [
-        "CDD",
-        "HDD"
+        "thermal_anomaly"
       ]
     }
   ]
