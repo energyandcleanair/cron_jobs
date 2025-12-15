@@ -4,18 +4,15 @@
   "filters": [
     {
       "iso2": [
-        "EU"
+        "EU",
+        "CN",
+        "IN"
       ],
       "region_type": "country",
-      "date_from": "2018-01-01",
-      "date_to": -5,
-      "date_direction": -1,
+      "date_from": "2024-12-01",
       "variable": [
-        "solar_radiation",
-        "wind_speed",
-        "wind_power_curve",
-        "wind_power_density",
-        "precipitation"
+        "CDD",
+        "HDD"
       ]
     }
   ]
