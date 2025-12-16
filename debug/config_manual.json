@@ -4,14 +4,14 @@
   "filters": [
     {
       "iso2": [
-        "CN",
-        "IN"
+        "EU"
       ],
       "region_type": "country",
       "date_from": "2020-01-01",
       "date_to": -1,
+      "date_direction": -1,
       "variable": [
-        "thermal_anomaly"
+        "solar_radiation"
       ]
     }
   ]
