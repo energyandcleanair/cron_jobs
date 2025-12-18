@@ -37,7 +37,7 @@
       "station_source": "gem",
       "iso2": "CN",
       "date_from": "2020-01-01",
-      "date_to": "2020-01-01",
+      "date_to": "2020-12-31",
       "variable": [
         "ws50m_daily"
       ]
