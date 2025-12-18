@@ -1,17 +1,15 @@
 {
   "command": "refresh_weather_measurements",
-  "scraper": "earthengine",
+  "scraper": "nasa_power",
   "filters": [
     {
-      "iso2": [
-        "EU"
-      ],
-      "region_type": "country",
+      "region_type": "station",
+      "station_source": "gem",
+      "iso2": "EU",
       "date_from": "2020-01-01",
-      "date_to": "2024-10-17",
-      "date_direction": -1,
+      "date_to": -1,
       "variable": [
-        "solar_radiation"
+        "ws50m_daily"
       ]
     }
   ]
