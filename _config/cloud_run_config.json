@@ -672,6 +672,20 @@
     "nfs": false
   },
   {
+    "name": "weather-nasa-power",
+    "schedule": "0 0 */7 * *",
+    "time_zone": "Asia/Hong_Kong",
+    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
+    "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/weather/weather_nasa_power.json",
+    "parallelism": 1,
+    "taskCount": 1,
+    "maxRetries": 0,
+    "timeoutSeconds": 86400,
+    "cpu": "2000m",
+    "memory": "8Gi",
+    "nfs": false
+  },
+  {
     "name": "scrape-em-us",
     "schedule": "30 22 1 3,6,9,12 *",
     "time_zone": "Asia/Hong_Kong",

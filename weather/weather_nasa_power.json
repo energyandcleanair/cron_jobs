@@ -1,0 +1,24 @@
+{
+  "command": "refresh_weather_measurements",
+  "scraper": "nasa_power",
+  "filters": [
+    {
+      "region_type": "station",
+      "station_source": "gem",
+      "iso2": "CN",
+      "date_from": -10,
+      "variable": [
+        "ws50m_daily"
+      ]
+    },
+    {
+      "region_type": "station",
+      "station_source": "gem",
+      "iso2": "EU",
+      "date_from": -10,
+      "variable": [
+        "ws50m_daily"
+      ]
+    }
+  ]
+}
