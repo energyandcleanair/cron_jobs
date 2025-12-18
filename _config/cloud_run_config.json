@@ -666,7 +666,7 @@
     "parallelism": 1,
     "taskCount": 1,
     "maxRetries": 0,
-    "timeoutSeconds": 7200,
+    "timeoutSeconds": 14400,
     "cpu": "2000m",
     "memory": "8Gi",
     "nfs": false
