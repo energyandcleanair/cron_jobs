@@ -1,46 +1,20 @@
-{
-  "command": "refresh_weather_measurements",
-  "scraper": "nasa_power",
-  "filters": [
-    {
-      "region_type": "station",
-      "station_source": "gem",
-      "iso2": "EU",
-      "date_from": "2023-01-01",
-      "date_to": "2023-12-31",
-      "variable": [
-        "ws50m_daily"
-      ]
-    },
-    {
-      "region_type": "station",
-      "station_source": "gem",
-      "iso2": "EU",
-      "date_from": "2022-01-01",
-      "date_to": "2022-12-31",
-      "variable": [
-        "ws50m_daily"
-      ]
-    },
-    {
-      "region_type": "station",
-      "station_source": "gem",
-      "iso2": "EU",
-      "date_from": "2021-01-01",
-      "date_to": "2021-12-31",
-      "variable": [
-        "ws50m_daily"
-      ]
-    },
-    {
-      "region_type": "station",
-      "station_source": "gem",
-      "iso2": "EU",
-      "date_from": "2020-01-01",
-      "date_to": "2020-12-31",
-      "variable": [
-        "ws50m_daily"
-      ]
-    }
-  ]
-}
+[
+  {
+    "command": "refresh_weather_measurements",
+    "scraper": "earthengine",
+    "filters": [
+      {
+        "iso2": [
+          "EU"
+        ],
+        "region_type": "country",
+        "date_from": "2020-01-01",
+        "date_to": "2023-02-12",
+        "date_direction": -1,
+        "variable": [
+          "solar_radiation"
+        ]
+      }
+    ]
+  }
+]
