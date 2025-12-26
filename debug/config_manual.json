@@ -7,7 +7,6 @@
       "station_source": "gem",
       "iso2": "EU",
       "date_from": "2020-01-01",
-      "date_direction": -1,
       "variable": [
         "t2m_daily"
       ]
@@ -17,7 +16,6 @@
       "station_source": "gem",
       "iso2": "CN",
       "date_from": "2020-01-01",
-      "date_direction": -1,
       "variable": [
         "t2m_daily"
       ]
