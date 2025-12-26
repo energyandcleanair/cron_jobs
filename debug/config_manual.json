@@ -1,38 +1,26 @@
-[
-  {
-    "command": "refresh_weather_measurements",
-    "scraper": "earthengine",
-    "filters": [
-      {
-        "iso2": ["EU"],
-        "region_type": "country",
-        "date_from": "2024-05-01",
-        "date_to": "2024-08-06",
-        "date_direction": -1,
-        "variable": [
-          "precipitation"
-        ]
-      },
-      {
-        "iso2": ["EU"],
-        "region_type": "country",
-        "date_from": "2024-11-09",
-        "date_to": "2025-06-14",
-        "date_direction": -1,
-        "variable": [
-          "precipitation"
-        ]
-      },
-      {
-        "iso2": ["EU"],
-        "region_type": "country",
-        "date_from": "2025-06-16",
-        "date_to": "2025-08-14",
-        "date_direction": -1,
-        "variable": [
-          "precipitation"
-        ]
-      }
-    ]
-  }
-]
+{
+  "command": "refresh_weather_measurements",
+  "scraper": "nasa_power",
+  "filters": [
+    {
+      "region_type": "station",
+      "station_source": "gem",
+      "iso2": "EU",
+      "date_from": "2020-01-01",
+      "date_direction": -1,
+      "variable": [
+        "t2m_daily"
+      ]
+    },
+    {
+      "region_type": "station",
+      "station_source": "gem",
+      "iso2": "CN",
+      "date_from": "2020-01-01",
+      "date_direction": -1,
+      "variable": [
+        "t2m_daily"
+      ]
+    }
+  ]
+}
