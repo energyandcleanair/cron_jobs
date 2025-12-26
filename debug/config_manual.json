@@ -8,7 +8,7 @@
       "iso2": "EU",
       "date_from": "2020-01-01",
       "variable": [
-        "t2m_daily"
+        "t10m_daily"
       ]
     },
     {
@@ -17,7 +17,7 @@
       "iso2": "CN",
       "date_from": "2020-01-01",
       "variable": [
-        "t2m_daily"
+        "t10m_daily"
       ]
     }
   ]
