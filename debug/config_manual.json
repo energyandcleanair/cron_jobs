@@ -7,19 +7,8 @@
         "EU"
       ],
       "region_type": "country",
-      "date_from": "2024-11-09",
-      "date_to": "2025-05-22",
-      "variable": [
-        "precipitation"
-      ]
-    },
-    {
-      "iso2": [
-        "EU"
-      ],
-      "region_type": "country",
-      "date_from": "2025-06-16",
-      "date_to": "2025-08-14",
+      "date_from": "2021-05-17",
+      "date_to": "2023-12-31",
       "variable": [
         "precipitation"
       ]
