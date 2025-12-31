@@ -1,23 +1,27 @@
 {
   "command": "refresh_weather_measurements",
-  "scraper": "nasa_power",
+  "scraper": "earthengine",
   "filters": [
     {
-      "region_type": "station",
-      "station_source": "gem",
-      "iso2": "EU",
-      "date_from": "2020-01-01",
+      "iso2": [
+        "EU"
+      ],
+      "region_type": "country",
+      "date_from": "2024-11-09",
+      "date_to": "2025-05-22",
       "variable": [
-        "t10m_daily"
+        "precipitation"
       ]
     },
     {
-      "region_type": "station",
-      "station_source": "gem",
-      "iso2": "CN",
-      "date_from": "2020-01-01",
+      "iso2": [
+        "EU"
+      ],
+      "region_type": "country",
+      "date_from": "2025-06-16",
+      "date_to": "2025-08-14",
       "variable": [
-        "t10m_daily"
+        "precipitation"
       ]
     }
   ]
