@@ -8,7 +8,8 @@
       "iso2": "CN",
       "date_from": -10,
       "variable": [
-        "ws50m_daily"
+        "ws50m_daily",
+        "t10m_daily"
       ]
     },
     {
@@ -17,7 +18,8 @@
       "iso2": "EU",
       "date_from": -10,
       "variable": [
-        "ws50m_daily"
+        "ws50m_daily",
+        "t10m_daily"
       ]
     }
   ]
