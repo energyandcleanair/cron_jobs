@@ -7,10 +7,10 @@
         "EU"
       ],
       "region_type": "country",
-      "date_from": "2021-05-17",
-      "date_to": "2023-12-31",
+      "date_from": "2015-01-01",
+      "date_to": "2019-12-31",
       "variable": [
-        "precipitation"
+        "solar_radiation"
       ]
     }
   ]
