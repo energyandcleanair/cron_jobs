@@ -1,16 +1,65 @@
 {
   "command": "refresh_weather_measurements",
-  "scraper": "earthengine",
+  "scraper": "nasa_power",
   "filters": [
     {
-      "iso2": [
-        "EU"
-      ],
-      "region_type": "country",
-      "date_from": "2015-01-01",
+      "region_type": "station",
+      "station_source": "gem",
+      "iso2": "EU",
+      "date_from": "2019-01-01",
       "date_to": "2019-12-31",
+      "date_direction": -1,
       "variable": [
-        "solar_radiation"
+        "ws50m_daily",
+        "t10m_daily"
+      ]
+    },
+    {
+      "region_type": "station",
+      "station_source": "gem",
+      "iso2": "EU",
+      "date_from": "2018-01-01",
+      "date_to": "2018-12-31",
+      "date_direction": -1,
+      "variable": [
+        "ws50m_daily",
+        "t10m_daily"
+      ]
+    },
+    {
+      "region_type": "station",
+      "station_source": "gem",
+      "iso2": "EU",
+      "date_from": "2017-01-01",
+      "date_to": "2017-12-31",
+      "date_direction": -1,
+      "variable": [
+        "ws50m_daily",
+        "t10m_daily"
+      ]
+    },
+    {
+      "region_type": "station",
+      "station_source": "gem",
+      "iso2": "EU",
+      "date_from": "2016-01-01",
+      "date_to": "2016-12-31",
+      "date_direction": -1,
+      "variable": [
+        "ws50m_daily",
+        "t10m_daily"
+      ]
+    },
+    {
+      "region_type": "station",
+      "station_source": "gem",
+      "iso2": "EU",
+      "date_from": "2015-01-01",
+      "date_to": "2015-12-31",
+      "date_direction": -1,
+      "variable": [
+        "ws50m_daily",
+        "t10m_daily"
       ]
     }
   ]
