@@ -7,7 +7,7 @@
         "EU"
       ],
       "region_type": "country",
-      "date_from": "2016-09-03",
+      "date_from": "2018-05-18",
       "date_to": "2019-12-31",
       "variable": [
         "solar_radiation"
