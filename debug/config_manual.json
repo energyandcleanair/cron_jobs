@@ -1,61 +1,27 @@
-{
-  "command": "refresh",
-  "scraper": "entsoe",
-  "filters": [
-    {
-      "date_from": "2025-01-01",
-      "date_to": "2025-12-31",
-      "content": ["generation"]
-    },
-    {
-      "date_from": "2024-01-01",
-      "date_to": "2024-12-31",
-      "content": ["generation"]
-    },
-    {
-      "date_from": "2023-01-01",
-      "date_to": "2023-12-31",
-      "content": ["generation"]
-    },
-    {
-      "date_from": "2022-01-01",
-      "date_to": "2022-12-31",
-      "content": ["generation"]
-    },
-    {
-      "date_from": "2021-01-01",
-      "date_to": "2021-12-31",
-      "content": ["generation"]
-    },
-    {
-      "date_from": "2020-01-01",
-      "date_to": "2020-12-31",
-      "content": ["generation"]
-    },
-    {
-      "date_from": "2019-01-01",
-      "date_to": "2019-12-31",
-      "content": ["generation"]
-    },
-    {
-      "date_from": "2018-01-01",
-      "date_to": "2018-12-31",
-      "content": ["generation"]
-    },
-    {
-      "date_from": "2017-01-01",
-      "date_to": "2017-12-31",
-      "content": ["generation"]
-    },
-    {
-      "date_from": "2016-01-01",
-      "date_to": "2016-12-31",
-      "content": ["generation"]
-    },
-    {
-      "date_from": "2015-01-01",
-      "date_to": "2015-12-31",
-      "content": ["generation"]
-    }
-  ]
-}
+[
+  {
+    "command": "refresh_measurements",
+    "scraper": "mee",
+    "filters": [
+      {
+       "date_from": -375
+     }
+   ],
+    "processes": [
+      "city_hour_mad"
+    ]
+  },
+  {
+    "command": "refresh_measurements",
+    "scraper": "mee",
+    "filters": [
+      {
+        "pollutant": ["o3"],
+        "date_from": -375
+     }
+   ],
+    "processes": [
+      "city_hour_mad"
+    ]
+  }
+]
