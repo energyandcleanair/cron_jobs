@@ -4,19 +4,7 @@
     "scraper": "mee",
     "filters": [
       {
-       "date_from": -375
-     }
-   ],
-    "processes": [
-      "city_hour_mad"
-    ]
-  },
-  {
-    "command": "refresh_measurements",
-    "scraper": "mee",
-    "filters": [
-      {
-        "pollutant": ["o3"],
+        "pollutant": ["pm10", "pm25"],
         "date_from": -375
      }
    ],
