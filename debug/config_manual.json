@@ -5,8 +5,8 @@
     "filters": [
       {
         "pollutant": ["pm10", "pm25"],
-        "date_from": "2025-05-01",
-        "date_to": "2025-07-01"
+        "date_from": "2025-07-01",
+        "date_to": "2025-09-01"
      }
    ],
     "processes": [
