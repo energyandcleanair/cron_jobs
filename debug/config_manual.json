@@ -1,16 +1,12 @@
-[
-  {
-    "command": "refresh_measurements",
-    "scraper": "mee",
-    "filters": [
-      {
-        "pollutant": ["pm10", "pm25"],
-        "date_from": "2025-11-01",
-        "date_to": "2026-01-01"
-     }
-   ],
-    "processes": [
-      "city_hour_mad"
+{
+  "command": "run_script",
+  "rscript":{
+    "content": [
+      "library(creadeweather)",
+      "era5.refresh_files('2026-01-03')"
     ]
-  }
-]
+  },
+  "environment_variables":[
+    "GITHUB_PAT"
+  ]
+}
