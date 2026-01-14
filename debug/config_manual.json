@@ -1,12 +1,16 @@
-{
-  "command": "run_script",
-  "rscript":{
-    "content": [
-      "library(creadeweather)",
-      "era5.refresh_files('2026-01-03')"
+[
+  {
+    "command": "deweather_measurements",
+    "source": "mee",
+    "poll": [
+      "pm25"
+    ],
+    "deweather_process_id": [
+      "default_anomaly_2018_2099"
+    ],
+    "yoy_months": [-1],
+    "location_id": [
+      "harbin_chn.11_1_cn"
     ]
-  },
-  "environment_variables":[
-    "GITHUB_PAT"
-  ]
-}
+  }
+]
