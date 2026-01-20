@@ -97,6 +97,40 @@
         "date_key": "date",
         "date_within_days": 15
       }
+    },
+    {
+      "description": "Recent weather India GADM1 has any CDD value",
+      "type": "latest_available_date_at_least",
+      "config": {
+        "endpoint": "/v1/weather",
+        "params": {
+          "source": "ERA5",
+          "region_type": "gadm1",
+          "region_iso2": "IN",
+          "variable": "CDD"
+        },
+        "date_from_key": "date_from",
+        "date_to_key": "date_to",
+        "date_key": "date",
+        "date_within_days": 15
+      }
+    },
+    {
+      "description": "Recent weather India GADM1 has any HDD value",
+      "type": "latest_available_date_at_least",
+      "config": {
+        "endpoint": "/v1/weather",
+        "params": {
+          "source": "ERA5",
+          "region_type": "gadm1",
+          "region_iso2": "IN",
+          "variable": "HDD"
+        },
+        "date_from_key": "date_from",
+        "date_to_key": "date_to",
+        "date_key": "date",
+        "date_within_days": 15
+      }
     },  
     {
       "description": "Air trajectory Beijing has a recent enough latest date",
@@ -144,6 +178,20 @@
         "endpoint": "/power/generation",
         "params": {
           "region": "EU"
+        },
+        "date_from_key": "date_from",
+        "date_to_key": "date_to",
+        "date_key": "date",
+        "date_within_days": 13
+      }
+    },
+    {
+      "description": "Recent India Power Generation has any data",
+      "type": "latest_available_date_at_least",
+      "config": {
+        "endpoint": "/energy/power_generation",
+        "params": {
+          "country": "IN"
         },
         "date_from_key": "date_from",
         "date_to_key": "date_to",
