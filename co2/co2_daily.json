@@ -18,6 +18,7 @@
   "POWER_DB_PRODUCTION",
   "API_KEY",
   "AGSI_API_KEY",
+  "EMBER_KEY",
   "GITHUB_PAT"
  ]
 }
