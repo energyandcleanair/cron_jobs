@@ -2,6 +2,9 @@
   "command": "run_script",
   "rscript":{
     "content": [
+      "try(readRenviron('.Renviron'))",
+      "try(readRenviron('app/.Renviron'))",
+      "try(readRenviron('app/.env'))",
       "library(creahelpers)",
       "library(rcrea)",
       "library(creadeweather)",
