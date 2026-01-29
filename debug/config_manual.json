@@ -18,6 +18,8 @@
     ]
   },
   "environment_variables":[
-    "GITHUB_PAT"
+    "GITHUB_PAT",
+    "CDS_UID",
+    "CDS_TOKEN"
   ]
 }
