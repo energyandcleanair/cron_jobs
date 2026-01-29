@@ -1,25 +1,16 @@
 {
-  "command": "run_script",
-  "rscript":{
-    "content": [
-      "try(readRenviron('.Renviron'))",
-      "try(readRenviron('app/.Renviron'))",
-      "try(readRenviron('app/.env'))",
-      "remotes::install_github('energyandcleanair/creadeweather', upgrade=F, force=F)",
-      "library('rcrea')",
-      "library('creahelpers')",
-      "library('creadeweather')",
-      "library('creatrajs')",
-      "library('creafire')",
-      "library(tidyverse)",
-      "library(glue)",
-      "era5_long_vars <- c('boundary_layer_height', '10m_u_component_of_wind', '10m_v_component_of_wind', '2m_temperature', '2m_dewpoint_temperature', 'surface_pressure', 'total_precipitation')",
-      "era5.download_nc(force = FALSE, date = ymd('2026-01-04'), era5_long_vars = era5_long_vars, folder = '/mnt/crea_nfs/weather/era5', min_layers = 24, time_out = NULL)"
+    "command": "deweather_measurements",
+    "source": "mee",
+    "poll": [
+      "pm25",
+      "no2",
+      "pm10"
+    ],
+    "deweather_process_id": [
+      "default_anomaly_2018_2099"
+    ],
+    "yoy_months": [-1, -2],
+    "location_id": [
+      "harbin_chn.11_1_cn"
     ]
-  },
-  "environment_variables":[
-    "GITHUB_PAT",
-    "CDS_UID",
-    "CDS_TOKEN"
-  ]
 }
