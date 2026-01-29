@@ -6,7 +6,6 @@
       "try(readRenviron('app/.Renviron'))",
       "try(readRenviron('app/.env'))",
       "require(remotes)",
-      "install.packages('keyring', repos = 'https://cloud.r-project.org/')",
       "install_and_load_github <- function(repo) {{remotes::install_github(paste0('energyandcleanair/', repo), force=F, upgrade=F); if(repo %in% (.packages())){{try(detach(paste0('package:', repo), unload=T))}}; library(repo, character.only = TRUE);}}",
       "install.packages('ecmwfr')",
       "install_and_load_github('rcrea')",
