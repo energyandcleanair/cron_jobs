@@ -5,7 +5,7 @@
       "try(readRenviron('.Renviron'))",
       "try(readRenviron('app/.Renviron'))",
       "try(readRenviron('app/.env'))",
-      "remotes::install_github('energyandcleanair/deweather', upgrade=F, force=F)",
+      "remotes::install_github('energyandcleanair/creadeweather', upgrade=F, force=F)",
       "library('rcrea')",
       "library('creahelpers')",
       "library('creadeweather')",
