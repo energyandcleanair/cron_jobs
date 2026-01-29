@@ -6,7 +6,6 @@
       "library(rcrea)",
       "library(creadeweather)",
       "library(creatrajs)",
-      "library(creafire)",
       "library(tidyverse)",
       "library(glue)",
       "era5_long_vars <- c('boundary_layer_height', '10m_u_component_of_wind', '10m_v_component_of_wind', '2m_temperature', '2m_dewpoint_temperature', 'surface_pressure', 'total_precipitation')",
