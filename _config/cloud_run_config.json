@@ -99,7 +99,7 @@
   },
   {
     "name": "deweather-mee",
-    "schedule": "0 0 10 * *",
+    "schedule": "0 0 7 * *",
     "time_zone": "Etc/UTC",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/deweather/config_deweather_mee.json",
