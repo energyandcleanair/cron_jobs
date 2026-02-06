@@ -198,6 +198,22 @@
         "date_key": "date",
         "date_within_days": 13
       }
+    },
+    {
+      "description": "Recent deweather Haikou, China has any value",
+      "type": "latest_available_date_at_least",
+      "config": {
+        "endpoint": "/v1/measurements",
+        "params": {
+          "location_id": "haikou_chn.9_1_cn",
+          "variable": "anomaly",
+          "pollutant": "pm25"
+        },
+        "date_from_key": "date_from",
+        "date_to_key": "date_to",
+        "date_key": "date",
+        "date_within_days": 39
+      }
     }
   ]
 }
