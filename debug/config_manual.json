@@ -1,32 +1,19 @@
-[
-  {
-    "command": "refresh_measurements",
-    "scraper": "cpcb",
-    "filters": [
-      {
-        "pollutant": ["pm25", "pm10", "no2"],
-        "date_from": -3
-      }
-    ],
-    "processes": [
-      "city_day_mad",
-      "station_day_mad"
-    ]
-  },
-  {
-    "command": "refresh_measurements",
-    "scraper": "cpcb",
-    "filters": [
-      {
-        "pollutant": ["o3"],
-        "date_from": -3
-      }
-    ],
-    "processes": [
-      "city_day_mad",
-      "station_day_mad",
-      "station_8h_max_day_mad",
-      "city_8h_max_day_mad"
-    ]
-  }
-]
+
+{
+  "command": "refresh_weather_measurements",
+  "scraper": "earthengine",
+  "filters": [
+    {
+      "iso2": [
+        "ID",
+        "IN",
+        "CN"
+      ],
+      "region_type": "gadm1",
+      "date_from": "2025-01-01",
+      "variable": [
+        "heat_index"
+      ]
+    }
+  ]
+}
