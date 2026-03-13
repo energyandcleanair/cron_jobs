@@ -309,7 +309,7 @@
   },
   {
     "name": "scrape-energy-posoco-in",
-    "schedule": "0 0 */7 * *",
+    "schedule": "0 0 * * *",
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/power/config_posoco_in.json",
