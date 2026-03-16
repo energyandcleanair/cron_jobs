@@ -14,7 +14,7 @@
       "library(chinatracker)",
       "library(ggrepel)",
       "folder <- {tmp_dir}",
-      "build_snapshot(output_dir = folder, plots = c('aq_compliance', 'air_quality'))"
+      "build_snapshot(output_dir = folder, plots = c('aq_compliance', 'air_quality', 'steel_indicator', 'power_generation', 'industry_output', 'fuel_supply', 'car_sales'))"
     ]
   },
   "export": [
