@@ -1,0 +1,14 @@
+[
+  {
+    "command": "refresh_measurements",
+    "scraper": "mefindo_hourly",
+    "filters": [{}],
+    "processes": [
+      "raw"
+    ]
+  },
+    {
+    "command": "refresh_locations",
+    "scraper": "mefindo_hourly"
+  }
+]
