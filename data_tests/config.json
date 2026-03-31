@@ -214,6 +214,25 @@
         "date_key": "date",
         "date_within_days": 39
       }
+    },
+    {
+      "description": "Recent WIND steel plant metadata has a recent \"Update\" date",
+      "type": "wind_latest_available_metadata_recency",
+      "config": {
+        "full_url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4bC6se-U5hWZWWINNQXeccSxPyQqt81Y1nFMsqYqavhfUatnpREvcSM4qiQcWYw/pub?gid=657368505&single=true&output=csv",
+        "column_to_max_age_days": {
+          "China: Blast Furnace Starting Rate (247)": 10,
+          "China: Blast Furnace Refining Production Capacity Utilization (247)": 10,
+          "China: Tangshan: Operating Rate of Blast Furnaces": 10,
+          "China: Operating Rate: Electric Furnace": 10,
+          "China: Capacity Utilization: Electric Stove": 10,
+          "China: Estimated Daily Average Output: Steel Products": 10,
+          "China: Estimated Daily Average Output: Pig Iron": 10,
+          "China: Estimated Daily Average Output: Crude Steel": 10,
+          "China: Daily Average Output: Crude Steel": 10,
+          "China: Operating Rate: Wire Rod: Major Steel Mills": 10
+        }
+      }
     }
   ]
 }
