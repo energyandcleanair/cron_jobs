@@ -1,9 +1,5 @@
 [
   {
-    "command": "refresh_locations",
-    "scraper": "doebd"
-  },
-  {
     "command": "refresh_measurements",
     "scraper": "doebd",
     "filters": [{"date_from": -14}],
@@ -12,5 +8,9 @@
       "station_day_mad",
       "city_day_mad"
     ]
+  },
+  {
+    "command": "refresh_locations",
+    "scraper": "doebd"
   }
 ]
