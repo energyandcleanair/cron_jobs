@@ -1,7 +1,7 @@
 [
   {
     "command": "refresh_measurements",
-    "scraper": "mefindo",
+    "scraper": "mefindo_24hr",
     "filters": [{"date_from": -7}],
     "processes": [
       "raw"
