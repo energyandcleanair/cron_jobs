@@ -1,7 +1,7 @@
 [
   {
     "command": "compute_trajectories",
-    "date_from": -3,
+    "date_from": -7,
     "city": [
       "ambon_idn.19_1_id",
       "balikpapan_idn.15_1_id",
