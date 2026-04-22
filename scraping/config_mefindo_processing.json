@@ -5,7 +5,8 @@
     "filters": [{"date_from": -7}],
     "processes": [
       "city_day_mad",
-      "station_day_mad"
+      "station_day_mad",
+      "city_hour_mad"
     ]
   },
    {
