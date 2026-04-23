@@ -1,12 +1,9 @@
-[
-  {
-    "command": "compute_trajectories",
-    "date_from": -14,
-    "location_id": [
-      "jakarta pusat_idn.7_1_id",
-      "jakarta timur_idn.7_1_id",
-      "jakarta utara_idn.7_1_id",
-      "jakarta south_idn.7_1_id"
-    ]
-  }
-]
+{
+  "command": "refresh",
+  "scraper": "entsoe",
+  "filters": [
+    {
+      "date_from": "2025-01-01"
+    }
+  ]
+}
