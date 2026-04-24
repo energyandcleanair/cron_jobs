@@ -681,7 +681,7 @@
     "taskCount": 1,
     "maxRetries": 0,
     "timeoutSeconds": 86400,
-    "cpu": "500m",
+    "cpu": "1000m",
     "memory": "1Gi",
     "nfs": false
   },
@@ -695,7 +695,7 @@
     "taskCount": 1,
     "maxRetries": 0,
     "timeoutSeconds": 86400,
-    "cpu": "500m",
+    "cpu": "1000m",
     "memory": "1Gi",
     "nfs": false
   },
