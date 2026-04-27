@@ -1,9 +1,19 @@
 {
-  "command": "refresh",
-  "scraper": "entsoe",
+  "command": "refresh_weather_measurements",
+  "scraper": "earthengine",
   "filters": [
     {
-      "date_from": "2025-01-01"
+      "iso2": [
+        "IN"
+      ],
+      "region_type": "gadm1",
+      "date_from": "2020-01-01",
+      "date_to": "2024-06-26",
+      "date_direction": -1,
+      "variable": [
+        "heat_index",
+        "temperature"
+      ]
     }
   ]
 }
