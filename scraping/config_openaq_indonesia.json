@@ -1,0 +1,18 @@
+[
+    {
+        "command": "refresh_measurements",
+        "error_if_no_measurement": true,
+        "debug": true,
+        "scraper": "openaq",
+        "store_raw": false,
+        "filters": [
+            {
+                "country": ["ID"],
+                "providers": ["AirGradient", "Clean Air Catalyst", "HabitatMap"],
+                "is_monitor": false,
+                "poll": ["pm25", "pm10", "pm1", "o3", "no2", "so2", "co"],
+                "date_from": -2
+            }
+        ]
+    }
+]

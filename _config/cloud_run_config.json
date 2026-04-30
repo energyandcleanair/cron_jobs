@@ -42,6 +42,20 @@
     "nfs": true
   },
   {
+    "name": "compute-trajectories-indonesia",
+    "schedule": "0 0 * * *",
+    "time_zone": "Etc/UTC",
+    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
+    "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/trajectories/compute_trajectories_indonesia.json",
+    "parallelism": 1,
+    "taskCount": 1,
+    "maxRetries": 0,
+    "timeoutSeconds": 86400,
+    "cpu": "2000m",
+    "memory": "8Gi",
+    "nfs": true
+  },
+  {
     "name": "deweather-mee",
     "schedule": "0 0 7 * *",
     "time_zone": "Etc/UTC",
@@ -537,6 +551,20 @@
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/scraping/config_openaq_asia_so2.json",
+    "parallelism": 1,
+    "taskCount": 1,
+    "maxRetries": 0,
+    "timeoutSeconds": 86400,
+    "cpu": "2000m",
+    "memory": "4Gi",
+    "nfs": false
+  },
+  {
+    "name": "scrape-openaq-indonesia",
+    "schedule": "0 3 * * *",
+    "time_zone": "Asia/Hong_Kong",
+    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
+    "command": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/scraping/config_openaq_indonesia.json",
     "parallelism": 1,
     "taskCount": 1,
     "maxRetries": 0,
