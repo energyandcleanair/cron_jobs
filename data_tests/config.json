@@ -238,9 +238,9 @@
       "config": {
         "full_url": "http://docs.google.com/spreadsheets/d/1-LumT7h3GSryFLFYzxK_QedmhI6X4y58/export?format=csv",
         "column_to_max_age_days": {
-          "China: Blast Furnace Starting Rate (247)": 10,
-          "China: Blast Furnace Refining Production Capacity Utilization (247)": 10,
-          "China: Tangshan: Operating Rate of Blast Furnaces": 10,
+          "China: Blast Furnace Starting Rate (247)": 12,
+          "China: Blast Furnace Refining Production Capacity Utilization (247)": 12,
+          "China: Tangshan: Operating Rate of Blast Furnaces": 12,
           "China: Operating Rate: Electric Furnace": 10,
           "China: Capacity Utilization: Electric Stove": 10,
           "China: Estimated Daily Average Output: Steel Products": 17,
