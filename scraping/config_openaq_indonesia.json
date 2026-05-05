@@ -10,7 +10,7 @@
                 "country": ["ID"],
                 "poll": ["pm25", "pm10", "pm1", "o3", "no2", "so2", "co"],
                 "date_from": -2,
-                "openaq": {
+                "config": {
                     "providers": ["AirGradient", "Clean Air Catalyst", "HabitatMap"],
                     "is_monitor": false
                 }

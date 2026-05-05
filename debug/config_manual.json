@@ -1,19 +1,29 @@
-{
-  "command": "refresh_weather_measurements",
-  "scraper": "earthengine",
+[
+  {
+  "command": "process_measurements",
+  "scraper": "mefindo_24hr",
   "filters": [
     {
-      "iso2": [
-        "IN"
-      ],
-      "region_type": "gadm1",
-      "date_from": "2020-01-01",
-      "date_to": "2024-06-26",
-      "date_direction": -1,
-      "variable": [
-        "heat_index",
-        "temperature"
-      ]
+      "date_from": "2025-01-01"
     }
+  ],
+  "processes": [
+    "city_day_rolling24h_eod",
+    "station_day_rolling24h_eod"
   ]
-}
+},
+{
+  "command": "process_measurements",
+  "scraper": "mefindo_hourly",
+  "filters": [
+    {
+      "date_from": "2025-01-01"
+    }
+  ],
+  "processes": [
+    "city_day_mad",
+    "station_day_mad",
+    "city_hour_mad",
+    "station_hour_mad"
+  ]
+}]
