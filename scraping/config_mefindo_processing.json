@@ -19,16 +19,6 @@
       "city_hour_mad"
     ]
   },
-  {
-    "command": "process_measurements",
-    "scraper": "openaq_lowcost",
-    "filters": [{"date_from": -7}],
-    "processes": [
-      "city_day_mad",
-      "station_day_mad",
-      "city_hour_mad"
-    ]
-  },
    {
     "command": "process_measurements",
     "scraper": "mefindo_24hr",
