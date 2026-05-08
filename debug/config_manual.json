@@ -4,6 +4,7 @@
 		"location_id": [
 			"ambon_idn.19_1_id"
 		  ],
-		"date_from": -10
+		"date_from": -10,
+    "upload_results": true
 	}
 ]
