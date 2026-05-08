@@ -5,6 +5,7 @@
 			"ambon_idn.19_1_id"
 		  ],
 		"date_from": -10,
-    "upload_results": true
+    "upload_results": true,
+    "force": false
 	}
 ]
