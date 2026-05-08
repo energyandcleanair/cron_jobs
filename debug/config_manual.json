@@ -1,29 +1,9 @@
 [
-  {
-  "command": "process_measurements",
-  "scraper": "mefindo_24hr",
-  "filters": [
-    {
-      "date_from": "2025-01-01"
-    }
-  ],
-  "processes": [
-    "city_day_rolling24h_eod",
-    "station_day_rolling24h_eod"
-  ]
-},
-{
-  "command": "process_measurements",
-  "scraper": "mefindo_hourly",
-  "filters": [
-    {
-      "date_from": "2025-01-01"
-    }
-  ],
-  "processes": [
-    "city_day_mad",
-    "station_day_mad",
-    "city_hour_mad",
-    "station_hour_mad"
-  ]
-}]
+	{
+		"command": "compute_trajectories",
+		"location_id": [
+			"ambon_idn.19_1_id"
+		  ],
+		"date_from": -10
+	}
+]
