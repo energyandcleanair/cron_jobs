@@ -36,5 +36,14 @@
       "city_day_rolling24h_eod",
       "station_day_rolling24h_eod"
     ]
+  },
+  {
+    "command": "process_measurements",
+    "scraper": "dlh",
+    "filters": [{"date_from": -7}],
+    "processes": [
+      "city_day_mad",
+      "station_day_mad"
+    ]
   }
 ]
