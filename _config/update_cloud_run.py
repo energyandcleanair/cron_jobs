@@ -5,8 +5,6 @@ from google.cloud import run_v2, scheduler_v1
 from time import sleep
 from typing import Dict
 
-run_client = run_v2.JobsClient()
-scheduler_client = scheduler_v1.CloudSchedulerClient()
 local_config_file_name = "cloud_run_config.json"
 
 location = "europe-west1"
@@ -24,10 +22,26 @@ nfs_path = "/crea_nfs"
 nfs_mount_path = f"/mnt{nfs_path}"
 nfs_server = "10.21.193.2"
 
+# Ownership marker. Only jobs carrying this annotation are managed by this
+# script; every other job (e.g. ones created manually in the console) is left
+# untouched. A domain-prefixed key is used because Cloud Run labels disallow
+# dots/slashes, whereas Knative-style annotations permit a DNS prefix.
+MANAGED_BY_KEY = "energyandcleanair.org/managed-by"
+MANAGED_BY_VALUE = "cron-jobs-config"
+
 
 def main():
-    jobs, schedulers = get_remote_jobs_and_schedulers()
-    remote_config = generate_current_config(jobs, schedulers)
+    run_client = run_v2.JobsClient()
+    scheduler_client = scheduler_v1.CloudSchedulerClient()
+
+    jobs, schedulers = get_remote_jobs_and_schedulers(run_client, scheduler_client)
+    managed_jobs = filter_managed_jobs(jobs)
+
+    skipped = sorted(set(jobs) - set(managed_jobs))
+    if skipped:
+        print(f"Ignoring {len(skipped)} unmanaged job(s): {', '.join(skipped)}")
+
+    remote_config = generate_current_config(managed_jobs, schedulers)
     local_config = load_json(local_config_file_name)
 
     remote_config.sort(key=lambda obj: obj["name"])
@@ -39,13 +53,13 @@ def main():
         if diff[action]:
             for k, item in diff[action]:
                 prev_item = next((x for x in remote_config if x["name"] == item["name"]), {})
-                create_job(action, item)
-                create_scheduler_job(action, prev_item, item)
+                create_job(run_client, action, item)
+                create_scheduler_job(scheduler_client, action, prev_item, item)
 
     print(diff)
 
 
-def get_remote_jobs_and_schedulers():
+def get_remote_jobs_and_schedulers(run_client, scheduler_client):
     jobs_response = run_client.list_jobs(request=run_v2.ListJobsRequest(parent=project_path, page_size=500))
     schedulers_response = scheduler_client.list_jobs(
         request=scheduler_v1.ListJobsRequest(parent=project_path, page_size=500)
@@ -56,6 +70,16 @@ def get_remote_jobs_and_schedulers():
 
     print(f"Found {len(jobs)} jobs and {len(schedulers)} schedulers.")
     return jobs, schedulers
+
+
+def is_managed(job) -> bool:
+    """A job is managed by this script iff it carries the ownership annotation."""
+    return dict(job.annotations).get(MANAGED_BY_KEY) == MANAGED_BY_VALUE
+
+
+def filter_managed_jobs(jobs: Dict[str, run_v2.Job]) -> Dict[str, run_v2.Job]:
+    """Keep only the jobs this script owns; unmanaged jobs are ignored entirely."""
+    return {name: job for name, job in jobs.items() if is_managed(job)}
 
 
 def generate_current_config(jobs: Dict[str, run_v2.Job], schedulers: Dict[str, scheduler_v1.Job]):
@@ -90,7 +114,7 @@ def generate_current_config(jobs: Dict[str, run_v2.Job], schedulers: Dict[str, s
     return output
 
 
-def create_job(action, item):
+def create_job(run_client, action, item):
     if action == "inserted":
         job = construct_job(item)
         job.name = None
@@ -112,7 +136,7 @@ def create_job(action, item):
     sleep(2)
 
 
-def create_scheduler_job(action: str, prev_item: dict, item: dict):
+def create_scheduler_job(scheduler_client, action: str, prev_item: dict, item: dict):
 
     if not prev_item:
         action = "inserted"
@@ -156,6 +180,8 @@ def construct_scheduler(item: dict):
 def construct_job(item: dict):
     job = run_v2.Job()
     job.name = full_project_job_name.format(job_name=item["name"])
+    # Stamp the ownership annotation so this job is recognised as managed on later runs.
+    job.annotations = {MANAGED_BY_KEY: MANAGED_BY_VALUE}
     job.template = run_v2.ExecutionTemplate()
     job.template.template = run_v2.TaskTemplate()
 
