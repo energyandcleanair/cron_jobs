@@ -17,7 +17,17 @@
         "precipitation"
       ]
     },
-     {
+    {
+      "iso2": [
+        "IN"
+      ],
+      "region_type": "country",
+      "date_from": -10,
+      "variable": [
+        "temperature"
+      ]
+    },
+    {
       "iso2": [
         "EU",
         "GB"
