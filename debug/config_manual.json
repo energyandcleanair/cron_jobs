@@ -5,14 +5,16 @@
 		"filters": [
 			{
 				"iso2": [
-					"IN"
+					"ID",
+					"IN",
+					"CN"
 				],
-				"region_type": "country",
-				"date_from": "2000-01-01",
-				"date_to": "2025-10-28",
+				"region_type": "gadm1",
+				"date_from": "2012-01-19",
+				"date_to": "2014-12-31",
 				"date_direction": "backward",
 				"variable": [
-					"temperature"
+					"thermal_anomaly"
 				]
 			}
 		]
