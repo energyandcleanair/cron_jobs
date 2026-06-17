@@ -131,6 +131,39 @@ def test_unmanaged_job_excluded_from_config_and_diff():
     assert diff["removed"] is None
 
 
+def test_check_diff_treats_middle_insertion_as_inserted_not_updated():
+    remote = [_item("a-job"), _item("c-job")]
+    local = [_item("a-job"), _item("b-job"), _item("c-job")]
+
+    diff = ucr.check_diff(remote, local)
+
+    assert diff["inserted"] == [(1, _item("b-job"))]
+    assert diff["updated"] is None
+    assert diff["removed"] is None
+
+
+def test_check_diff_detects_updates_by_name_after_insertion():
+    remote = [_item("a-job"), _item("c-job", schedule="0 * * * *")]
+    local = [_item("a-job"), _item("b-job"), _item("c-job", schedule="30 * * * *")]
+
+    diff = ucr.check_diff(remote, local)
+
+    assert diff["inserted"] == [(1, _item("b-job"))]
+    assert diff["updated"] == [(2, _item("c-job", schedule="30 * * * *"))]
+    assert diff["removed"] is None
+
+
+def test_check_diff_treats_rename_as_insert_and_remove():
+    remote = [_item("a-job"), _item("old-job"), _item("z-job")]
+    local = [_item("a-job"), _item("new-job"), _item("z-job")]
+
+    diff = ucr.check_diff(remote, local)
+
+    assert diff["inserted"] == [(1, _item("new-job"))]
+    assert diff["removed"] == [(1, _item("old-job"))]
+    assert diff["updated"] is None
+
+
 # --------------------------------------------------------------------------- #
 # Reconciliation actions create the right resources
 # --------------------------------------------------------------------------- #

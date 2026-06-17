@@ -1,6 +1,4 @@
 import json
-import jsondiff
-from jsondiff import symbols
 from google.cloud import run_v2, scheduler_v1
 from time import sleep
 from typing import Dict
@@ -229,8 +227,15 @@ def construct_job(item: dict):
     return job
 
 
-def check_diff(remote_config: dict, local_config: dict):
-    diff = jsondiff.diff(remote_config, local_config, syntax="explicit")
+def check_diff(remote_config: list[dict], local_config: list[dict]):
+    """Return reconciliation actions by comparing configs by stable job name.
+
+    jsondiff compares lists by position, so inserting a new job in the middle of
+    the alphabetically sorted config can be reported as an update to the item at
+    that index. For a brand-new Cloud Run job, that leads this script to call
+    update_job before create_job, which fails with NOT_FOUND. Use job names as
+    identifiers instead so new jobs are always inserted first.
+    """
 
     result = {
         "inserted": None,
@@ -238,21 +243,29 @@ def check_diff(remote_config: dict, local_config: dict):
         "updated": None,
     }
 
-    if diff == {} or diff is None:  # If no differences found
-        return result
+    remote_by_name = {item["name"]: (index, item) for index, item in enumerate(remote_config)}
+    local_by_name = {item["name"]: (index, item) for index, item in enumerate(local_config)}
 
-    if symbols.insert in diff:
-        result["inserted"] = diff[symbols.insert]
+    inserted = [
+        (local_by_name[name][0], local_by_name[name][1])
+        for name in sorted(set(local_by_name) - set(remote_by_name))
+    ]
+    removed = [
+        (remote_by_name[name][0], remote_by_name[name][1])
+        for name in sorted(set(remote_by_name) - set(local_by_name))
+    ]
+    updated = [
+        (local_by_name[name][0], local_by_name[name][1])
+        for name in sorted(set(remote_by_name) & set(local_by_name))
+        if remote_by_name[name][1] != local_by_name[name][1]
+    ]
 
-    if symbols.delete in diff:
-        result["removed"] = [(key, remote_config[key]) for key in diff[symbols.delete]]
-
-    # Check for completely removed items in the current data
-    if diff == [] and len(remote_config) > 0 and len(local_config) == 0:
-        result["removed"] = [(key, remote_config[key]) for key, _ in enumerate(remote_config)]
-        return result
-
-    result["updated"] = [(key, local_config[key]) for key, _ in diff.items() if isinstance(key, int)]
+    if inserted:
+        result["inserted"] = inserted
+    if removed:
+        result["removed"] = removed
+    if updated:
+        result["updated"] = updated
 
     return result
 
