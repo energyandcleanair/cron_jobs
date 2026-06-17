@@ -153,6 +153,17 @@ def test_check_diff_detects_updates_by_name_after_insertion():
     assert diff["removed"] is None
 
 
+def test_check_diff_treats_rename_as_insert_and_remove():
+    remote = [_item("a-job"), _item("old-job"), _item("z-job")]
+    local = [_item("a-job"), _item("new-job"), _item("z-job")]
+
+    diff = ucr.check_diff(remote, local)
+
+    assert diff["inserted"] == [(1, _item("new-job"))]
+    assert diff["removed"] == [(1, _item("old-job"))]
+    assert diff["updated"] is None
+
+
 # --------------------------------------------------------------------------- #
 # Reconciliation actions create the right resources
 # --------------------------------------------------------------------------- #
