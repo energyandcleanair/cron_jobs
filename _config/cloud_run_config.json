@@ -700,7 +700,7 @@
     "nfs": false
   },
   {
-    "name": "scrape-indonesia-hourly",
+    "name": "scrape-mefindo-hourly",
     "schedule": "0 * * * *",
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
@@ -728,7 +728,7 @@
     "nfs": false
   },
   {
-    "name": "scrape-indonesia-processing",
+    "name": "scrape-mefindo-processing",
     "schedule": "2 * * * *",
     "time_zone": "Asia/Hong_Kong",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
