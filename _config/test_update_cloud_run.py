@@ -21,10 +21,18 @@ def no_sleep(monkeypatch):
     monkeypatch.setattr(ucr, "sleep", lambda *_: None)
 
 
-def make_remote_job(name, *, managed=True, image="img", command="do thing", schedule_cmd=None):
+def make_remote_job(
+    name,
+    *,
+    managed=True,
+    image="img",
+    command="do thing",
+    schedule_cmd=None,
+    region=ucr.default_location,
+):
     """Build a realistic run_v2.Job as returned by list_jobs."""
     job = run_v2.Job()
-    job.name = ucr.full_project_job_name.format(job_name=name)
+    job.name = ucr.full_project_job_name_for(region, name)
     if managed:
         job.annotations = {ucr.MANAGED_BY_KEY: ucr.MANAGED_BY_VALUE}
     job.template = run_v2.ExecutionTemplate()
@@ -113,6 +121,22 @@ def test_construct_job_stamps_ownership_annotation():
     assert ucr.is_managed(job)
 
 
+def test_construct_job_uses_configured_region():
+    item = _item("scrape-cpcb", region="asia-south1")
+    job = ucr.construct_job(item)
+    assert job.name == "projects/crea-aq-data/locations/asia-south1/jobs/scrape-cpcb"
+
+
+def test_construct_scheduler_uses_configured_region():
+    item = _item("scrape-cpcb", region="asia-south1")
+    job = ucr.construct_scheduler(item)
+    assert job.name == "projects/crea-aq-data/locations/asia-south1/jobs/scrape-cpcb"
+    assert job.http_target.uri == (
+        "https://asia-south1-run.googleapis.com/apis/run.googleapis.com/v1/"
+        "namespaces/crea-aq-data/jobs/scrape-cpcb:run"
+    )
+
+
 # --------------------------------------------------------------------------- #
 # The original bug: an unmanaged remote job must never reach the diff/removal
 # --------------------------------------------------------------------------- #
@@ -164,6 +188,30 @@ def test_check_diff_treats_rename_as_insert_and_remove():
     assert diff["updated"] is None
 
 
+def test_check_diff_treats_region_change_as_insert_and_remove():
+    remote = [_item("scrape-cpcb")]
+    local = [_item("scrape-cpcb", region="asia-south1")]
+
+    diff = ucr.check_diff(remote, local)
+
+    assert diff["inserted"] == [(0, _item("scrape-cpcb", region="asia-south1"))]
+    assert diff["removed"] == [(0, _item("scrape-cpcb"))]
+    assert diff["updated"] is None
+
+
+def test_generate_current_config_includes_non_default_region():
+    remote_job = make_remote_job("scrape-cpcb", region="asia-south1")
+    remote = ucr.generate_current_config({ucr.job_key_from_resource(remote_job.name): remote_job}, schedulers={})
+    assert remote[0]["region"] == "asia-south1"
+
+
+def test_get_config_locations_includes_default_and_configured_regions():
+    assert ucr.get_config_locations([_item("a-job"), _item("b-job", region="asia-south1")]) == [
+        "asia-south1",
+        "europe-west1",
+    ]
+
+
 # --------------------------------------------------------------------------- #
 # Reconciliation actions create the right resources
 # --------------------------------------------------------------------------- #
@@ -183,8 +231,8 @@ def test_scheduler_inserted_for_new_job():
 # --------------------------------------------------------------------------- #
 # Helpers
 # --------------------------------------------------------------------------- #
-def _item(name, schedule="0 * * * *"):
-    return {
+def _item(name, schedule="0 * * * *", region=None):
+    item = {
         "name": name,
         "schedule": schedule,
         "time_zone": "UTC",
@@ -198,3 +246,6 @@ def _item(name, schedule="0 * * * *"):
         "memory": "512Mi",
         "nfs": False,
     }
+    if region:
+        item["region"] = region
+    return item

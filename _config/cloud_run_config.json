@@ -155,6 +155,7 @@
   },
   {
     "name": "scrape-cpcb",
+    "region": "asia-south1",
     "schedule": "0 5,18 * * *",
     "time_zone": "Asia/Kolkata",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
@@ -169,6 +170,7 @@
   },
   {
     "name": "scrape-cpcb-delhi",
+    "region": "asia-south1",
     "schedule": "0 * * * *",
     "time_zone": "Asia/Kolkata",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",

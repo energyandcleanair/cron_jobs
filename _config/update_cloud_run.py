@@ -5,15 +5,12 @@ from typing import Dict
 
 local_config_file_name = "cloud_run_config.json"
 
-location = "europe-west1"
+default_location = "europe-west1"
+location = default_location
 project_id = "crea-aq-data"
-project_path = f"projects/{project_id}/locations/{location}"
+project_path = f"projects/{project_id}/locations/{default_location}"
 full_project_job_name = project_path + "/jobs/{job_name}"
-nsf_connector = project_path + "/connectors/nfs-connector"
 service_account_email = "829505003332-compute@developer.gserviceaccount.com"
-scheduler_endpoint = (
-    f"https://{location}-run.googleapis.com/apis/run.googleapis.com/v1/namespaces/{project_id}" + "/jobs/{job_name}:run"
-)
 
 nfs_volume_name = "crea-nfs"
 nfs_path = "/crea_nfs"
@@ -32,39 +29,95 @@ def main():
     run_client = run_v2.JobsClient()
     scheduler_client = scheduler_v1.CloudSchedulerClient()
 
-    jobs, schedulers = get_remote_jobs_and_schedulers(run_client, scheduler_client)
+    local_config = load_json(local_config_file_name)
+    locations = get_config_locations(local_config)
+    jobs, schedulers = get_remote_jobs_and_schedulers(run_client, scheduler_client, locations)
     managed_jobs = filter_managed_jobs(jobs)
 
     skipped = sorted(set(jobs) - set(managed_jobs))
     if skipped:
-        print(f"Ignoring {len(skipped)} unmanaged job(s): {', '.join(skipped)}")
+        print(f"Ignoring {len(skipped)} unmanaged job(s): {', '.join(format_job_key(job) for job in skipped)}")
 
     remote_config = generate_current_config(managed_jobs, schedulers)
-    local_config = load_json(local_config_file_name)
 
-    remote_config.sort(key=lambda obj: obj["name"])
-    local_config.sort(key=lambda obj: obj["name"])
+    remote_config.sort(key=sort_config_key)
+    local_config.sort(key=sort_config_key)
 
     diff = check_diff(remote_config, local_config)
 
     for action in ["inserted", "updated", "removed"]:
         if diff[action]:
             for k, item in diff[action]:
-                prev_item = next((x for x in remote_config if x["name"] == item["name"]), {})
+                prev_item = next((x for x in remote_config if config_key(x) == config_key(item)), {})
                 create_job(run_client, action, item)
                 create_scheduler_job(scheduler_client, action, prev_item, item)
 
     print(diff)
 
 
-def get_remote_jobs_and_schedulers(run_client, scheduler_client):
-    jobs_response = run_client.list_jobs(request=run_v2.ListJobsRequest(parent=project_path, page_size=500))
-    schedulers_response = scheduler_client.list_jobs(
-        request=scheduler_v1.ListJobsRequest(parent=project_path, page_size=500)
+def get_location(item: dict) -> str:
+    return item.get("region") or default_location
+
+
+def get_config_locations(config: list[dict]) -> list[str]:
+    return sorted({default_location, *(get_location(item) for item in config)})
+
+
+def project_path_for(location: str) -> str:
+    return f"projects/{project_id}/locations/{location}"
+
+
+def full_project_job_name_for(location: str, job_name: str) -> str:
+    return f"{project_path_for(location)}/jobs/{job_name}"
+
+
+def scheduler_endpoint_for(location: str, job_name: str) -> str:
+    return (
+        f"https://{location}-run.googleapis.com/apis/run.googleapis.com/v1/namespaces/{project_id}"
+        f"/jobs/{job_name}:run"
     )
 
-    jobs = {job.name.split("/")[-1]: job for job in jobs_response}
-    schedulers = {scheduler.name.split("/")[-1]: scheduler for scheduler in schedulers_response}
+
+def nfs_connector_for(location: str) -> str:
+    return f"{project_path_for(location)}/connectors/nfs-connector"
+
+
+def get_resource_location(resource_name: str) -> str:
+    parts = resource_name.split("/")
+    return parts[parts.index("locations") + 1]
+
+
+def job_key_from_resource(resource_name: str) -> tuple[str, str]:
+    return (get_resource_location(resource_name), resource_name.split("/")[-1])
+
+
+def config_key(item: dict) -> tuple[str, str]:
+    return (get_location(item), item["name"])
+
+
+def sort_config_key(item: dict) -> tuple[str, str]:
+    return config_key(item)
+
+
+def format_job_key(job_key: tuple[str, str]) -> str:
+    location, name = job_key
+    return f"{location}/{name}"
+
+
+def get_remote_jobs_and_schedulers(run_client, scheduler_client, locations=None):
+    locations = locations or [default_location]
+    jobs = {}
+    schedulers = {}
+
+    for location in locations:
+        parent = project_path_for(location)
+        jobs_response = run_client.list_jobs(request=run_v2.ListJobsRequest(parent=parent, page_size=500))
+        schedulers_response = scheduler_client.list_jobs(
+            request=scheduler_v1.ListJobsRequest(parent=parent, page_size=500)
+        )
+
+        jobs.update({job_key_from_resource(job.name): job for job in jobs_response})
+        schedulers.update({job_key_from_resource(scheduler.name): scheduler for scheduler in schedulers_response})
 
     print(f"Found {len(jobs)} jobs and {len(schedulers)} schedulers.")
     return jobs, schedulers
@@ -84,39 +137,44 @@ def generate_current_config(jobs: Dict[str, run_v2.Job], schedulers: Dict[str, s
     output = []
 
     # join jobs and schedulers based on name
-    for job_name, job in jobs.items():
-        scheduler = schedulers.get(job_name, None)
+    for job_key, job in jobs.items():
+        scheduler = schedulers.get(job_key, None)
+        location = get_resource_location(job.name)
 
         uses_nfs = job.template.template.vpc_access.connector not in [None, ""]
         # skip first command arg if nfs is used
         index_args = 1 if uses_nfs else 0
         command = " ".join(job.template.template.containers[0].args[index_args:])
 
-        output.append(
-            {
-                "name": job.name.split("/")[-1],
-                "schedule": scheduler.schedule if scheduler else "",
-                "time_zone": scheduler.time_zone if scheduler else "",
-                "image": job.template.template.containers[0].image,
-                "command": command,
-                "parallelism": job.template.parallelism,
-                "taskCount": job.template.task_count,
-                "maxRetries": job.template.template.max_retries,
-                "timeoutSeconds": int(job.template.template.timeout.total_seconds()),
-                "cpu": job.template.template.containers[0].resources.limits["cpu"],
-                "memory": job.template.template.containers[0].resources.limits["memory"],
-                "nfs": uses_nfs,
-            }
-        )
+        item = {
+            "name": job.name.split("/")[-1],
+            "schedule": scheduler.schedule if scheduler else "",
+            "time_zone": scheduler.time_zone if scheduler else "",
+            "image": job.template.template.containers[0].image,
+            "command": command,
+            "parallelism": job.template.parallelism,
+            "taskCount": job.template.task_count,
+            "maxRetries": job.template.template.max_retries,
+            "timeoutSeconds": int(job.template.template.timeout.total_seconds()),
+            "cpu": job.template.template.containers[0].resources.limits["cpu"],
+            "memory": job.template.template.containers[0].resources.limits["memory"],
+            "nfs": uses_nfs,
+        }
+        if location != default_location:
+            item["region"] = location
+
+        output.append(item)
 
     return output
 
 
 def create_job(run_client, action, item):
+    location = get_location(item)
+
     if action == "inserted":
         job = construct_job(item)
         job.name = None
-        create_request = run_v2.CreateJobRequest(job=job, parent=project_path, job_id=item["name"])
+        create_request = run_v2.CreateJobRequest(job=job, parent=project_path_for(location), job_id=item["name"])
         response = run_client.create_job(request=create_request)
         action_msg = "Created job"
 
@@ -126,7 +184,7 @@ def create_job(run_client, action, item):
         action_msg = "Updated job"
 
     elif action == "removed":
-        delete_request = run_v2.DeleteJobRequest(name=full_project_job_name.format(job_name=item["name"]))
+        delete_request = run_v2.DeleteJobRequest(name=full_project_job_name_for(location, item["name"]))
         response = run_client.delete_job(request=delete_request)
         action_msg = "Deleted job"
 
@@ -135,6 +193,7 @@ def create_job(run_client, action, item):
 
 
 def create_scheduler_job(scheduler_client, action: str, prev_item: dict, item: dict):
+    location = get_location(item)
 
     if not prev_item:
         action = "inserted"
@@ -145,7 +204,7 @@ def create_scheduler_job(scheduler_client, action: str, prev_item: dict, item: d
 
     if action == "inserted":
         job = construct_scheduler(item)
-        create_request = scheduler_v1.CreateJobRequest(parent=project_path, job=job)
+        create_request = scheduler_v1.CreateJobRequest(parent=project_path_for(location), job=job)
         scheduler_client.create_job(request=create_request)
         action_msg = "Created scheduler job"
 
@@ -155,7 +214,7 @@ def create_scheduler_job(scheduler_client, action: str, prev_item: dict, item: d
         action_msg = "Updated scheduler job"
 
     elif action == "removed":
-        delete_request = scheduler_v1.DeleteJobRequest(name=full_project_job_name.format(job_name=item["name"]))
+        delete_request = scheduler_v1.DeleteJobRequest(name=full_project_job_name_for(location, item["name"]))
         scheduler_client.delete_job(request=delete_request)
         action_msg = "Deleted scheduler job"
 
@@ -164,20 +223,24 @@ def create_scheduler_job(scheduler_client, action: str, prev_item: dict, item: d
 
 
 def construct_scheduler(item: dict):
+    location = get_location(item)
+
     job = scheduler_v1.Job()
-    job.name = full_project_job_name.format(job_name=item["name"])
+    job.name = full_project_job_name_for(location, item["name"])
     job.schedule = item["schedule"]
     job.time_zone = item["time_zone"]
     job.http_target = scheduler_v1.HttpTarget()
-    job.http_target.uri = scheduler_endpoint.format(job_name=item["name"])
+    job.http_target.uri = scheduler_endpoint_for(location, item["name"])
     job.http_target.http_method = scheduler_v1.HttpMethod.POST
     job.http_target.oauth_token.service_account_email = service_account_email
     return job
 
 
 def construct_job(item: dict):
+    location = get_location(item)
+
     job = run_v2.Job()
-    job.name = full_project_job_name.format(job_name=item["name"])
+    job.name = full_project_job_name_for(location, item["name"])
     # Stamp the ownership annotation so this job is recognised as managed on later runs.
     job.annotations = {MANAGED_BY_KEY: MANAGED_BY_VALUE}
     job.template = run_v2.ExecutionTemplate()
@@ -200,7 +263,7 @@ def construct_job(item: dict):
 
     if item["nfs"]:
         vpc = run_v2.VpcAccess()
-        vpc.connector = nsf_connector
+        vpc.connector = nfs_connector_for(location)
         job.template.template.vpc_access = vpc
 
         # Add NFS VPC startup script
@@ -243,8 +306,8 @@ def check_diff(remote_config: list[dict], local_config: list[dict]):
         "updated": None,
     }
 
-    remote_by_name = {item["name"]: (index, item) for index, item in enumerate(remote_config)}
-    local_by_name = {item["name"]: (index, item) for index, item in enumerate(local_config)}
+    remote_by_name = {config_key(item): (index, item) for index, item in enumerate(remote_config)}
+    local_by_name = {config_key(item): (index, item) for index, item in enumerate(local_config)}
 
     inserted = [
         (local_by_name[name][0], local_by_name[name][1])
