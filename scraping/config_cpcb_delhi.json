@@ -5,6 +5,7 @@
     "filters": [
       {
         "city_name": "Delhi",
+        "pollutant": ["pm25", "pm10"],
         "date_from": -2
       }
     ]
