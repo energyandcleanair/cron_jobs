@@ -26,7 +26,8 @@ def make_remote_job(
     *,
     managed=True,
     image="img",
-    command="do thing",
+    command="",
+    args="do thing",
     secrets=None,
     schedule_cmd=None,
     region=ucr.default_location,
@@ -45,7 +46,8 @@ def make_remote_job(
     container = run_v2.Container()
     container.image = image
     container.resources.limits = {"cpu": "1", "memory": "512Mi"}
-    container.args = ["/app/config/run.sh"] + command.split(" ")
+    container.command = command.split(" ") if command else []
+    container.args = args.split(" ") if args else []
     container.env.extend(ucr.secret_env_var(secret_name) for secret_name in secrets or [])
     job.template.template.containers.append(container)
     return job
@@ -149,13 +151,40 @@ def test_construct_job_maps_secrets_to_same_named_secret_env_vars():
     assert [env_var.value_source.secret_key_ref.version for env_var in env] == ["latest", "latest"]
 
 
-def test_construct_job_uses_image_default_command_when_command_is_empty():
-    item = _item("co2-counter", command="")
+def test_construct_job_uses_image_default_command_when_command_is_omitted():
+    item = _item("co2-counter", args="")
     job = ucr.construct_job(item)
 
     container = job.template.template.containers[0]
     assert container.command == []
     assert container.args == []
+
+
+def test_construct_job_preserves_image_entrypoint_by_default():
+    item = _item("scrape-mee", args="main.py -c scrape_mee")
+    job = ucr.construct_job(item)
+
+    container = job.template.template.containers[0]
+    assert container.command == []
+    assert container.args == ["main.py", "-c", "scrape_mee"]
+
+
+def test_construct_job_can_override_command():
+    item = _item("scrape-mee", command="/custom/entrypoint", args="main.py -c scrape_mee")
+    job = ucr.construct_job(item)
+
+    container = job.template.template.containers[0]
+    assert container.command == ["/custom/entrypoint"]
+    assert container.args == ["main.py", "-c", "scrape_mee"]
+
+
+def test_construct_job_can_use_image_entrypoint_with_args():
+    item = _item("co2-counter", args="creaco2tracker::update_all(diagnostics_folder=NULL)")
+    job = ucr.construct_job(item)
+
+    container = job.template.template.containers[0]
+    assert container.command == []
+    assert container.args == ["creaco2tracker::update_all(diagnostics_folder=NULL)"]
 
 
 def test_generate_current_config_includes_secret_names():
@@ -164,6 +193,15 @@ def test_generate_current_config_includes_secret_names():
     }
     remote = ucr.generate_current_config(jobs, schedulers={})
     assert remote[0]["secrets"] == ["API_KEY", "EMBER_KEY"]
+
+
+def test_generate_current_config_omits_empty_command():
+    jobs = {
+        "co2-counter": make_remote_job("co2-counter", command="", args="do thing"),
+    }
+    remote = ucr.generate_current_config(jobs, schedulers={})
+    assert "command" not in remote[0]
+    assert remote[0]["args"] == "do thing"
 
 
 # --------------------------------------------------------------------------- #
@@ -273,13 +311,20 @@ def test_scheduler_inserted_for_new_job():
 # --------------------------------------------------------------------------- #
 # Helpers
 # --------------------------------------------------------------------------- #
-def _item(name, schedule="0 * * * *", command="do thing", secrets=None, region=None):
+def _item(
+    name,
+    schedule="0 * * * *",
+    command=None,
+    args="do thing",
+    secrets=None,
+    region=None,
+):
     item = {
         "name": name,
         "schedule": schedule,
         "time_zone": "UTC",
         "image": ucr.default_image,
-        "command": command,
+        "args": args,
         "parallelism": 1,
         "taskCount": 1,
         "maxRetries": 3,
@@ -289,6 +334,8 @@ def _item(name, schedule="0 * * * *", command="do thing", secrets=None, region=N
         "nfs": False,
         "secrets": secrets or [],
     }
+    if command is not None:
+        item["command"] = command
     if region:
         item["region"] = region
     return item
