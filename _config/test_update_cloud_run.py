@@ -27,6 +27,7 @@ def make_remote_job(
     managed=True,
     image="img",
     command="do thing",
+    secrets=None,
     schedule_cmd=None,
     region=ucr.default_location,
 ):
@@ -45,6 +46,7 @@ def make_remote_job(
     container.image = image
     container.resources.limits = {"cpu": "1", "memory": "512Mi"}
     container.args = ["/app/config/run.sh"] + command.split(" ")
+    container.env.extend(ucr.secret_env_var(secret_name) for secret_name in secrets or [])
     job.template.template.containers.append(container)
     return job
 
@@ -137,6 +139,33 @@ def test_construct_scheduler_uses_configured_region():
     )
 
 
+def test_construct_job_maps_secrets_to_same_named_secret_env_vars():
+    item = _item("co2-counter", secrets=["API_KEY", "EMBER_KEY"])
+    job = ucr.construct_job(item)
+
+    env = job.template.template.containers[0].env
+    assert [env_var.name for env_var in env] == ["API_KEY", "EMBER_KEY"]
+    assert [env_var.value_source.secret_key_ref.secret for env_var in env] == ["API_KEY", "EMBER_KEY"]
+    assert [env_var.value_source.secret_key_ref.version for env_var in env] == ["latest", "latest"]
+
+
+def test_construct_job_uses_image_default_command_when_command_is_empty():
+    item = _item("co2-counter", command="")
+    job = ucr.construct_job(item)
+
+    container = job.template.template.containers[0]
+    assert container.command == []
+    assert container.args == []
+
+
+def test_generate_current_config_includes_secret_names():
+    jobs = {
+        "co2-counter": make_remote_job("co2-counter", secrets=["API_KEY", "EMBER_KEY"]),
+    }
+    remote = ucr.generate_current_config(jobs, schedulers={})
+    assert remote[0]["secrets"] == ["API_KEY", "EMBER_KEY"]
+
+
 # --------------------------------------------------------------------------- #
 # The original bug: an unmanaged remote job must never reach the diff/removal
 # --------------------------------------------------------------------------- #
@@ -212,6 +241,19 @@ def test_get_config_locations_includes_default_and_configured_regions():
     ]
 
 
+def test_check_diff_treats_missing_optional_config_as_defaults():
+    remote = [_item("a-job")]
+    local = [_item("a-job")]
+    del local[0]["image"]
+    del local[0]["secrets"]
+
+    diff = ucr.check_diff(remote, local)
+
+    assert diff["inserted"] is None
+    assert diff["updated"] is None
+    assert diff["removed"] is None
+
+
 # --------------------------------------------------------------------------- #
 # Reconciliation actions create the right resources
 # --------------------------------------------------------------------------- #
@@ -231,13 +273,13 @@ def test_scheduler_inserted_for_new_job():
 # --------------------------------------------------------------------------- #
 # Helpers
 # --------------------------------------------------------------------------- #
-def _item(name, schedule="0 * * * *", region=None):
+def _item(name, schedule="0 * * * *", command="do thing", secrets=None, region=None):
     item = {
         "name": name,
         "schedule": schedule,
         "time_zone": "UTC",
-        "image": "img",
-        "command": "do thing",
+        "image": ucr.default_image,
+        "command": command,
         "parallelism": 1,
         "taskCount": 1,
         "maxRetries": 3,
@@ -245,6 +287,7 @@ def _item(name, schedule="0 * * * *", region=None):
         "cpu": "1",
         "memory": "512Mi",
         "nfs": False,
+        "secrets": secrets or [],
     }
     if region:
         item["region"] = region
