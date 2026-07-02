@@ -11,6 +11,7 @@ project_id = "crea-aq-data"
 project_path = f"projects/{project_id}/locations/{default_location}"
 full_project_job_name = project_path + "/jobs/{job_name}"
 service_account_email = "829505003332-compute@developer.gserviceaccount.com"
+default_image = "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest"
 
 nfs_volume_name = "crea-nfs"
 nfs_path = "/crea_nfs"
@@ -140,28 +141,32 @@ def generate_current_config(jobs: Dict[str, run_v2.Job], schedulers: Dict[str, s
     for job_key, job in jobs.items():
         scheduler = schedulers.get(job_key, None)
         location = get_resource_location(job.name)
+        container = job.template.template.containers[0]
 
         uses_nfs = job.template.template.vpc_access.connector not in [None, ""]
         # skip first command arg if nfs is used
         index_args = 1 if uses_nfs else 0
-        command = " ".join(job.template.template.containers[0].args[index_args:])
+        command = " ".join(container.args[index_args:])
+        secrets = container_secrets(container)
 
         item = {
             "name": job.name.split("/")[-1],
             "schedule": scheduler.schedule if scheduler else "",
             "time_zone": scheduler.time_zone if scheduler else "",
-            "image": job.template.template.containers[0].image,
+            "image": container.image,
             "command": command,
             "parallelism": job.template.parallelism,
             "taskCount": job.template.task_count,
             "maxRetries": job.template.template.max_retries,
             "timeoutSeconds": int(job.template.template.timeout.total_seconds()),
-            "cpu": job.template.template.containers[0].resources.limits["cpu"],
-            "memory": job.template.template.containers[0].resources.limits["memory"],
+            "cpu": container.resources.limits["cpu"],
+            "memory": container.resources.limits["memory"],
             "nfs": uses_nfs,
         }
         if location != default_location:
             item["region"] = location
+        if secrets:
+            item["secrets"] = secrets
 
         output.append(item)
 
@@ -253,13 +258,15 @@ def construct_job(item: dict):
     job.template.template.service_account = service_account_email
     job.template.template.execution_environment = run_v2.ExecutionEnvironment.EXECUTION_ENVIRONMENT_GEN2
     container = run_v2.Container()
-    container.image = item["image"]
+    container.image = item.get("image", default_image)
     # container.args = item["command"].split(" ")
     # container.command = ["python3"]
     container.resources.limits = {"cpu": item["cpu"], "memory": item["memory"]}
 
-    container.command = []  # use args[0] as the executable
-    container.args = ["/app/config/run.sh"] + item["command"].split(" ")
+    if item.get("command", ""):
+        container.command = []  # use args[0] as the executable
+        container.args = ["/app/config/run.sh"] + item["command"].split(" ")
+    container.env.extend(secret_env_var(secret_name) for secret_name in item.get("secrets", []))
 
     if item["nfs"]:
         vpc = run_v2.VpcAccess()
@@ -288,6 +295,34 @@ def construct_job(item: dict):
     job.template.template.containers.append(container)
 
     return job
+
+
+def secret_env_var(secret_name: str) -> run_v2.EnvVar:
+    return run_v2.EnvVar(
+        name=secret_name,
+        value_source=run_v2.EnvVarSource(
+            secret_key_ref=run_v2.SecretKeySelector(
+                secret=secret_name,
+                version="latest",
+            )
+        ),
+    )
+
+
+def container_secrets(container: run_v2.Container) -> list[str]:
+    secrets = []
+    for env_var in container.env:
+        secret_ref = env_var.value_source.secret_key_ref
+        if secret_ref.secret:
+            secrets.append(env_var.name)
+    return secrets
+
+
+def normalize_config_item(item: dict) -> dict:
+    normalized = dict(item)
+    normalized.setdefault("image", default_image)
+    normalized.setdefault("secrets", [])
+    return normalized
 
 
 def check_diff(remote_config: list[dict], local_config: list[dict]):
@@ -320,7 +355,7 @@ def check_diff(remote_config: list[dict], local_config: list[dict]):
     updated = [
         (local_by_name[name][0], local_by_name[name][1])
         for name in sorted(set(remote_by_name) & set(local_by_name))
-        if remote_by_name[name][1] != local_by_name[name][1]
+        if normalize_config_item(remote_by_name[name][1]) != normalize_config_item(local_by_name[name][1])
     ]
 
     if inserted:
