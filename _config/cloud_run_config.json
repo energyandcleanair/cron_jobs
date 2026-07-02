@@ -17,7 +17,7 @@
     "name": "co2-counter",
     "schedule": "15 5 * * *",
     "time_zone": "Asia/Hong_Kong",
-    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/creaco2tracker:326f8ab6fa0a4f6f61dc490dc41dfa302a4995de",
+    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/creaco2tracker:786f5f5493f80c93786fa1e206f31ec60f88f03d",
     "command": "creaco2tracker::update_all(diagnostics_folder=NULL)",
     "parallelism": 1,
     "taskCount": 1,
