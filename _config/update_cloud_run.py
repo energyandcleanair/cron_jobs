@@ -144,9 +144,8 @@ def generate_current_config(jobs: Dict[str, run_v2.Job], schedulers: Dict[str, s
         container = job.template.template.containers[0]
 
         uses_nfs = job.template.template.vpc_access.connector not in [None, ""]
-        # skip first command arg if nfs is used
-        index_args = 1 if uses_nfs else 0
-        command = " ".join(container.args[index_args:])
+        command = " ".join(container.command)
+        args = " ".join(container.args)
         secrets = container_secrets(container)
 
         item = {
@@ -154,7 +153,7 @@ def generate_current_config(jobs: Dict[str, run_v2.Job], schedulers: Dict[str, s
             "schedule": scheduler.schedule if scheduler else "",
             "time_zone": scheduler.time_zone if scheduler else "",
             "image": container.image,
-            "command": command,
+            "args": args,
             "parallelism": job.template.parallelism,
             "taskCount": job.template.task_count,
             "maxRetries": job.template.template.max_retries,
@@ -163,6 +162,8 @@ def generate_current_config(jobs: Dict[str, run_v2.Job], schedulers: Dict[str, s
             "memory": container.resources.limits["memory"],
             "nfs": uses_nfs,
         }
+        if command:
+            item["command"] = command
         if location != default_location:
             item["region"] = location
         if secrets:
@@ -259,13 +260,13 @@ def construct_job(item: dict):
     job.template.template.execution_environment = run_v2.ExecutionEnvironment.EXECUTION_ENVIRONMENT_GEN2
     container = run_v2.Container()
     container.image = item.get("image", default_image)
-    # container.args = item["command"].split(" ")
-    # container.command = ["python3"]
     container.resources.limits = {"cpu": item["cpu"], "memory": item["memory"]}
 
-    if item.get("command", ""):
-        container.command = []  # use args[0] as the executable
-        container.args = ["/app/config/run.sh"] + item["command"].split(" ")
+    command = item.get("command")
+    args = item.get("args", "")
+    if command:
+        container.command = command.split(" ")
+    container.args = args.split(" ") if args else []
     container.env.extend(secret_env_var(secret_name) for secret_name in item.get("secrets", []))
 
     if item["nfs"]:
