@@ -11,19 +11,6 @@
     "command": "refresh_locations",
     "scraper": "mefindo_hourly"
   },
-   {
-    "command": "refresh_measurements",
-    "scraper": "mefindo_silika",
-    "filters": [{"date_from": -7}],
-    "processes": [
-      "raw"
-    ],
-    "error_if_no_measurement": false
-  },
-    {
-    "command": "refresh_locations",
-    "scraper": "mefindo_silika"
-  },
   {
     "command": "refresh_measurements",
     "scraper": "dlh",
@@ -35,5 +22,18 @@
     {
     "command": "refresh_locations",
     "scraper": "dlh"
+  },
+  {
+    "command": "refresh_measurements",
+    "scraper": "mefindo_silika",
+    "filters": [{"date_from": -7}],
+    "processes": [
+      "raw"
+    ],
+    "error_if_no_measurement": false
+  },
+    {
+    "command": "refresh_locations",
+    "scraper": "mefindo_silika"
   }
 ]
