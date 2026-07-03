@@ -17,7 +17,8 @@
     "filters": [{"date_from": -7}],
     "processes": [
       "raw"
-    ]
+    ],
+    "error_if_no_measurement": false
   },
     {
     "command": "refresh_locations",
