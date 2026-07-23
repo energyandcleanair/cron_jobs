@@ -7,7 +7,8 @@
       "city_day_mad",
       "station_day_mad",
       "city_hour_mad"
-    ]
+    ],
+    "continue_on_error": true
   },
   {
     "command": "process_measurements",
@@ -17,16 +18,18 @@
       "city_day_mad",
       "station_day_mad",
       "city_hour_mad"
-    ]
+    ],
+    "continue_on_error": true
   },
-   {
+  {
     "command": "process_measurements",
     "scraper": "mefindo_24hr",
     "filters": [{"date_from": -7}],
     "processes": [
       "city_day_rolling24h_eod",
       "station_day_rolling24h_eod"
-    ]
+    ],
+    "continue_on_error": true
   },
   {
     "command": "process_measurements",
@@ -35,7 +38,8 @@
     "processes": [
       "city_day_rolling24h_eod",
       "station_day_rolling24h_eod"
-    ]
+    ],
+    "continue_on_error": true
   },
   {
     "command": "process_measurements",
@@ -45,6 +49,7 @@
       "city_day_mad",
       "station_day_mad",
       "city_hour_mad"
-    ]
+    ],
+    "continue_on_error": true
   }
 ]
