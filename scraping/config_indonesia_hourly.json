@@ -5,11 +5,13 @@
     "filters": [{"date_from": -7}],
     "processes": [
       "raw"
-    ]
+    ],
+    "continue_on_error": true
   },
-    {
+  {
     "command": "refresh_locations",
-    "scraper": "mefindo_hourly"
+    "scraper": "mefindo_hourly",
+    "continue_on_error": true
   },
   {
     "command": "refresh_measurements",
@@ -17,11 +19,13 @@
     "filters": [{"date_from": -7}],
     "processes": [
       "raw"
-    ]
+    ],
+    "continue_on_error": true
   },
-    {
+  {
     "command": "refresh_locations",
-    "scraper": "dlh"
+    "scraper": "dlh",
+    "continue_on_error": true
   },
   {
     "command": "refresh_measurements",
@@ -30,10 +34,12 @@
     "processes": [
       "raw"
     ],
-    "error_if_no_measurement": false
+    "error_if_no_measurement": false,
+    "continue_on_error": true
   },
-    {
+  {
     "command": "refresh_locations",
-    "scraper": "mefindo_silika"
+    "scraper": "mefindo_silika",
+    "continue_on_error": true
   }
 ]
