@@ -141,14 +141,23 @@ def test_construct_scheduler_uses_configured_region():
     )
 
 
+def test_construct_job_sets_default_env_vars():
+    job = ucr.construct_job(_item("scrape-mee"))
+
+    env = {env_var.name: env_var.value for env_var in job.template.template.containers[0].env if env_var.value}
+    assert env == {"ENVIRONMENT": "production", "PROJECT_ID": "crea-aq-data"}
+
+
 def test_construct_job_maps_secrets_to_same_named_secret_env_vars():
     item = _item("co2-counter", secrets=["API_KEY", "EMBER_KEY"])
     job = ucr.construct_job(item)
 
     env = job.template.template.containers[0].env
-    assert [env_var.name for env_var in env] == ["API_KEY", "EMBER_KEY"]
-    assert [env_var.value_source.secret_key_ref.secret for env_var in env] == ["API_KEY", "EMBER_KEY"]
-    assert [env_var.value_source.secret_key_ref.version for env_var in env] == ["latest", "latest"]
+    assert [env_var.name for env_var in env] == ["ENVIRONMENT", "PROJECT_ID", "API_KEY", "EMBER_KEY"]
+    assert env[0].value == "production"
+    assert env[1].value == "crea-aq-data"
+    assert [env_var.value_source.secret_key_ref.secret for env_var in env[2:]] == ["API_KEY", "EMBER_KEY"]
+    assert [env_var.value_source.secret_key_ref.version for env_var in env[2:]] == ["latest", "latest"]
 
 
 def test_construct_job_uses_image_default_command_when_command_is_omitted():
@@ -185,6 +194,37 @@ def test_construct_job_can_use_image_entrypoint_with_args():
     container = job.template.template.containers[0]
     assert container.command == []
     assert container.args == ["creaco2tracker::update_all(diagnostics_folder=NULL)"]
+
+
+def test_generate_current_config_omits_env_when_defaults_are_set():
+    job = make_remote_job("scrape-mee")
+    container = job.template.template.containers[0]
+    container.env.extend(
+        run_v2.EnvVar(name=name, value=value) for name, value in ucr.DEFAULT_ENV_VARS.items()
+    )
+
+    remote = ucr.generate_current_config({ucr.job_key_from_resource(job.name): job}, schedulers={})
+    assert "env" not in remote[0]
+
+
+def test_generate_current_config_flags_missing_default_env():
+    remote = ucr.generate_current_config(
+        {ucr.job_key_from_resource(make_remote_job("scrape-mee").name): make_remote_job("scrape-mee")},
+        schedulers={},
+    )
+    assert remote[0]["env"] == {"ENVIRONMENT": None, "PROJECT_ID": None}
+
+
+def test_check_diff_detects_missing_default_env():
+    remote = [_item("scrape-mee")]
+    remote[0]["env"] = {"ENVIRONMENT": None, "PROJECT_ID": None}
+    local = [_item("scrape-mee")]
+
+    diff = ucr.check_diff(remote, local)
+
+    assert diff["updated"] == [(0, _item("scrape-mee"))]
+    assert diff["inserted"] is None
+    assert diff["removed"] is None
 
 
 def test_generate_current_config_includes_secret_names():

@@ -25,6 +25,11 @@ nfs_server = "10.21.193.2"
 MANAGED_BY_KEY = "energyandcleanair.org/managed-by"
 MANAGED_BY_VALUE = "cron-jobs-config"
 
+DEFAULT_ENV_VARS = {
+    "ENVIRONMENT": "production",
+    "PROJECT_ID": project_id,
+}
+
 
 def main():
     run_client = run_v2.JobsClient()
@@ -147,6 +152,7 @@ def generate_current_config(jobs: Dict[str, run_v2.Job], schedulers: Dict[str, s
         command = " ".join(container.command)
         args = " ".join(container.args)
         secrets = container_secrets(container)
+        plain_env = container_plain_env(container)
 
         item = {
             "name": job.name.split("/")[-1],
@@ -168,6 +174,8 @@ def generate_current_config(jobs: Dict[str, run_v2.Job], schedulers: Dict[str, s
             item["region"] = location
         if secrets:
             item["secrets"] = secrets
+        if any(plain_env.get(name) != value for name, value in DEFAULT_ENV_VARS.items()):
+            item["env"] = {name: plain_env.get(name) for name in DEFAULT_ENV_VARS}
 
         output.append(item)
 
@@ -267,6 +275,9 @@ def construct_job(item: dict):
     if command:
         container.command = command.split(" ")
     container.args = args.split(" ") if args else []
+    container.env.extend(
+        run_v2.EnvVar(name=name, value=value) for name, value in DEFAULT_ENV_VARS.items()
+    )
     container.env.extend(secret_env_var(secret_name) for secret_name in item.get("secrets", []))
 
     if item["nfs"]:
@@ -310,6 +321,14 @@ def secret_env_var(secret_name: str) -> run_v2.EnvVar:
     )
 
 
+def container_plain_env(container: run_v2.Container) -> dict[str, str]:
+    return {
+        env_var.name: env_var.value
+        for env_var in container.env
+        if env_var.value
+    }
+
+
 def container_secrets(container: run_v2.Container) -> list[str]:
     secrets = []
     for env_var in container.env:
@@ -323,6 +342,7 @@ def normalize_config_item(item: dict) -> dict:
     normalized = dict(item)
     normalized.setdefault("image", default_image)
     normalized.setdefault("secrets", [])
+    normalized.setdefault("env", DEFAULT_ENV_VARS.copy())
     return normalized
 
 
