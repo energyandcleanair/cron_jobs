@@ -239,7 +239,7 @@
       "config": {
         "endpoint": "/v1/measurements",
         "params": {
-          "location_id": "haikou_chn.9_1_cn",
+          "location_id": "beijing_chn.2_1_cn",
           "variable": "anomaly",
           "pollutant": "pm25"
         },
