@@ -3,12 +3,10 @@
     "command": "deweather_measurements",
     "source": "mee",
     "poll": [
-      "pm25",
-      "no2",
-      "pm10"
+      "o3"
     ],
     "deweather_process_id": [
-      "default_anomaly_2018_2099"
+      "default_anomaly_o3_2018_2099"
     ],
     "yoy_months": [-1, -2],
     "location_id": [
