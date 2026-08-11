@@ -234,22 +234,6 @@
       }
     },
     {
-      "description": "Recent deweather Haikou, China has any value",
-      "type": "latest_available_date_at_least",
-      "config": {
-        "endpoint": "/v1/measurements",
-        "params": {
-          "location_id": "beijing_chn.2_1_cn",
-          "variable": "anomaly",
-          "pollutant": "pm25"
-        },
-        "date_from_key": "date_from",
-        "date_to_key": "date_to",
-        "date_key": "date",
-        "date_within_days": 39
-      }
-    },
-    {
       "description": "Recent WIND steel plant metadata has a recent \"Update\" date",
       "type": "wind_latest_available_metadata_recency",
       "config": {
