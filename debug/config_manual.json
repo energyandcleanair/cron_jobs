@@ -8,7 +8,6 @@
          "library(creahelpers)",
          "library(creadeweather)",
          "library(creatrajs)",
-         "library(creafire)",
          "library(tidyverse)",
          "library(glue)",
          "sessionInfo()"
