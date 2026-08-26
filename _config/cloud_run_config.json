@@ -68,7 +68,7 @@
   {
     "name": "deweather-mee",
     "schedule": "0 0 6 * *",
-    "time_zone": "Asia/Hong_Kong",
+    "time_zone": "Etc/UTC",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "python3",
     "args": "main.py -u https://github.com/energyandcleanair/cron_jobs/raw/main/deweather/config_deweather_mee.json",
@@ -83,7 +83,7 @@
   {
     "name": "plot-china-co2",
     "schedule": "0 0 */3 * *",
-    "time_zone": "Asia/Hong_Kong",
+    "time_zone": "Etc/UTC",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "python3",
     "args": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/plotting/config_plot_china_co2.json",
