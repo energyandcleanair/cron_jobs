@@ -67,7 +67,7 @@
   },
   {
     "name": "deweather-mee",
-    "schedule": "0 0 7 * *",
+    "schedule": "0 0 6 * *",
     "time_zone": "Etc/UTC",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "python3",
