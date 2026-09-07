@@ -1,0 +1,12 @@
+[
+    {
+        "command": "refresh",
+        "scraper": "india_npp",
+        "filters": [
+            {
+                "date_from": -120
+            }
+        ],
+        "error_if_no_measurement": true
+    }
+]

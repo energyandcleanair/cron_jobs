@@ -1,0 +1,11 @@
+[
+    {
+        "command": "refresh",
+        "scraper": "india_npp",
+        "filters": [
+            {
+                "date_from": "2019-07-01"
+            }
+        ]
+    }
+]
