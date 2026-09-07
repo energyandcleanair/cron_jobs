@@ -331,6 +331,22 @@
         "date_key": "date",
         "date_within_days": 80
       }
+    },
+    {
+      "description": "Recent MoC India coal offtake by sector has any data",
+      "type": "latest_available_date_at_least",
+      "config": {
+        "endpoint": "/energy/india/moc_coal_monthly",
+        "params": {
+          "source_raw": "Coal",
+          "variable_raw": "offtake",
+          "sector_raw": "Power"
+        },
+        "date_from_key": "date_from",
+        "date_to_key": "date_to",
+        "date_key": "date",
+        "date_within_days": 75
+      }
     }
   ]
 }

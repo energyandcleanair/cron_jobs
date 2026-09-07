@@ -1,0 +1,11 @@
+[
+    {
+        "command": "refresh",
+        "scraper": "india_moc",
+        "filters": [
+            {
+                "date_from": "2021-01-01"
+            }
+        ]
+    }
+]
