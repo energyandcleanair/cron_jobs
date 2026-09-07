@@ -165,13 +165,15 @@
         "date_key": "date",
         "date_within_days": 15
       }
-    },  
+    },
     {
       "description": "Air trajectory Beijing has a recent enough latest date",
       "type": "metadata_date_has_max_age",
       "config": {
         "endpoint": "/v1/trajectories",
-        "params": { "location_id": "beijing_chn.2_1_cn" },
+        "params": {
+          "location_id": "beijing_chn.2_1_cn"
+        },
         "date_within_days": 14
       }
     },
@@ -266,6 +268,37 @@
           "China: Daily Average Output: Crude Steel": 17,
           "China: Operating Rate: Wire Rod: Major Steel Mills": 17
         }
+      }
+    },
+    {
+      "description": "Recent PPAC India petroleum consumption has any data",
+      "type": "latest_available_date_at_least",
+      "config": {
+        "endpoint": "/energy/india/ppac_petroleum_consumption",
+        "params": {
+          "source_raw": "HSD",
+          "region_type": "iso2"
+        },
+        "date_from_key": "date_from",
+        "date_to_key": "date_to",
+        "date_key": "date",
+        "date_within_days": 80
+      }
+    },
+    {
+      "description": "Recent PPAC India natural gas consumption has any data",
+      "type": "latest_available_date_at_least",
+      "config": {
+        "endpoint": "/energy/india/ppac_gas_consumption",
+        "params": {
+          "region_type": "iso2",
+          "sector_raw": "Power",
+          "source_raw": "Total"
+        },
+        "date_from_key": "date_from",
+        "date_to_key": "date_to",
+        "date_key": "date",
+        "date_within_days": 80
       }
     }
   ]

@@ -293,6 +293,21 @@
     "nfs": false
   },
   {
+    "name": "scrape-india-ppac",
+    "schedule": "0 2 * * 1",
+    "time_zone": "Asia/Hong_Kong",
+    "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
+    "command": "python3",
+    "args": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/power/config_india_ppac.json",
+    "parallelism": 1,
+    "taskCount": 1,
+    "maxRetries": 0,
+    "timeoutSeconds": 86400,
+    "cpu": "2000m",
+    "memory": "4Gi",
+    "nfs": false
+  },
+  {
     "name": "scrape-energy-southkorea-kr",
     "schedule": "0 0 27 * *",
     "time_zone": "Asia/Hong_Kong",

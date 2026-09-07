@@ -1,0 +1,12 @@
+[
+    {
+        "command": "refresh",
+        "scraper": "india_ppac",
+        "filters": [
+            {
+                "date_from": -90
+            }
+        ],
+        "error_if_no_measurement": true
+    }
+]
