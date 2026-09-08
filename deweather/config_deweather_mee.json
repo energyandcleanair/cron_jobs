@@ -2,6 +2,7 @@
   {
     "command": "deweather_measurements",
     "source": "mee",
+    "split_by_location_id": false,
     "poll": [
       "pm25",
       "no2",
@@ -48,6 +49,7 @@
   {
     "command": "deweather_measurements",
     "source": "mee",
+    "split_by_location_id": false,
     "poll": [
       "o3"
     ],
