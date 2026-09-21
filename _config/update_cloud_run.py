@@ -13,6 +13,11 @@ full_project_job_name = project_path + "/jobs/{job_name}"
 service_account_email = "829505003332-compute@developer.gserviceaccount.com"
 default_image = "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest"
 
+# Existing GCP resource: named for its original NFS-only use, but it is the
+# project's general-purpose connector and is also used by jobs that need VPC
+# access without an NFS mount. Renaming it would mean recreating it in GCP.
+vpc_connector_name = "nfs-connector"
+
 nfs_volume_name = "crea-nfs"
 nfs_path = "/crea_nfs"
 nfs_mount_path = f"/mnt{nfs_path}"
@@ -84,8 +89,8 @@ def scheduler_endpoint_for(location: str, job_name: str) -> str:
     )
 
 
-def nfs_connector_for(location: str) -> str:
-    return f"{project_path_for(location)}/connectors/nfs-connector"
+def vpc_connector_for(location: str) -> str:
+    return f"{project_path_for(location)}/connectors/{vpc_connector_name}"
 
 
 def get_resource_location(resource_name: str) -> str:
@@ -148,7 +153,9 @@ def generate_current_config(jobs: Dict[str, run_v2.Job], schedulers: Dict[str, s
         location = get_resource_location(job.name)
         container = job.template.template.containers[0]
 
-        uses_nfs = job.template.template.vpc_access.connector not in [None, ""]
+        # Detect NFS from the volume, not the connector
+        uses_nfs = any(volume.name == nfs_volume_name for volume in job.template.template.volumes)
+        uses_vpc = job.template.template.vpc_access.connector not in [None, ""]
         command = " ".join(container.command)
         args = " ".join(container.args)
         secrets = container_secrets(container)
@@ -166,8 +173,12 @@ def generate_current_config(jobs: Dict[str, run_v2.Job], schedulers: Dict[str, s
             "timeoutSeconds": int(job.template.template.timeout.total_seconds()),
             "cpu": container.resources.limits["cpu"],
             "memory": container.resources.limits["memory"],
-            "nfs": uses_nfs,
         }
+        if uses_nfs:
+            item["nfs"] = True
+        # NFS implies a connector, so only report vpc when it stands alone.
+        elif uses_vpc:
+            item["vpc"] = True
         if command:
             item["command"] = command
         if location != default_location:
@@ -280,12 +291,14 @@ def construct_job(item: dict):
     )
     container.env.extend(secret_env_var(secret_name) for secret_name in item.get("secrets", []))
 
-    if item["nfs"]:
+    # NFS is served from inside the VPC, so mounting it implies VPC access
+    # Jobs that only need to reach private IPs (e.g. Redis, private Cloud SQL) set "vpc": true
+    if item.get("nfs") or item.get("vpc"):
         vpc = run_v2.VpcAccess()
-        vpc.connector = nfs_connector_for(location)
+        vpc.connector = vpc_connector_for(location)
         job.template.template.vpc_access = vpc
 
-        # Add NFS VPC startup script
+    if item.get("nfs"):
         nfs_volume = run_v2.Volume(
             name=nfs_volume_name,
             nfs=run_v2.NFSVolumeSource(
@@ -342,6 +355,8 @@ def normalize_config_item(item: dict) -> dict:
     normalized = dict(item)
     normalized.setdefault("image", default_image)
     normalized.setdefault("secrets", [])
+    normalized.setdefault("nfs", False)
+    normalized.setdefault("vpc", False)
     normalized.setdefault("env", DEFAULT_ENV_VARS.copy())
     return normalized
 

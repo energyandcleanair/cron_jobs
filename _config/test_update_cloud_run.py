@@ -371,7 +371,6 @@ def _item(
         "timeoutSeconds": 600,
         "cpu": "1",
         "memory": "512Mi",
-        "nfs": False,
         "secrets": secrets or [],
     }
     if command is not None:
@@ -379,3 +378,93 @@ def _item(
     if region:
         item["region"] = region
     return item
+
+
+def test_construct_job_without_vpc_or_nfs_has_no_connector():
+    job = ucr.construct_job(_item("cache-ncap"))
+
+    assert job.template.template.vpc_access.connector in [None, ""]
+    assert list(job.template.template.volumes) == []
+
+
+def test_construct_job_with_vpc_attaches_connector_without_nfs_mount():
+    item = _item("cache-ncap")
+    item["vpc"] = True
+
+    job = ucr.construct_job(item)
+
+    assert job.template.template.vpc_access.connector == ucr.vpc_connector_for(ucr.default_location)
+    # VPC access only: no NFS volume and no mount.
+    assert list(job.template.template.volumes) == []
+    assert list(job.template.template.containers[0].volume_mounts) == []
+
+
+def test_construct_job_with_nfs_still_attaches_connector_and_mount():
+    item = _item("deweather-mee")
+    item["nfs"] = True
+
+    job = ucr.construct_job(item)
+
+    assert job.template.template.vpc_access.connector == ucr.vpc_connector_for(ucr.default_location)
+    assert [volume.name for volume in job.template.template.volumes] == [ucr.nfs_volume_name]
+    assert [mount.name for mount in job.template.template.containers[0].volume_mounts] == [ucr.nfs_volume_name]
+
+
+def test_generate_current_config_reports_vpc_without_nfs():
+    item = _item("cache-ncap")
+    item["vpc"] = True
+    job = ucr.construct_job(item)
+    job.name = ucr.full_project_job_name_for(ucr.default_location, "cache-ncap")
+    job.annotations = {ucr.MANAGED_BY_KEY: ucr.MANAGED_BY_VALUE}
+
+    remote = ucr.generate_current_config({ucr.job_key_from_resource(job.name): job}, schedulers={})
+
+    # A connector without an NFS volume must read back as vpc, not nfs.
+    assert "nfs" not in remote[0]
+    assert remote[0]["vpc"] is True
+
+
+def test_generate_current_config_reports_nfs_not_vpc_for_nfs_job():
+    item = _item("deweather-mee")
+    item["nfs"] = True
+    job = ucr.construct_job(item)
+    job.name = ucr.full_project_job_name_for(ucr.default_location, "deweather-mee")
+    job.annotations = {ucr.MANAGED_BY_KEY: ucr.MANAGED_BY_VALUE}
+
+    remote = ucr.generate_current_config({ucr.job_key_from_resource(job.name): job}, schedulers={})
+
+    assert remote[0]["nfs"] is True
+    assert "vpc" not in remote[0]
+
+
+def test_vpc_job_round_trips_without_drift():
+    """A vpc job must not flap: deploy then read back must produce no update."""
+    local = _item("cache-ncap")
+    local["vpc"] = True
+    job = ucr.construct_job(local)
+    job.name = ucr.full_project_job_name_for(ucr.default_location, "cache-ncap")
+    job.annotations = {ucr.MANAGED_BY_KEY: ucr.MANAGED_BY_VALUE}
+
+    remote = ucr.generate_current_config({ucr.job_key_from_resource(job.name): job}, schedulers={})
+    remote[0]["schedule"] = local["schedule"]
+    remote[0]["time_zone"] = local["time_zone"]
+
+    diff = ucr.check_diff(remote, [local])
+
+    assert not diff["updated"]
+
+
+def test_nfs_job_round_trips_without_drift():
+    local = _item("deweather-mee")
+    local["nfs"] = True
+    job = ucr.construct_job(local)
+    job.name = ucr.full_project_job_name_for(ucr.default_location, "deweather-mee")
+    job.annotations = {ucr.MANAGED_BY_KEY: ucr.MANAGED_BY_VALUE}
+
+    remote = ucr.generate_current_config({ucr.job_key_from_resource(job.name): job}, schedulers={})
+    remote[0]["schedule"] = local["schedule"]
+    remote[0]["time_zone"] = local["time_zone"]
+
+    diff = ucr.check_diff(remote, [local])
+
+    assert not diff["updated"]
