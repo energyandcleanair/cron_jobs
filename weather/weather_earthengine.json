@@ -10,7 +10,7 @@
         "GB"
       ],
       "region_type": "country",
-      "date_from": -10,
+      "date_from": -14,
       "variable": [
         "CDD",
         "HDD",
@@ -22,7 +22,7 @@
         "IN"
       ],
       "region_type": "country",
-      "date_from": -10,
+      "date_from": -14,
       "variable": [
         "temperature"
       ]
@@ -33,7 +33,7 @@
         "GB"
       ],
       "region_type": "country",
-      "date_from": -10,
+      "date_from": -14,
       "variable": [
         "solar_radiation",
         "wind_speed",
@@ -48,7 +48,7 @@
         "CN"
       ],
       "region_type": "gadm1",
-      "date_from": -10,
+      "date_from": -14,
       "variable": [
         "CDD",
         "HDD",
