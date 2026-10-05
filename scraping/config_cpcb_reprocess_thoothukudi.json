@@ -1,0 +1,202 @@
+[
+  {
+    "command": "process_measurements",
+    "scraper": "cpcb",
+    "processes": [
+      "city_day_mad"
+    ],
+    "filters": [
+      {
+        "city_ids": [
+          "thoothukudi_ind.31_1_in"
+        ],
+        "pollutants": [
+          "pm10",
+          "no2",
+          "o3",
+          "so2",
+          "co",
+          "no",
+          "nox"
+        ],
+        "date_from": "2020-01-01",
+        "date_to": "2020-12-31"
+      },
+      {
+        "city_ids": [
+          "thoothukudi_ind.31_1_in"
+        ],
+        "pollutants": [
+          "pm10",
+          "no2",
+          "o3",
+          "so2",
+          "co",
+          "no",
+          "nox"
+        ],
+        "date_from": "2021-01-01",
+        "date_to": "2021-12-31"
+      },
+      {
+        "city_ids": [
+          "thoothukudi_ind.31_1_in"
+        ],
+        "pollutants": [
+          "pm10",
+          "no2",
+          "o3",
+          "so2",
+          "co",
+          "no",
+          "nox"
+        ],
+        "date_from": "2022-01-01",
+        "date_to": "2022-12-31"
+      },
+      {
+        "city_ids": [
+          "thoothukudi_ind.31_1_in"
+        ],
+        "pollutants": [
+          "pm10",
+          "no2",
+          "o3",
+          "so2",
+          "co",
+          "no",
+          "nox"
+        ],
+        "date_from": "2023-01-01",
+        "date_to": "2023-12-31"
+      },
+      {
+        "city_ids": [
+          "thoothukudi_ind.31_1_in"
+        ],
+        "pollutants": [
+          "pm10",
+          "no2",
+          "o3",
+          "so2",
+          "co",
+          "no",
+          "nox"
+        ],
+        "date_from": "2024-01-01",
+        "date_to": "2024-12-31"
+      },
+      {
+        "city_ids": [
+          "thoothukudi_ind.31_1_in"
+        ],
+        "pollutants": [
+          "pm10",
+          "no2",
+          "o3",
+          "so2",
+          "co",
+          "no",
+          "nox"
+        ],
+        "date_from": "2025-01-01",
+        "date_to": "2025-12-31"
+      },
+      {
+        "city_ids": [
+          "thoothukudi_ind.31_1_in"
+        ],
+        "pollutants": [
+          "pm10",
+          "no2",
+          "o3",
+          "so2",
+          "co",
+          "no",
+          "nox"
+        ],
+        "date_from": "2026-01-01",
+        "date_to": "2026-12-31"
+      }
+    ]
+  },
+  {
+    "command": "process_measurements",
+    "scraper": "cpcb",
+    "processes": [
+      "city_8h_max_day_mad"
+    ],
+    "filters": [
+      {
+        "city_ids": [
+          "thoothukudi_ind.31_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2020-01-01",
+        "date_to": "2020-12-31"
+      },
+      {
+        "city_ids": [
+          "thoothukudi_ind.31_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2021-01-01",
+        "date_to": "2021-12-31"
+      },
+      {
+        "city_ids": [
+          "thoothukudi_ind.31_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2022-01-01",
+        "date_to": "2022-12-31"
+      },
+      {
+        "city_ids": [
+          "thoothukudi_ind.31_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2023-01-01",
+        "date_to": "2023-12-31"
+      },
+      {
+        "city_ids": [
+          "thoothukudi_ind.31_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2024-01-01",
+        "date_to": "2024-12-31"
+      },
+      {
+        "city_ids": [
+          "thoothukudi_ind.31_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2025-01-01",
+        "date_to": "2025-12-31"
+      },
+      {
+        "city_ids": [
+          "thoothukudi_ind.31_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2026-01-01",
+        "date_to": "2026-12-31"
+      }
+    ]
+  }
+]
