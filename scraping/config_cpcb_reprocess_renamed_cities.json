@@ -1,0 +1,1182 @@
+[
+  {
+    "command": "process_measurements",
+    "scraper": "cpcb",
+    "filters": [
+      {
+        "city_ids": [
+          "bangalore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2017-01-01",
+        "date_to": "2017-12-31"
+      },
+      {
+        "city_ids": [
+          "bangalore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2018-01-01",
+        "date_to": "2018-12-31"
+      },
+      {
+        "city_ids": [
+          "bangalore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2019-01-01",
+        "date_to": "2019-12-31"
+      },
+      {
+        "city_ids": [
+          "bangalore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2020-01-01",
+        "date_to": "2020-12-31"
+      },
+      {
+        "city_ids": [
+          "bangalore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2021-01-01",
+        "date_to": "2021-12-31"
+      },
+      {
+        "city_ids": [
+          "bangalore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2022-01-01",
+        "date_to": "2022-12-31"
+      },
+      {
+        "city_ids": [
+          "bangalore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2023-01-01",
+        "date_to": "2023-11-02"
+      },
+      {
+        "city_ids": [
+          "asanol_ind.36_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2017-01-01",
+        "date_to": "2017-12-31"
+      },
+      {
+        "city_ids": [
+          "asanol_ind.36_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2018-01-01",
+        "date_to": "2018-12-31"
+      },
+      {
+        "city_ids": [
+          "asanol_ind.36_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2019-01-01",
+        "date_to": "2019-12-31"
+      },
+      {
+        "city_ids": [
+          "asanol_ind.36_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2020-01-01",
+        "date_to": "2020-12-31"
+      },
+      {
+        "city_ids": [
+          "asanol_ind.36_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2021-01-01",
+        "date_to": "2021-12-31"
+      },
+      {
+        "city_ids": [
+          "asanol_ind.36_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2022-01-01",
+        "date_to": "2022-12-31"
+      },
+      {
+        "city_ids": [
+          "asanol_ind.36_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2023-01-01",
+        "date_to": "2023-11-02"
+      },
+      {
+        "city_ids": [
+          "muradabad_ind.34_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2017-01-01",
+        "date_to": "2017-12-31"
+      },
+      {
+        "city_ids": [
+          "muradabad_ind.34_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2018-01-01",
+        "date_to": "2018-12-31"
+      },
+      {
+        "city_ids": [
+          "muradabad_ind.34_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2019-01-01",
+        "date_to": "2019-12-31"
+      },
+      {
+        "city_ids": [
+          "muradabad_ind.34_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2020-01-01",
+        "date_to": "2020-12-31"
+      },
+      {
+        "city_ids": [
+          "muradabad_ind.34_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2021-01-01",
+        "date_to": "2021-12-31"
+      },
+      {
+        "city_ids": [
+          "muradabad_ind.34_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2022-01-01",
+        "date_to": "2022-12-31"
+      },
+      {
+        "city_ids": [
+          "muradabad_ind.34_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2023-01-01",
+        "date_to": "2023-11-02"
+      },
+      {
+        "city_ids": [
+          "gurgaon_ind.12_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2017-01-01",
+        "date_to": "2017-12-31"
+      },
+      {
+        "city_ids": [
+          "gurgaon_ind.12_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2018-01-01",
+        "date_to": "2018-12-31"
+      },
+      {
+        "city_ids": [
+          "gurgaon_ind.12_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2019-01-01",
+        "date_to": "2019-12-31"
+      },
+      {
+        "city_ids": [
+          "gurgaon_ind.12_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2020-01-01",
+        "date_to": "2020-12-31"
+      },
+      {
+        "city_ids": [
+          "gurgaon_ind.12_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2021-01-01",
+        "date_to": "2021-12-31"
+      },
+      {
+        "city_ids": [
+          "gurgaon_ind.12_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2022-01-01",
+        "date_to": "2022-12-31"
+      },
+      {
+        "city_ids": [
+          "gurgaon_ind.12_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2023-01-01",
+        "date_to": "2023-11-02"
+      },
+      {
+        "city_ids": [
+          "manglore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2017-01-01",
+        "date_to": "2017-12-31"
+      },
+      {
+        "city_ids": [
+          "manglore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2018-01-01",
+        "date_to": "2018-12-31"
+      },
+      {
+        "city_ids": [
+          "manglore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2019-01-01",
+        "date_to": "2019-12-31"
+      },
+      {
+        "city_ids": [
+          "manglore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2020-01-01",
+        "date_to": "2020-12-31"
+      },
+      {
+        "city_ids": [
+          "manglore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2021-01-01",
+        "date_to": "2021-12-31"
+      },
+      {
+        "city_ids": [
+          "manglore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2022-01-01",
+        "date_to": "2022-12-31"
+      },
+      {
+        "city_ids": [
+          "manglore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2023-01-01",
+        "date_to": "2023-11-02"
+      },
+      {
+        "city_ids": [
+          "chikkaballarpur_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2017-01-01",
+        "date_to": "2017-12-31"
+      },
+      {
+        "city_ids": [
+          "chikkaballarpur_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2018-01-01",
+        "date_to": "2018-12-31"
+      },
+      {
+        "city_ids": [
+          "chikkaballarpur_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2019-01-01",
+        "date_to": "2019-12-31"
+      },
+      {
+        "city_ids": [
+          "chikkaballarpur_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2020-01-01",
+        "date_to": "2020-12-31"
+      },
+      {
+        "city_ids": [
+          "chikkaballarpur_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2021-01-01",
+        "date_to": "2021-12-31"
+      },
+      {
+        "city_ids": [
+          "chikkaballarpur_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2022-01-01",
+        "date_to": "2022-12-31"
+      },
+      {
+        "city_ids": [
+          "chikkaballarpur_ind.16_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2023-01-01",
+        "date_to": "2023-11-02"
+      },
+      {
+        "city_ids": [
+          "greater_noida_ind.34_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2017-01-01",
+        "date_to": "2017-12-31"
+      },
+      {
+        "city_ids": [
+          "greater_noida_ind.34_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2018-01-01",
+        "date_to": "2018-12-31"
+      },
+      {
+        "city_ids": [
+          "greater_noida_ind.34_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2019-01-01",
+        "date_to": "2019-12-31"
+      },
+      {
+        "city_ids": [
+          "greater_noida_ind.34_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2020-01-01",
+        "date_to": "2020-12-31"
+      },
+      {
+        "city_ids": [
+          "greater_noida_ind.34_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2021-01-01",
+        "date_to": "2021-12-31"
+      },
+      {
+        "city_ids": [
+          "greater_noida_ind.34_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2022-01-01",
+        "date_to": "2022-12-31"
+      },
+      {
+        "city_ids": [
+          "greater_noida_ind.34_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2023-01-01",
+        "date_to": "2023-11-02"
+      },
+      {
+        "city_ids": [
+          "bangalore_ind.16_1_in",
+          "asanol_ind.36_1_in",
+          "muradabad_ind.34_1_in",
+          "gurgaon_ind.12_1_in",
+          "manglore_ind.16_1_in",
+          "chikkaballarpur_ind.16_1_in",
+          "greater_noida_ind.34_1_in"
+        ],
+        "pollutants": [
+          "pm25",
+          "pm10",
+          "no2",
+          "o3"
+        ],
+        "date_from": "2026-06-28",
+        "date_to": "2026-06-30"
+      }
+    ],
+    "processes": [
+      "city_day_mad"
+    ]
+  },
+  {
+    "command": "process_measurements",
+    "scraper": "cpcb",
+    "filters": [
+      {
+        "city_ids": [
+          "bangalore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2017-01-01",
+        "date_to": "2017-12-31"
+      },
+      {
+        "city_ids": [
+          "bangalore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2018-01-01",
+        "date_to": "2018-12-31"
+      },
+      {
+        "city_ids": [
+          "bangalore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2019-01-01",
+        "date_to": "2019-12-31"
+      },
+      {
+        "city_ids": [
+          "bangalore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2020-01-01",
+        "date_to": "2020-12-31"
+      },
+      {
+        "city_ids": [
+          "bangalore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2021-01-01",
+        "date_to": "2021-12-31"
+      },
+      {
+        "city_ids": [
+          "bangalore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2022-01-01",
+        "date_to": "2022-12-31"
+      },
+      {
+        "city_ids": [
+          "bangalore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2023-01-01",
+        "date_to": "2023-11-02"
+      },
+      {
+        "city_ids": [
+          "asanol_ind.36_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2017-01-01",
+        "date_to": "2017-12-31"
+      },
+      {
+        "city_ids": [
+          "asanol_ind.36_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2018-01-01",
+        "date_to": "2018-12-31"
+      },
+      {
+        "city_ids": [
+          "asanol_ind.36_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2019-01-01",
+        "date_to": "2019-12-31"
+      },
+      {
+        "city_ids": [
+          "asanol_ind.36_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2020-01-01",
+        "date_to": "2020-12-31"
+      },
+      {
+        "city_ids": [
+          "asanol_ind.36_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2021-01-01",
+        "date_to": "2021-12-31"
+      },
+      {
+        "city_ids": [
+          "asanol_ind.36_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2022-01-01",
+        "date_to": "2022-12-31"
+      },
+      {
+        "city_ids": [
+          "asanol_ind.36_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2023-01-01",
+        "date_to": "2023-11-02"
+      },
+      {
+        "city_ids": [
+          "muradabad_ind.34_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2017-01-01",
+        "date_to": "2017-12-31"
+      },
+      {
+        "city_ids": [
+          "muradabad_ind.34_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2018-01-01",
+        "date_to": "2018-12-31"
+      },
+      {
+        "city_ids": [
+          "muradabad_ind.34_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2019-01-01",
+        "date_to": "2019-12-31"
+      },
+      {
+        "city_ids": [
+          "muradabad_ind.34_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2020-01-01",
+        "date_to": "2020-12-31"
+      },
+      {
+        "city_ids": [
+          "muradabad_ind.34_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2021-01-01",
+        "date_to": "2021-12-31"
+      },
+      {
+        "city_ids": [
+          "muradabad_ind.34_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2022-01-01",
+        "date_to": "2022-12-31"
+      },
+      {
+        "city_ids": [
+          "muradabad_ind.34_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2023-01-01",
+        "date_to": "2023-11-02"
+      },
+      {
+        "city_ids": [
+          "gurgaon_ind.12_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2017-01-01",
+        "date_to": "2017-12-31"
+      },
+      {
+        "city_ids": [
+          "gurgaon_ind.12_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2018-01-01",
+        "date_to": "2018-12-31"
+      },
+      {
+        "city_ids": [
+          "gurgaon_ind.12_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2019-01-01",
+        "date_to": "2019-12-31"
+      },
+      {
+        "city_ids": [
+          "gurgaon_ind.12_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2020-01-01",
+        "date_to": "2020-12-31"
+      },
+      {
+        "city_ids": [
+          "gurgaon_ind.12_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2021-01-01",
+        "date_to": "2021-12-31"
+      },
+      {
+        "city_ids": [
+          "gurgaon_ind.12_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2022-01-01",
+        "date_to": "2022-12-31"
+      },
+      {
+        "city_ids": [
+          "gurgaon_ind.12_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2023-01-01",
+        "date_to": "2023-11-02"
+      },
+      {
+        "city_ids": [
+          "manglore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2017-01-01",
+        "date_to": "2017-12-31"
+      },
+      {
+        "city_ids": [
+          "manglore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2018-01-01",
+        "date_to": "2018-12-31"
+      },
+      {
+        "city_ids": [
+          "manglore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2019-01-01",
+        "date_to": "2019-12-31"
+      },
+      {
+        "city_ids": [
+          "manglore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2020-01-01",
+        "date_to": "2020-12-31"
+      },
+      {
+        "city_ids": [
+          "manglore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2021-01-01",
+        "date_to": "2021-12-31"
+      },
+      {
+        "city_ids": [
+          "manglore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2022-01-01",
+        "date_to": "2022-12-31"
+      },
+      {
+        "city_ids": [
+          "manglore_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2023-01-01",
+        "date_to": "2023-11-02"
+      },
+      {
+        "city_ids": [
+          "chikkaballarpur_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2017-01-01",
+        "date_to": "2017-12-31"
+      },
+      {
+        "city_ids": [
+          "chikkaballarpur_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2018-01-01",
+        "date_to": "2018-12-31"
+      },
+      {
+        "city_ids": [
+          "chikkaballarpur_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2019-01-01",
+        "date_to": "2019-12-31"
+      },
+      {
+        "city_ids": [
+          "chikkaballarpur_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2020-01-01",
+        "date_to": "2020-12-31"
+      },
+      {
+        "city_ids": [
+          "chikkaballarpur_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2021-01-01",
+        "date_to": "2021-12-31"
+      },
+      {
+        "city_ids": [
+          "chikkaballarpur_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2022-01-01",
+        "date_to": "2022-12-31"
+      },
+      {
+        "city_ids": [
+          "chikkaballarpur_ind.16_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2023-01-01",
+        "date_to": "2023-11-02"
+      },
+      {
+        "city_ids": [
+          "greater_noida_ind.34_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2017-01-01",
+        "date_to": "2017-12-31"
+      },
+      {
+        "city_ids": [
+          "greater_noida_ind.34_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2018-01-01",
+        "date_to": "2018-12-31"
+      },
+      {
+        "city_ids": [
+          "greater_noida_ind.34_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2019-01-01",
+        "date_to": "2019-12-31"
+      },
+      {
+        "city_ids": [
+          "greater_noida_ind.34_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2020-01-01",
+        "date_to": "2020-12-31"
+      },
+      {
+        "city_ids": [
+          "greater_noida_ind.34_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2021-01-01",
+        "date_to": "2021-12-31"
+      },
+      {
+        "city_ids": [
+          "greater_noida_ind.34_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2022-01-01",
+        "date_to": "2022-12-31"
+      },
+      {
+        "city_ids": [
+          "greater_noida_ind.34_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2023-01-01",
+        "date_to": "2023-11-02"
+      },
+      {
+        "city_ids": [
+          "bangalore_ind.16_1_in",
+          "asanol_ind.36_1_in",
+          "muradabad_ind.34_1_in",
+          "gurgaon_ind.12_1_in",
+          "manglore_ind.16_1_in",
+          "chikkaballarpur_ind.16_1_in",
+          "greater_noida_ind.34_1_in"
+        ],
+        "pollutants": [
+          "o3"
+        ],
+        "date_from": "2026-06-28",
+        "date_to": "2026-06-30"
+      }
+    ],
+    "processes": [
+      "city_8h_max_day_mad"
+    ]
+  }
+]
