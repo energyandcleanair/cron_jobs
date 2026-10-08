@@ -1,0 +1,11 @@
+[
+  {
+    "command": "refresh",
+    "scraper": "india_grid",
+    "filters": [
+      {
+        "date_from": -7
+      }
+    ]
+  }
+]
