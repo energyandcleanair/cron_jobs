@@ -246,8 +246,8 @@
     "taskCount": 1,
     "maxRetries": 0,
     "timeoutSeconds": 7200,
-    "cpu": "2000m",
-    "memory": "4Gi"
+    "cpu": "1000m",
+    "memory": "2Gi"
   },
   {
     "name": "scrape-energy-india-dpiit",
@@ -260,8 +260,8 @@
     "taskCount": 1,
     "maxRetries": 0,
     "timeoutSeconds": 7200,
-    "cpu": "2000m",
-    "memory": "4Gi"
+    "cpu": "1000m",
+    "memory": "2Gi"
   },
   {
     "name": "scrape-energy-india-grid",
@@ -275,8 +275,8 @@
     "taskCount": 1,
     "maxRetries": 0,
     "timeoutSeconds": 7200,
-    "cpu": "2000m",
-    "memory": "4Gi"
+    "cpu": "1000m",
+    "memory": "2Gi"
   },
   {
     "name": "scrape-energy-india-moc",
@@ -289,8 +289,8 @@
     "taskCount": 1,
     "maxRetries": 0,
     "timeoutSeconds": 7200,
-    "cpu": "2000m",
-    "memory": "4Gi"
+    "cpu": "1000m",
+    "memory": "2Gi"
   },
   {
     "name": "scrape-energy-india-npp",
@@ -303,8 +303,8 @@
     "taskCount": 1,
     "maxRetries": 0,
     "timeoutSeconds": 7200,
-    "cpu": "2000m",
-    "memory": "4Gi"
+    "cpu": "1000m",
+    "memory": "2Gi"
   },
   {
     "name": "scrape-energy-india-ppac",
@@ -317,8 +317,8 @@
     "taskCount": 1,
     "maxRetries": 0,
     "timeoutSeconds": 7200,
-    "cpu": "2000m",
-    "memory": "4Gi"
+    "cpu": "1000m",
+    "memory": "2Gi"
   },
   {
     "name": "scrape-energy-iemop-ph",
