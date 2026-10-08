@@ -239,6 +239,7 @@
     "name": "scrape-energy-india-cea",
     "schedule": "0 11 * * 1,4",
     "time_zone": "Asia/Kolkata",
+    "region": "asia-south1",
     "image": "europe-docker.pkg.dev/crea-aq-data/creaengine/engine:latest",
     "command": "python3",
     "args": "main.py -u https://raw.githubusercontent.com/energyandcleanair/cron_jobs/main/power/config_india_cea.json",
