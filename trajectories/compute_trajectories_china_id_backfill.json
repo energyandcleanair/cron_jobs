@@ -1,0 +1,18 @@
+[
+  {
+    "command": "compute_trajectories",
+    "location_id": [
+      "changchun_chn.17_1_cn",
+      "changsha_chn.14_1_cn",
+      "guiyang_chn.8_1_cn",
+      "haikou_chn.9_1_cn",
+      "jinan_chn.23_1_cn",
+      "nanning_chn.7_1_cn"
+    ],
+    "date_from": "2026-05-10",
+    "date_to": "2026-10-08",
+    "force": true,
+    "upload_results": true,
+    "error_if_no_trajectory": true
+  }
+]
