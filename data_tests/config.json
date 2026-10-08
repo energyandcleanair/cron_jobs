@@ -167,6 +167,15 @@
       }
     },  
     {
+      "description": "Air trajectory Beijing has a recent enough latest date",
+      "type": "metadata_date_has_max_age",
+      "config": {
+        "endpoint": "/v1/trajectories",
+        "params": { "location_id": "beijing_chn.2_1_cn" },
+        "date_within_days": 14
+      }
+    },
+    {
       "description": "Recent energy demand EU has any data",
       "type": "latest_available_date_at_least",
       "config": {
