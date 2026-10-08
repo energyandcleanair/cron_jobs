@@ -1,0 +1,11 @@
+[
+  {
+    "command": "refresh",
+    "scraper": "india_cea",
+    "filters": [
+      {
+        "date_from": -90
+      }
+    ]
+  }
+]
