@@ -1,0 +1,16 @@
+[
+  {
+    "command": "refresh",
+    "scraper": "india_grid",
+    "sources": [
+      "grid_india_daily_psp"
+    ],
+    "filters": [
+      {
+        "date_from": "2018-04-01"
+      }
+    ],
+    "ignore_scrape_errors": true,
+    "ignore_parse_errors": true
+  }
+]
