@@ -269,51 +269,51 @@
       }
     },
     {
-      "description": "Russia Fossil Tracker chart 13560160 (RFT - Daily payments by fuel) updated in the last 24 hours",
+      "description": "Russia Fossil Tracker chart 13560160 (RFT - Daily payments by fuel) updated in the last 48 hours",
       "type": "flourish_chart_recency",
       "config": {
         "chart_id": "13560160",
-        "max_age_hours": 24
+        "max_age_hours": 48
       }
     },
     {
-      "description": "Russia Fossil Tracker chart 13560170 (RFT - All regions daily payments) updated in the last 24 hours",
+      "description": "Russia Fossil Tracker chart 13560170 (RFT - All regions daily payments) updated in the last 48 hours",
       "type": "flourish_chart_recency",
       "config": {
         "chart_id": "13560170",
-        "max_age_hours": 24
+        "max_age_hours": 48
       }
     },
     {
-      "description": "Russia Fossil Tracker chart 13560173 (RFT largest_importers) updated in the last 24 hours",
+      "description": "Russia Fossil Tracker chart 13560173 (RFT largest_importers) updated in the last 48 hours",
       "type": "flourish_chart_recency",
       "config": {
         "chart_id": "13560173",
-        "max_age_hours": 24
+        "max_age_hours": 48
       }
     },
     {
-      "description": "Russia sanction tracker chart 13560332 (Departures by destination) updated in the last 24 hours",
+      "description": "Russia sanction tracker chart 13560332 (Departures by destination) updated in the last 48 hours",
       "type": "flourish_chart_recency",
       "config": {
         "chart_id": "13560332",
-        "max_age_hours": 24
+        "max_age_hours": 48
       }
     },
     {
-      "description": "Russia sanction tracker chart 13560336 (Departures by ownership) updated in the last 24 hours",
+      "description": "Russia sanction tracker chart 13560336 (Departures by ownership) updated in the last 48 hours",
       "type": "flourish_chart_recency",
       "config": {
         "chart_id": "13560336",
-        "max_age_hours": 24
+        "max_age_hours": 48
       }
     },
     {
-      "description": "Russia sanction tracker chart 13560312 (Urals) updated in the last 24 hours",
+      "description": "Russia sanction tracker chart 13560312 (Urals) updated in the last 48 hours",
       "type": "flourish_chart_recency",
       "config": {
         "chart_id": "13560312",
-        "max_age_hours": 24
+        "max_age_hours": 48
       }
     }
   ]
