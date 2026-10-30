@@ -1,0 +1,11 @@
+{
+  "command": "refresh_weather_measurements",
+  "scraper": "viirs_nasa",
+  "filters": [
+    {
+      "iso2": ["ID", "IN", "CN"],
+      "date_from": -14,
+      "product": ["VJ114A1", "VJ214A1"]
+    }
+  ]
+}
