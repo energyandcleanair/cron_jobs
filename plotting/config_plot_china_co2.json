@@ -24,6 +24,7 @@
     }
   ],
   "environment_variables":[
-    "GITHUB_PAT"
+    "GITHUB_PAT",
+    "EMBER_KEY"
   ]
 }
